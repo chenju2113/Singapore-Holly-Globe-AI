@@ -45,8 +45,16 @@ export interface CitationTranslation {
   ownedCitationTooltip: string;
   queriesEvaluatedTitle: string;
   competitorAvgTitle: string;
+  recommendationRateTitle: string;
+  recommendationRateTooltip: string;
 
   // Sections
+  brandIndicatorsTitle: string;
+  brandIndicatorsSubtitle: string;
+  keywordPlatformStatsTitle: string;
+  keywordPlatformStatsSubtitle: string;
+  platformRecommendationTitle: string;
+  platformRecommendationSubtitle: string;
   previewSectionTitle: string;
   previewSectionSubtitle: string;
   fullSnippetsTitle: string;
@@ -74,6 +82,9 @@ export interface CitationTranslation {
   copiedLinkNotice: string;
   unlockedBadge: string;
   lockedBadge: string;
+  auditErrorTitle: string;
+  auditErrorBody: string;
+  auditRetryBtn: string;
 }
 
 export const CITATION_TRANSLATIONS: Record<CitationLanguage, CitationTranslation> = {
@@ -136,7 +147,15 @@ export const CITATION_TRANSLATIONS: Record<CitationLanguage, CitationTranslation
     ownedCitationTooltip: 'AI 回答中的参考来源（Citations）直接指向您官方网站域名的比例。',
     queriesEvaluatedTitle: '评估查询采样数',
     competitorAvgTitle: '同行业竞品提及参考',
+    recommendationRateTitle: 'AI 推荐正向率',
+    recommendationRateTooltip: '在本次采样平台中，AI 结果呈现为正向推荐或明确背书的比例。',
 
+    brandIndicatorsTitle: 'AI搜索品牌指标',
+    brandIndicatorsSubtitle: '把分散的引用结果压缩成更适合决策的品牌信号指标。',
+    keywordPlatformStatsTitle: '按关键词各平台数据统计',
+    keywordPlatformStatsSubtitle: '按查询词拆开看每个平台是否提及品牌、是否引用官网，以及推荐倾向。',
+    platformRecommendationTitle: 'AI全平台推荐率',
+    platformRecommendationSubtitle: '基于本次实际采样到的平台集合统计；后续接入更多 AI provider 时会自动扩展。',
     previewSectionTitle: '预览摘要：AI 回答引用片段示例',
     previewSectionSubtitle: '下方展示部分已解锁的 AI 回答片段，完整 8 项深度分析与改进建议需解锁后查看',
     fullSnippetsTitle: '全量 AI 回答引用切片明细',
@@ -145,8 +164,8 @@ export const CITATION_TRANSLATIONS: Record<CitationLanguage, CitationTranslation
     recommendedActionsTitle: '优先执行的 GEO 优化建议',
     methodologyTitle: '诊断方法论与声明',
 
-    gateTitle: '解锁完整版 AI 引用切片诊断报告',
-    gateSubtitle: '提交您的业务联系方式，立即解锁全部 8 项 AI 答案引文源、权威域名列表及 AI 抓取优化建议。',
+    gateTitle: '解锁完整版 China AI 机会报告',
+    gateSubtitle: '提交您的业务联系方式，立即解锁完整引用片段、权威域名拆解，以及 China AI review 的下一步入口。',
     gateFormEmail: '工作邮箱',
     gateFormName: '您的姓名',
     gateFormTitle: '职位 / 部门',
@@ -159,14 +178,17 @@ export const CITATION_TRANSLATIONS: Record<CitationLanguage, CitationTranslation
       '赠送 1 次新加坡顾问团队 1-on-1 战略解读服务',
     ],
 
-    bookReviewBtn: '预约新加坡团队 1-on-1 战略复盘',
-    requestFullAuditBtn: '申请完整版 China & Global GEO 审计',
+    bookReviewBtn: '预约 China AI Citation Review',
+    requestFullAuditBtn: '获取 China AI 深度报告',
     emailStrategistBtn: '邮件联系首席策略师 (John)',
     backToInputBtn: '重新输入检测其他品牌',
     downloadPdfBtn: '导出摘要文本',
     copiedLinkNotice: '已复制报告链接',
     unlockedBadge: '完整版已解锁',
     lockedBadge: '受限预览中',
+    auditErrorTitle: '报告生成失败',
+    auditErrorBody: '后端没有返回真实 workflow 结果，请检查脚本配置后重试。',
+    auditRetryBtn: '重试',
   },
 
   en: {
@@ -228,7 +250,15 @@ export const CITATION_TRANSLATIONS: Record<CitationLanguage, CitationTranslation
     ownedCitationTooltip: 'Percentage of AI answers where reference footnotes directly link to your official domain URL.',
     queriesEvaluatedTitle: 'Queries Sampled',
     competitorAvgTitle: 'Industry Competitor Average',
+    recommendationRateTitle: 'AI Recommendation Rate',
+    recommendationRateTooltip: 'Share of sampled AI results that recommend or positively endorse the brand.',
 
+    brandIndicatorsTitle: 'AI Search Brand Indicators',
+    brandIndicatorsSubtitle: 'Compress raw citation output into decision-ready signals for the brand.',
+    keywordPlatformStatsTitle: 'Keyword-by-Platform Statistics',
+    keywordPlatformStatsSubtitle: 'Break each query down by platform to show mention, owned-domain citation, and recommendation tendency.',
+    platformRecommendationTitle: 'Cross-Platform AI Recommendation Rate',
+    platformRecommendationSubtitle: 'Calculated from the currently sampled platform set; this expands automatically when more providers are connected.',
     previewSectionTitle: 'Preview Findings: AI Answer Snippets',
     previewSectionSubtitle: 'Previewing initial findings. Unlock the full report to access all 8 AI query breakdowns and site readiness notes.',
     fullSnippetsTitle: 'All Evaluated AI Answer Citation Snippets',
@@ -237,8 +267,8 @@ export const CITATION_TRANSLATIONS: Record<CitationLanguage, CitationTranslation
     recommendedActionsTitle: 'Top Recommended GEO Action Items',
     methodologyTitle: 'Methodology & Disclaimers',
 
-    gateTitle: 'Unlock Full Executive Citation Report',
-    gateSubtitle: 'Enter your business email to instantly unlock all 8 query snippets, external domain breakdowns, and actionable GEO technical steps.',
+    gateTitle: 'Unlock the Full China AI Opportunity Report',
+    gateSubtitle: 'Enter your business email to unlock the full snippet set, authority-domain breakdowns, and the next-step China AI review offer.',
     gateFormEmail: 'Work Email Address',
     gateFormName: 'Your Full Name',
     gateFormTitle: 'Job Title / Role',
@@ -251,14 +281,17 @@ export const CITATION_TRANSLATIONS: Record<CitationLanguage, CitationTranslation
       'Includes complimentary 1-on-1 strategy consultation with SG team',
     ],
 
-    bookReviewBtn: 'Book 1-on-1 Strategy Review with SG Team',
-    requestFullAuditBtn: 'Request Fuller China & Global GEO Audit',
+    bookReviewBtn: 'Book China AI Citation Review',
+    requestFullAuditBtn: 'Get the China AI Deep-Dive',
     emailStrategistBtn: 'Email Lead Strategist (John)',
     backToInputBtn: 'Scan Another Brand',
     downloadPdfBtn: 'Export Summary Text',
     copiedLinkNotice: 'Report link copied to clipboard',
     unlockedBadge: 'Full Report Unlocked',
     lockedBadge: 'Preview Mode',
+    auditErrorTitle: 'Report could not be generated',
+    auditErrorBody: 'The backend did not return a real workflow result. Please try again after fixing the workflow configuration.',
+    auditRetryBtn: 'Try again',
   },
 
   ms: {
@@ -320,7 +353,15 @@ export const CITATION_TRANSLATIONS: Record<CitationLanguage, CitationTranslation
     ownedCitationTooltip: 'Peratusan jawapan AI di mana nota kaki rujukan memaut terus ke URL domain rasmi anda.',
     queriesEvaluatedTitle: 'Sampel Soalan Dinilai',
     competitorAvgTitle: 'Purata Pesaing Industri',
+    recommendationRateTitle: 'Kadar Syor AI',
+    recommendationRateTooltip: 'Peratusan hasil AI yang memberi cadangan atau nada sokongan positif kepada jenama.',
 
+    brandIndicatorsTitle: 'Penunjuk Jenama Dalam Carian AI',
+    brandIndicatorsSubtitle: 'Menukarkan hasil sitasi mentah kepada isyarat jenama yang lebih mudah dibuat keputusan.',
+    keywordPlatformStatsTitle: 'Statistik Mengikut Kata Kunci Dan Platform',
+    keywordPlatformStatsSubtitle: 'Pecahkan setiap soalan mengikut platform untuk melihat sebutan jenama, petikan domain rasmi, dan kecenderungan syor.',
+    platformRecommendationTitle: 'Kadar Syor AI Merentas Platform',
+    platformRecommendationSubtitle: 'Dikira berdasarkan set platform yang benar-benar disampel dalam larian ini; akan berkembang sendiri apabila lebih banyak provider disambungkan.',
     previewSectionTitle: 'Penemuan Pratonton: Cuplikan Jawapan AI',
     previewSectionSubtitle: 'Pratonton penemuan awal. Buka laporan penuh untuk mengakses kesemua 8 analisis soalan AI.',
     fullSnippetsTitle: 'Semua Cuplikan Petikan Jawapan AI Dinilai',
@@ -329,8 +370,8 @@ export const CITATION_TRANSLATIONS: Record<CitationLanguage, CitationTranslation
     recommendedActionsTitle: 'Tindakan GEO Syor Teratas',
     methodologyTitle: 'Metodologi & Penafian',
 
-    gateTitle: 'Buka Laporan Petikan Eksekutif Penuh',
-    gateSubtitle: 'Masukkan e-mel perniagaan anda untuk membuka kunci kesemua 8 soalan, senarai domain luar, dan langkah teknikal GEO.',
+    gateTitle: 'Buka Laporan Peluang China AI Penuh',
+    gateSubtitle: 'Masukkan e-mel perniagaan anda untuk membuka kunci set petikan penuh, pecahan domain autoriti, dan tawaran semakan China AI seterusnya.',
     gateFormEmail: 'E-mel Perniagaan',
     gateFormName: 'Nama Penuh Anda',
     gateFormTitle: 'Jawatan / Peranan',
@@ -343,13 +384,16 @@ export const CITATION_TRANSLATIONS: Record<CitationLanguage, CitationTranslation
       'Termasuk sesi perundingan strategi 1-on-1 percuma dengan pasukan SG',
     ],
 
-    bookReviewBtn: 'Tempah Semakan Strategi 1-on-1 Pasukan SG',
-    requestFullAuditBtn: 'Minta Audit GEO Penuh China & Global',
+    bookReviewBtn: 'Tempah China AI Citation Review',
+    requestFullAuditBtn: 'Dapatkan Laporan Mendalam China AI',
     emailStrategistBtn: 'E-mel Ketua Ahli Strategi (John)',
     backToInputBtn: 'Imbas Jenama Lain',
     downloadPdfBtn: 'Eksport Teks Ringkasan',
     copiedLinkNotice: 'Pautan laporan disalin ke papan keratan',
     unlockedBadge: 'Laporan Penuh Dibuka',
     lockedBadge: 'Mod Pratonton',
+    auditErrorTitle: 'Laporan tidak dapat dijana',
+    auditErrorBody: 'Bahagian belakang tidak mengembalikan hasil workflow yang sebenar. Sila cuba lagi selepas membetulkan konfigurasi.',
+    auditRetryBtn: 'Cuba lagi',
   },
 };

@@ -4,7 +4,7 @@ import { IntakeForm } from './IntakeForm';
 import { LoadingState } from './LoadingState';
 import { ReportDashboard } from './ReportDashboard';
 import { UnlockGateModal } from './UnlockGateModal';
-import { generateFallbackCitationSnapshot } from '../../server/citationGenerator';
+import { CITATION_TRANSLATIONS } from '../../data/citationTranslations';
 
 interface CitationSnapshotViewProps {
   onOpenConsultation: () => void;
@@ -15,58 +15,39 @@ export const CitationSnapshotView: React.FC<CitationSnapshotViewProps> = ({
   onOpenConsultation,
   onOpenGeoAudit,
 }) => {
-  const [viewState, setViewState] = useState<'input' | 'loading' | 'report'>('input');
+  const [viewState, setViewState] = useState<'input' | 'loading' | 'report' | 'error'>('input');
   const [language, setLanguage] = useState<CitationLanguage>('zh');
+  const t = CITATION_TRANSLATIONS[language];
   const [formData, setFormData] = useState<CitationFormData | null>(null);
   const [snapshotData, setSnapshotData] = useState<CitationSnapshotData | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [isUnlocked, setIsUnlocked] = useState(false);
   const [isUnlockModalOpen, setIsUnlockModalOpen] = useState(false);
 
   const handleFormSubmit = async (data: CitationFormData) => {
     setFormData(data);
+    setErrorMessage(null);
     setViewState('loading');
 
     try {
-      // Call server-side Perplexity citation API endpoint
       const response = await fetch('/api/perplexity-citation', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
 
-      if (response.ok) {
-        const result: CitationSnapshotData = await response.json();
-        setSnapshotData(result);
-      } else {
-        console.warn('API returned non-200, generating client fallback');
-        const fallback = generateFallbackCitationSnapshot({
-          brandName: data.brandName,
-          website: data.website,
-          industry: data.industry,
-          targetMarket: data.targetMarket,
-          competitors: data.competitors,
-          targetLanguage: data.targetLanguage,
-          queryFocus: data.queryFocus,
-        });
-        setSnapshotData(fallback);
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        throw new Error(payload?.error || 'Audit report could not be generated.');
       }
+      setSnapshotData(payload as CitationSnapshotData);
+      await new Promise((resolve) => setTimeout(resolve, 3500));
+      setViewState('report');
     } catch (err) {
       console.error('Error fetching citation snapshot:', err);
-      const fallback = generateFallbackCitationSnapshot({
-        brandName: data.brandName,
-        website: data.website,
-        industry: data.industry,
-        targetMarket: data.targetMarket,
-        competitors: data.competitors,
-        targetLanguage: data.targetLanguage,
-        queryFocus: data.queryFocus,
-      });
-      setSnapshotData(fallback);
-    } finally {
-      // Wait for loading animation to finish gracefully
-      setTimeout(() => {
-        setViewState('report');
-      }, 3500);
+      setSnapshotData(null);
+      setErrorMessage(err instanceof Error ? err.message : 'Audit report could not be generated.');
+      setViewState('error');
     }
   };
 
@@ -78,6 +59,7 @@ export const CitationSnapshotView: React.FC<CitationSnapshotViewProps> = ({
   const handleReset = () => {
     setViewState('input');
     setSnapshotData(null);
+    setErrorMessage(null);
     setIsUnlocked(false);
   };
 
@@ -152,6 +134,34 @@ export const CitationSnapshotView: React.FC<CitationSnapshotViewProps> = ({
             onOpenGeoAudit={onOpenGeoAudit}
             onReset={handleReset}
           />
+        </div>
+      )}
+
+      {/* View 4: Error State */}
+      {viewState === 'error' && (
+        <div className="max-w-3xl mx-auto animate-fadeIn">
+          <div className="rounded-2xl border border-red-500/30 bg-[#0b172a] p-8 text-center shadow-2xl">
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-red-500/10 text-red-300">
+              <span className="material-symbols-outlined text-3xl">error</span>
+            </div>
+            <h2 className="text-2xl font-extrabold text-white">{t.auditErrorTitle}</h2>
+            <p className="mt-3 text-sm text-[#94a3b8]">{t.auditErrorBody}</p>
+            {errorMessage && <p className="mt-4 text-sm text-red-300">{errorMessage}</p>}
+            <div className="mt-6 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <button
+                onClick={handleReset}
+                className="rounded-xl bg-gradient-to-r from-[#00f2fe] to-[#0d9488] px-5 py-3 text-sm font-extrabold text-[#0b172a]"
+              >
+                {t.auditRetryBtn}
+              </button>
+              <button
+                onClick={() => setViewState('input')}
+                className="rounded-xl border border-[#334155] bg-[#0f172a] px-5 py-3 text-sm font-semibold text-[#cbd5e1]"
+              >
+                {t.backToInputBtn}
+              </button>
+            </div>
+          </div>
         </div>
       )}
 
