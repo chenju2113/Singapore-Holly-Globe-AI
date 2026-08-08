@@ -1,0 +1,45 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1200' height='675' viewBox='0 0 1200 675' fill='none'>
+  <rect width='1200' height='675' fill='#f8f9ff'/>
+  <rect x='30' y='30' width='1140' height='615' rx='16' fill='white' stroke='#c2c6d7' stroke-width='2'/>
+  <text x='60' y='80' font-family='sans-serif' font-size='24' font-weight='bold' fill='#0b1c30'>Herb正品 (2026/07/10 – 2026/07/12)</text>
+  <rect x='980' y='55' width='180' height='36' rx='6' fill='#0056c5'/>
+  <text x='995' y='78' font-family='sans-serif' font-size='14' font-weight='bold' fill='white'>查看品牌名称及关联</text>
+  <text x='60' y='140' font-family='sans-serif' font-size='28' font-weight='extrabold' fill='#0b1c30'>Ai搜索品牌指标</text>
+  <text x='850' y='140' font-family='sans-serif' font-size='14' fill='#727685'>数据统计周期: 2026/06/22–2026/07/21</text>
+
+  <!-- Metric Card 1 -->
+  <rect x='60' y='170' font-family='sans-serif' width='250' height='100' rx='12' fill='#eff4ff' stroke='#d9e2ff'/>
+  <text x='185' y='215' text-anchor='middle' font-family='sans-serif' font-size='32' font-weight='bold' fill='#0056c5'>2.3</text>
+  <text x='185' y='245' text-anchor='middle' font-family='sans-serif' font-size='14' fill='#727685'>排名指数</text>
+
+  <!-- Metric Card 2 -->
+  <rect x='330' y='170' width='250' height='100' rx='12' fill='#eff4ff' stroke='#d9e2ff'/>
+  <text x='455' y='215' text-anchor='middle' font-family='sans-serif' font-size='32' font-weight='bold' fill='#0056c5'>NO.51</text>
+  <text x='455' y='245' text-anchor='middle' font-family='sans-serif' font-size='14' fill='#727685'>行业排名</text>
+
+  <!-- Metric Card 3 -->
+  <rect x='60' y='285' width='250' height='100' rx='12' fill='#eff4ff' stroke='#d9e2ff'/>
+  <text x='185' y='330' text-anchor='middle' font-family='sans-serif' font-size='32' font-weight='bold' fill='#0056c5'>+2.3</text>
+  <text x='185' y='360' text-anchor='middle' font-family='sans-serif' font-size='14' fill='#727685'>排名指数环比</text>
+
+  <!-- Metric Card 4 -->
+  <rect x='330' y='285' width='250' height='100' rx='12' fill='#eff4ff' stroke='#d9e2ff'/>
+  <text x='455' y='330' text-anchor='middle' font-family='sans-serif' font-size='32' font-weight='bold' fill='#0056c5'>38.45%</text>
+  <text x='455' y='360' text-anchor='middle' font-family='sans-serif' font-size='14' fill='#727685'>AI好评度</text>
+
+  <!-- Chart Box 1 -->
+  <rect x='610' y='170' width='510' height='215' rx='12' fill='#f8f9ff' stroke='#e2e8f0'/>
+  <text x='630' y='200' font-family='sans-serif' font-size='16' font-weight='bold' fill='#0b1c30'>排名指数对比</text>
+  <rect x='720' y='220' width='180' height='18' rx='4' fill='#0056c5'/>
+  <rect x='720' y='245' width='280' height='18' rx='4' fill='#93c5fd'/>
+  <rect x='720' y='270' width='140' height='18' rx='4' fill='#0056c5'/>
+  <rect x='720' y='295' width='320' height='18' rx='4' fill='#93c5fd'/>
+  <rect x='720' y='320' width='210' height='18' rx='4' fill='#0056c5'/>
+  <rect x='720' y='345' width='350' height='18' rx='4' fill='#93c5fd'/>
+
+  <!-- Bottom Details -->
+  <rect x='60' y='410' width='1060' height='200' rx='12' fill='#f8f9ff' stroke='#e2e8f0'/>
+  <text x='80' y='440' font-family='sans-serif' font-size='16' font-weight='bold' fill='#0b1c30'>品牌排名指数分平台表现 (Baidu Ernie, Tongyi, Kimi, Spark, Hunyuan)</text>
+  <text x='80' y='470' font-family='sans-serif' font-size='14' fill='#424654'>数据来源: GEOAgent BigData 洞察系统 | 分析方法: 多维度语义挖掘与情感计算</text>
+  <text x='80' y='500' font-family='sans-serif' font-size='14' fill='#424654'>核心诉求映射: 解构 AI 视角下的品牌心智图谱 | 包含: 品牌推荐率分析与声誉健康度监控</text>
+</svg>

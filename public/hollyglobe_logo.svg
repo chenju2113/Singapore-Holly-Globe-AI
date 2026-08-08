@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" fill="none">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b172a"/>
+      <stop offset="100%" stop-color="#0f2942"/>
+    </linearGradient>
+    <linearGradient id="tealGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="50%" stop-color="#0d9488"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="goldGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="128" cy="128" r="120" fill="url(#bgGrad3)" stroke="url(#tealGrad3)" stroke-width="4"/>
+  
+  <!-- Outer Globe Ring -->
+  <circle cx="128" cy="128" r="96" fill="none" stroke="#1e3a8a" stroke-width="2" stroke-dasharray="6 4" opacity="0.6"/>
+  
+  <!-- Latitude / Longitude Globe Grid -->
+  <ellipse cx="128" cy="128" rx="90" ry="40" fill="none" stroke="#00f2fe" stroke-width="1.5" opacity="0.3"/>
+  <ellipse cx="128" cy="128" rx="40" ry="90" fill="none" stroke="#00f2fe" stroke-width="1.5" opacity="0.3"/>
+  <line x1="38" y1="128" x2="218" y2="128" stroke="#00f2fe" stroke-width="1.5" opacity="0.3"/>
+  <line x1="128" y1="38" x2="128" y2="218" stroke="#00f2fe" stroke-width="1.5" opacity="0.3"/>
+
+  <!-- AI Constellation Nodes -->
+  <g>
+    <line x1="128" y1="65" x2="175" y2="95" stroke="url(#goldGrad3)" stroke-width="2.5"/>
+    <line x1="175" y1="95" x2="195" y2="145" stroke="url(#goldGrad3)" stroke-width="2.5"/>
+    <line x1="175" y1="95" x2="145" y2="140" stroke="url(#goldGrad3)" stroke-width="2"/>
+    <line x1="145" y1="140" x2="185" y2="180" stroke="url(#goldGrad3)" stroke-width="2"/>
+
+    <circle cx="128" cy="65" r="5" fill="#ffffff" stroke="url(#goldGrad3)" stroke-width="2"/>
+    <circle cx="175" cy="95" r="7" fill="#fbbf24" stroke="#ffffff" stroke-width="2"/>
+    <circle cx="195" cy="145" r="5" fill="#ffffff" stroke="url(#goldGrad3)" stroke-width="2"/>
+    <circle cx="145" cy="140" r="6" fill="#fbbf24" stroke="#ffffff" stroke-width="1.5"/>
+    <circle cx="185" cy="180" r="5.5" fill="#ffffff" stroke="url(#goldGrad3)" stroke-width="2"/>
+  </g>
+
+  <!-- Holly Leaf & Shield Dynamic Cut -->
+  <path d="M45 135 C 30 70, 95 40, 130 80 C 105 100, 110 135, 135 155 C 100 175, 90 205, 55 210 C 70 180, 50 155, 45 135 Z" fill="url(#tealGrad3)" stroke="#ffffff" stroke-width="2.5"/>
+  <path d="M55 135 C 75 110, 100 95, 125 85" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.8"/>
+</svg>

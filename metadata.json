@@ -1,0 +1,6 @@
+{
+  "name": "HollyGlobe Singapore",
+  "description": "AI Marketing & Generative Engine Optimization (GEO) platform for Singapore enterprises entering China.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

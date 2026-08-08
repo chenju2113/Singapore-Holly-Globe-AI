@@ -1,0 +1,247 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "inLanguage": "en-US",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "1. What is GEO, and how is it different from traditional SEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GEO stands for Generative Engine Optimization. In simple terms, it is about improving how your brand shows up in AI search and AI answer environments. Traditional SEO focuses more on rankings and clicks in search results. GEO focuses more on whether your brand can be found, understood, cited, and recommended when buyers ask AI tools which suppliers, products, or service providers they should consider."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "2. What does the HollyGlobe GEO product actually do?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HollyGlobe GEO helps Singapore and Southeast Asia businesses improve their visibility across major Chinese AI platforms when entering the China market. We organize company information, build AI-friendly content structures, strengthen trust signals, support distribution, and monitor visibility performance so your brand has a better chance of appearing in buyer research and recommendation flows."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "3. Is GEO the same as AEO, or are they different?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "They overlap, but they are not exactly the same. AEO usually focuses more narrowly on optimizing content to become a direct answer. GEO is broader. It also covers brand mentions, citations, comparison visibility, recommendation presence, and overall discoverability across AI platforms. For most businesses, GEO is the more practical umbrella term for building AI visibility."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "4. Why should companies start working on GEO now?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because more buyers, especially in B2B categories, are using AI before they contact sales. They ask questions, compare options, and screen suppliers before any conversation begins. If your brand is missing from the answer layer, you may be filtered out before you ever make the shortlist."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "5. Does GEO replace SEO, content marketing, or Baidu optimization?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. GEO does not replace your existing marketing efforts. It adds a new layer. Your website, SEO, PR, content marketing, and channel sales still matter. GEO helps reorganize and strengthen those assets so they are more likely to be discovered and referenced inside AI-driven buyer journeys."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "6. Is GEO suitable for every industry?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. GEO is usually best for high-value, trust-driven, information-heavy businesses where buyers do research before making contact. That includes manufacturing, industrial supply chains, equipment, materials, OEM/ODM, enterprise services, consulting, and other professional services. It is usually less urgent for low-ticket, impulse-driven businesses."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "7. What types of Singapore companies are the best fit for HollyGlobe GEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The best fit is a Singapore or regional company entering China, with high-value leads, long decision cycles, and limited China AI visibility today. It is especially useful for companies that already have a website, product pages, case studies, or English sales materials, but have not yet built a structured Chinese AI visibility layer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "8. Why are manufacturing and B2B companies especially well suited for GEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because manufacturing and B2B buying already depend on research. Buyers compare specifications, certifications, applications, supplier credibility, and commercial fit before speaking to anyone. GEO helps your brand show up earlier in those high-intent research moments, which is why it aligns so well with industrial exporters and B2B companies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "9. Are professional services firms also a good fit for GEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, especially consulting, enterprise services, cross-border advisory, legal, tax, education, and selected immigration-related services. These businesses depend heavily on trust and buyer questions. GEO helps brands become more visible when prospects ask who is credible, how the process works, what to compare, and what to watch out for."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "10. Can we start GEO if we do not yet have a China team?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. That is one of the most common use cases for HollyGlobe. Many Singapore companies have strong products or services but no local China team and no China AI operations capability. GEO helps build an early visibility foundation before the company makes larger market-entry moves."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "11. Can we do GEO if we do not yet have Chinese content?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but building foundational content is usually part of the work. AI platforms cannot understand or recommend a brand with no usable source material. You still need core assets such as product information, service pages, FAQs, case studies, trust signals, and company background to support meaningful AI visibility."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "12. Do companies focused only on Singapore need this GEO service?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Usually not as a priority. HollyGlobe's GEO offer is specifically designed for companies targeting China-facing demand. If China is not part of your growth strategy, this service may not be the right first move."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "13. What does a typical HollyGlobe GEO engagement include?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It usually includes an AI visibility audit, current-state diagnosis, buyer-question mapping, content and knowledge-structure improvements, FAQ and comparison content development, trust-signal strengthening, platform-distribution guidance, and ongoing visibility monitoring with iteration over time."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "14. Do you write content for us, or do you only provide consulting?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "We are not a strategy-only consulting service. HollyGlobe's approach is closer to diagnose + execute + monitor. We help define what needs to be said, how it should be structured, and how it should be turned into content assets that AI systems can better understand and surface."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "15. Do we need an FAQ page for GEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In most cases, yes. FAQ content is important because many high-intent buyer searches are already phrased as questions, such as how pricing works, whether a solution is suitable, or how one provider differs from another. A strong FAQ library helps match real search intent and improves the chances of AI citation."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "16. Is GEO just about adding FAQs to the website?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. FAQs are only one part of it. Effective GEO also involves brand knowledge structure, product and service pages, comparison content, case studies, category education, authority references, media signals, and performance monitoring. FAQs help, but they are not enough on their own."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "17. Which Chinese AI platforms do you focus on?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depending on the project, we focus on major Chinese AI discovery and answer platforms such as ERNIE, Doubao, Qianwen, Kimi, DeepSeek, and Yuanbao, along with the surrounding search, content, and trust-signal ecosystem that influences how brands appear inside those platforms."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "18. Does GEO also involve Baidu, content marketing, and media distribution?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, but as part of a wider AI visibility system. AI platforms often rely on web content, brand mentions, media references, and structured information as part of how they interpret and surface a brand. GEO does not sit outside SEO and content. It helps make those assets more useful for AI-driven discovery."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "19. How long does GEO take before we see results?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It depends on your starting point, content depth, category competition, and execution speed. The early phase is often about fixing foundations by organizing information, improving content structure, and adding trust signals. Meaningful changes in mentions, citations, and recommendation presence usually require ongoing monitoring and iteration rather than a quick one-time push."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "20. Can GEO guarantee that we rank first in AI answers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, and no credible provider should promise that. AI outputs change by platform, prompt, context, and timing. GEO is about increasing the likelihood that your brand is found, understood, cited, and considered, not about guaranteeing a fixed top position everywhere."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "21. How should GEO performance be measured?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "GEO should be measured through signals such as mention rate, citation rate, recommendation presence, visibility across key platforms, and coverage for high-intent buyer questions. For B2B companies, it also matters whether those visibility gains contribute to better conversations, stronger leads, and higher trust before the first sales call."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "22. Can GEO directly generate customers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It is better understood as a new upstream acquisition channel rather than a complete sales system by itself. GEO helps your brand enter the buyer's research and shortlist stage earlier. Whether that becomes revenue still depends on your offer, pricing, sales execution, and local market readiness."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "23. Is GEO better for brand awareness or lead generation?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It can support both, but HollyGlobe focuses more on high-intent pre-sales visibility. That means helping brands show up where buyers are actively asking category and supplier questions, rather than chasing broad awareness for its own sake. For B2B and professional services, that shortlist value is often more important."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "24. If our brand currently has almost no AI mentions, is GEO still worth doing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, and often that is exactly why you should start early. For many companies entering China, the main risk is not weak optimization. It is simply being absent from the AI answer layer. The earlier you build the right content and trust foundation, the easier it is to support future PR, paid media, events, and sales efforts."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "25. What materials should a company prepare before starting GEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Useful starting materials usually include your website, product or service descriptions, key value propositions, use cases, FAQs, customer case studies, certifications, brand story, and contact details. If those are incomplete, we can still start with the most important pages and questions first."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "26. Who from our company should be involved in a GEO project?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The most helpful people are usually those who understand the business, the buyers, and the sales process. That may include a founder, regional lead, marketing head, BD lead, or product expert. GEO is not just technical work. It depends heavily on real customer questions, real proof points, and real competitive positioning."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "27. Is GEO expensive to implement?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Compared with pure advertising spend, GEO is more like building a reusable asset base. There is an upfront investment in content organization and visibility structure, but those assets can continue to support your website, sales, PR, and future SEO efforts instead of disappearing after a campaign ends."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "28. If we are already doing SEO and PR, do we still need GEO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "In many cases, yes. If you already have SEO and PR assets, GEO can be even more effective because there is something to build from. The goal is not to restart your marketing from zero. It is to make your existing content and trust signals more usable inside AI-driven discovery environments."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "29. Does GEO come with compliance risk?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Any China-facing content and visibility work should be handled with compliance awareness, especially in sensitive categories such as finance, healthcare, education, immigration, and legal services. HollyGlobe's approach is to build content and trust signals in a more disciplined, reviewable, and lower-risk way rather than making exaggerated promises."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "30. How do we know whether a GEO service provider is credible?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "There are four things to look for. First, do they really understand Chinese AI platforms, not just global AI search trends. Second, do they avoid unrealistic claims like guaranteed rankings. Third, can they clearly explain what they deliver, how they measure progress, and where the service boundaries are. Fourth, do they understand how B2B, manufacturing, and trust-led professional services actually buy and sell."
+      }
+    }
+  ]
+}

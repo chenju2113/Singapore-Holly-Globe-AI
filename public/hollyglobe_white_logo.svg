@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 180" width="720" height="180" fill="none">
+  <defs>
+    <linearGradient id="bgGradH2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b172a"/>
+      <stop offset="100%" stop-color="#0f2942"/>
+    </linearGradient>
+    <linearGradient id="tealGradH2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="50%" stop-color="#0d9488"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="goldGradH2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Icon Emblem Left -->
+  <g transform="translate(10, 10)">
+    <circle cx="80" cy="80" r="76" fill="url(#bgGradH2)" stroke="url(#tealGradH2)" stroke-width="3"/>
+    <circle cx="80" cy="80" r="60" fill="none" stroke="#1e3a8a" stroke-width="1.5" stroke-dasharray="4 3" opacity="0.6"/>
+    
+    <ellipse cx="80" cy="80" rx="56" ry="26" fill="none" stroke="#00f2fe" stroke-width="1.2" opacity="0.35"/>
+    <ellipse cx="80" cy="80" rx="26" ry="56" fill="none" stroke="#00f2fe" stroke-width="1.2" opacity="0.35"/>
+    
+    <!-- AI Constellation Nodes -->
+    <line x1="80" y1="40" x2="110" y2="60" stroke="url(#goldGradH2)" stroke-width="2"/>
+    <line x1="110" y1="60" x2="122" y2="92" stroke="url(#goldGradH2)" stroke-width="2"/>
+    <line x1="110" y1="60" x2="92" y2="90" stroke="url(#goldGradH2)" stroke-width="1.5"/>
+    <line x1="92" y1="90" x2="118" y2="114" stroke="url(#goldGradH2)" stroke-width="1.5"/>
+
+    <circle cx="80" cy="40" r="3.5" fill="#ffffff" stroke="url(#goldGradH2)" stroke-width="1.5"/>
+    <circle cx="110" cy="60" r="5" fill="#fbbf24" stroke="#ffffff" stroke-width="1.5"/>
+    <circle cx="122" cy="92" r="3.5" fill="#ffffff" stroke="url(#goldGradH2)" stroke-width="1.5"/>
+    <circle cx="92" cy="90" r="4" fill="#fbbf24" stroke="#ffffff" stroke-width="1"/>
+    <circle cx="118" cy="114" r="3.5" fill="#ffffff" stroke="url(#goldGradH2)" stroke-width="1.5"/>
+
+    <!-- Holly Leaf Emblem -->
+    <path d="M28 84 C 18 44, 60 24, 82 50 C 66 62, 70 84, 86 96 C 64 108, 58 128, 35 130 C 44 112, 32 96, 28 84 Z" fill="url(#tealGradH2)" stroke="#ffffff" stroke-width="2"/>
+    <path d="M35 84 C 48 68, 64 58, 80 52" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.8"/>
+  </g>
+
+  <!-- Typography Right -->
+  <text x="190" y="62" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="900" fill="#ffffff" letter-spacing="-0.5">Holly Globe</text>
+  
+  <text x="190" y="105" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="34" font-weight="800" fill="url(#goldGradH2)">AI</text>
+  <line x1="242" y1="96" x2="700" y2="96" stroke="url(#goldGradH2)" stroke-width="2.5" opacity="0.8"/>
+
+  <text x="190" y="136" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#00f2fe" letter-spacing="9">SINGAPORE</text>
+  <text x="190" y="160" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" fill="#94a3b8" letter-spacing="1.5">Generative Engine Optimization (GEO)</text>
+</svg>
