@@ -2,12 +2,7 @@ node_modules/
 build/
 dist/
 coverage/
-.worktrees/
 .DS_Store
 *.log
 .env*
 !.env.example
-.codebase-memory/
-
-# Leaked workflow run dirs from fs.mkdtemp (not fixtures)
-src/server/__fixtures__/hg-brand-citation/hg-brand-citation-*/

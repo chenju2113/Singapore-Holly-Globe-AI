@@ -1,14 +1,13 @@
-import dotenv from 'dotenv';
-
-// dotenv.config() MUST run before any local imports that read process.env at module scope.
-dotenv.config();
-
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
+import dotenv from 'dotenv';
 import { GoogleGenAI, Type } from '@google/genai';
-import { handlePerplexityCitationRequest } from './src/server/citationRoutes';
+import { generateFallbackCitationSnapshot } from './src/server/citationGenerator';
+import { generatePerplexityLiveSnapshot } from './src/server/perplexityClient';
 import { transformHtmlForFaq } from './src/server/seoHtmlTransformer';
+
+dotenv.config();
 
 const app = express();
 const PORT = 3000;
@@ -171,7 +170,31 @@ Evaluate its projected visibility across top Chinese AI platforms (Baidu Ernie B
   }
 });
 
-app.post('/api/perplexity-citation', handlePerplexityCitationRequest);
+// Perplexity AI Search Citation Snapshot Route
+app.post('/api/perplexity-citation', async (req, res) => {
+  try {
+    const { brandName, website, industry, targetMarket, competitors, targetLanguage, queryFocus } = req.body;
+
+    if (!brandName || !website) {
+      return res.status(400).json({ error: 'brandName and website are required parameters' });
+    }
+
+    const snapshotData = await generatePerplexityLiveSnapshot({
+      brandName,
+      website,
+      industry: industry || 'B2B Tech & SaaS',
+      targetMarket: targetMarket || 'Singapore & Southeast Asia',
+      competitors: competitors || '',
+      targetLanguage: targetLanguage || 'en',
+      queryFocus: queryFocus || 'AI Search & Cross-Border Marketing',
+    });
+
+    return res.json(snapshotData);
+  } catch (error: any) {
+    console.error('Error in /api/perplexity-citation:', error);
+    return res.status(500).json({ error: error.message || 'Server error during citation snapshot execution' });
+  }
+});
 
 // Check email integration status
 app.get('/api/check-email-config', (req, res) => {

@@ -139,7 +139,7 @@ export const IntakeForm: React.FC<IntakeFormProps> = ({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Brand Name */}
           <div>
-            <label htmlFor="citation-brand-name" className="block text-xs font-semibold text-[#cbd5e1] uppercase tracking-wider mb-2">
+            <label className="block text-xs font-semibold text-[#cbd5e1] uppercase tracking-wider mb-2">
               {t.brandNameLabel} <span className="text-[#00f2fe]">*</span>
             </label>
             <div className="relative">
@@ -147,7 +147,6 @@ export const IntakeForm: React.FC<IntakeFormProps> = ({
                 domain
               </span>
               <input
-                id="citation-brand-name"
                 type="text"
                 required
                 value={formData.brandName}
@@ -160,7 +159,7 @@ export const IntakeForm: React.FC<IntakeFormProps> = ({
 
           {/* Website URL */}
           <div>
-            <label htmlFor="citation-website" className="block text-xs font-semibold text-[#cbd5e1] uppercase tracking-wider mb-2">
+            <label className="block text-xs font-semibold text-[#cbd5e1] uppercase tracking-wider mb-2">
               {t.websiteLabel} <span className="text-[#00f2fe]">*</span>
             </label>
             <div className="relative">
@@ -168,7 +167,6 @@ export const IntakeForm: React.FC<IntakeFormProps> = ({
                 language
               </span>
               <input
-                id="citation-website"
                 type="text"
                 required
                 value={formData.website}
@@ -181,11 +179,10 @@ export const IntakeForm: React.FC<IntakeFormProps> = ({
 
           {/* Industry */}
           <div>
-            <label htmlFor="citation-industry" className="block text-xs font-semibold text-[#cbd5e1] uppercase tracking-wider mb-2">
+            <label className="block text-xs font-semibold text-[#cbd5e1] uppercase tracking-wider mb-2">
               {t.industryLabel}
             </label>
             <select
-              id="citation-industry"
               value={formData.industry}
               onChange={(e) => setFormData({ ...formData, industry: e.target.value })}
               className="w-full bg-[#0f172a] border border-[#334155] rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#00f2fe] transition-all"
@@ -200,11 +197,10 @@ export const IntakeForm: React.FC<IntakeFormProps> = ({
 
           {/* Target Market */}
           <div>
-            <label htmlFor="citation-target-market" className="block text-xs font-semibold text-[#cbd5e1] uppercase tracking-wider mb-2">
+            <label className="block text-xs font-semibold text-[#cbd5e1] uppercase tracking-wider mb-2">
               {t.targetMarketLabel}
             </label>
             <select
-              id="citation-target-market"
               value={formData.targetMarket}
               onChange={(e) => setFormData({ ...formData, targetMarket: e.target.value })}
               className="w-full bg-[#0f172a] border border-[#334155] rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-[#00f2fe] transition-all"
@@ -219,11 +215,10 @@ export const IntakeForm: React.FC<IntakeFormProps> = ({
 
           {/* Competitors */}
           <div>
-            <label htmlFor="citation-competitors" className="block text-xs font-semibold text-[#cbd5e1] uppercase tracking-wider mb-2">
+            <label className="block text-xs font-semibold text-[#cbd5e1] uppercase tracking-wider mb-2">
               {t.competitorsLabel}
             </label>
             <input
-              id="citation-competitors"
               type="text"
               value={formData.competitors}
               onChange={(e) => setFormData({ ...formData, competitors: e.target.value })}
@@ -234,11 +229,10 @@ export const IntakeForm: React.FC<IntakeFormProps> = ({
 
           {/* Query Focus */}
           <div>
-            <label htmlFor="citation-query-focus" className="block text-xs font-semibold text-[#cbd5e1] uppercase tracking-wider mb-2">
+            <label className="block text-xs font-semibold text-[#cbd5e1] uppercase tracking-wider mb-2">
               {t.queryFocusLabel}
             </label>
             <input
-              id="citation-query-focus"
               type="text"
               value={formData.queryFocus}
               onChange={(e) => setFormData({ ...formData, queryFocus: e.target.value })}
