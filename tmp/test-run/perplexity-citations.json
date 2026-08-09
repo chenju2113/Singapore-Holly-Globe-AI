@@ -1,0 +1,30 @@
+{
+  "checked": true,
+  "skipped_reason": null,
+  "brand": "HollyGlobe Singapore",
+  "domain": "sghollyglobe.com",
+  "entries": [
+    {
+      "query": "Singapore AI search visibility partner",
+      "platform": "perplexity",
+      "model": "sonar",
+      "brand_mentioned": true,
+      "domain_cited": true,
+      "cited_sources": [
+        "sghollyglobe.com"
+      ],
+      "snippet": "HollyGlobe Singapore is cited as a real AI visibility partner.",
+      "error": null
+    }
+  ],
+  "queries_run": 4,
+  "brand_mention_rate": 100,
+  "domain_citation_rate": 100,
+  "top_cited_domains": [
+    [
+      "sghollyglobe.com",
+      4
+    ]
+  ],
+  "verdict": "visible"
+}

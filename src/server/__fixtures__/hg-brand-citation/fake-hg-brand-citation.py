@@ -33,15 +33,16 @@ audit = {
     "domain": request["brand_domain"],
     "entries": [
         {
-            "query": request["queries"][0],
+            "query": q,
             "platform": "perplexity",
             "model": "sonar",
             "brand_mentioned": True,
             "domain_cited": True,
             "cited_sources": [request["brand_domain"]],
-            "snippet": "HollyGlobe Singapore is cited as a real AI visibility partner.",
+            "snippet": f"HollyGlobe Singapore citation audit for {q}: {request['brand_name']} is cited on {request['brand_domain']}.",
             "error": None
         }
+        for q in request.get("queries", [request["brand_name"]])
     ],
     "queries_run": len(request["queries"]),
     "brand_mention_rate": 100,

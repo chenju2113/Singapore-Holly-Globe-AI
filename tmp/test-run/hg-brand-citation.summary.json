@@ -1,0 +1,12 @@
+{
+  "status": "ok",
+  "brand_name": "HollyGlobe Singapore",
+  "audit_path": "tmp/test-run/perplexity-citations.json",
+  "report_paths": {
+    "zh-CN": "tmp/test-run/HollyGlobe_GEO_20260808.html",
+    "en": "tmp/test-run/HollyGlobe_GEO_20260808_EN.html",
+    "ms": "tmp/test-run/HollyGlobe_GEO_20260808_MS.html"
+  },
+  "output_dir": "tmp/test-run",
+  "verdict": "visible"
+}

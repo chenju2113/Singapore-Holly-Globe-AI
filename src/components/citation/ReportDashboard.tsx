@@ -23,11 +23,21 @@ export const ReportDashboard: React.FC<ReportDashboardProps> = ({
 }) => {
   const t = CITATION_TRANSLATIONS[language];
   const [copied, setCopied] = useState(false);
-  const recommendationRate = data.metrics.recommendation_rate
-    ?? Math.round(((data.entries || []).filter((entry) => entry.sentiment === 'Positive').length / Math.max((data.entries || []).length, 1)) * 100);
-  const keywordPlatformStats = data.keyword_platform_stats?.length
+
+  const metrics = data?.metrics || {
+    queries_run: data?.entries?.length || 0,
+    mention_rate: 0,
+    owned_domain_citation_rate: 0,
+    recommendation_rate: 0,
+    competitor_mention_rate: 0,
+    average_sentiment: 'Neutral',
+  };
+
+  const recommendationRate = metrics.recommendation_rate
+    ?? Math.round(((data?.entries || []).filter((entry) => entry.sentiment === 'Positive').length / Math.max((data?.entries || []).length, 1)) * 100);
+  const keywordPlatformStats = data?.keyword_platform_stats?.length
     ? data.keyword_platform_stats
-    : (data.entries || []).map((entry) => ({
+    : (data?.entries || []).map((entry) => ({
         id: entry.id,
         query: entry.query,
         platform: entry.platform || 'Perplexity',
@@ -38,7 +48,7 @@ export const ReportDashboard: React.FC<ReportDashboardProps> = ({
         citedSourcesCount: entry.citedSourcesCount || 0,
         topCitedSource: entry.topCitedSource,
       }));
-  const platformRecommendationStats = data.platform_recommendation_stats?.length
+  const platformRecommendationStats = data?.platform_recommendation_stats?.length
     ? data.platform_recommendation_stats
     : (() => {
         const grouped = new Map<string, typeof keywordPlatformStats>();
@@ -57,7 +67,7 @@ export const ReportDashboard: React.FC<ReportDashboardProps> = ({
         }));
       })();
   const visibleKeywordStats = isUnlocked ? keywordPlatformStats : keywordPlatformStats.slice(0, 3);
-  const competitorGap = Math.max(0, (data.metrics.competitor_mention_rate || 0) - (data.metrics.mention_rate || 0));
+  const competitorGap = Math.max(0, (metrics.competitor_mention_rate || 0) - (metrics.mention_rate || 0));
   const bestPlatform = platformRecommendationStats
     .slice()
     .sort((a, b) => b.recommendationRate - a.recommendationRate)[0];
@@ -308,9 +318,9 @@ export const ReportDashboard: React.FC<ReportDashboardProps> = ({
   });
   const evidencePreview = isUnlocked ? orderedEntries.slice(0, 3) : orderedEntries.slice(0, 2);
   const insightPills = [
-    { label: t.mentionRateTitle, value: `${data.metrics.mention_rate}%` },
+    { label: t.mentionRateTitle, value: `${metrics.mention_rate}%` },
     { label: t.recommendationRateTitle, value: `${recommendationRate}%` },
-    { label: t.ownedCitationRateTitle, value: `${data.metrics.owned_domain_citation_rate}%` },
+    { label: t.ownedCitationRateTitle, value: `${metrics.owned_domain_citation_rate}%` },
     { label: reportNarrative.gapLabel, value: `+${competitorGap}%` },
   ];
 
@@ -329,37 +339,37 @@ export const ReportDashboard: React.FC<ReportDashboardProps> = ({
   const handleDownloadText = () => {
     const content = `HOLLYGLOBE SINGAPORE - AI CITATION SNAPSHOT REPORT
 ---------------------------------------------------
-Brand: ${data.brand}
-Website: ${data.website}
-Market: ${data.targetMarket}
-Timestamp: ${data.runTimestamp}
+Brand: ${data?.brand || ''}
+Website: ${data?.website || ''}
+Market: ${data?.targetMarket || ''}
+Timestamp: ${data?.runTimestamp || ''}
 
 KEY METRICS:
-- Brand Mention Rate: ${data.metrics.mention_rate}%
-- Owned Domain Direct Citation Rate: ${data.metrics.owned_domain_citation_rate}%
-- Queries Evaluated: ${data.metrics.queries_run}
+- Brand Mention Rate: ${metrics.mention_rate}%
+- Owned Domain Direct Citation Rate: ${metrics.owned_domain_citation_rate}%
+- Queries Evaluated: ${metrics.queries_run}
 - AI Recommendation Rate: ${recommendationRate}%
 - Competitor Gap: ${competitorGap}%
 
 GLOBAL SNAPSHOT:
-${data.metrics.mention_rate >= 50 ? '- The brand is visible in global AI answers.' : '- The brand is still underrepresented in global AI answers.'}
-${data.metrics.owned_domain_citation_rate >= 25 ? '- Owned-domain citations are appearing in the snapshot.' : '- Owned-domain citations need stronger coverage.'}
+${metrics.mention_rate >= 50 ? '- The brand is visible in global AI answers.' : '- The brand is still underrepresented in global AI answers.'}
+${metrics.owned_domain_citation_rate >= 25 ? '- Owned-domain citations are appearing in the snapshot.' : '- Owned-domain citations need stronger coverage.'}
 ${bestPlatform ? `- Best platform: ${bestPlatform.platform} (${bestPlatform.recommendationRate}%).` : ''}
 
 MEETING OFFER:
 - Book a China AI Citation Review to unlock Doubao, Yuanbao, Kimi, and Tongyi findings.
 
 TOP RECOMMENDED ACTIONS:
-${data.actions.map((action, index) => `${index + 1}. [${action.priority}] ${action.title}: ${action.description}`).join('\n')}
+${(data?.actions || []).map((action, index) => `${index + 1}. [${action.priority}] ${action.title}: ${action.description}`).join('\n')}
 
 DISCLAIMER:
-${data.methodology.disclaimer}
+${data?.methodology?.disclaimer || ''}
 `;
     const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `AI_Citation_Snapshot_${data.brand.replace(/[^a-zA-Z0-9]/g, '_')}.txt`;
+    a.download = `AI_Citation_Snapshot_${(data?.brand || 'Brand').replace(/[^a-zA-Z0-9]/g, '_')}.txt`;
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -445,7 +455,7 @@ ${data.methodology.disclaimer}
                 <div className="mt-2 text-lg font-bold text-white">{reportNarrative.verdictBody}</div>
               </div>
               <span className="rounded-full border border-[#10b981]/30 bg-[#10b981]/10 px-2.5 py-1 text-[10px] font-bold uppercase text-[#10b981]">
-                {Math.round((data.metrics.mention_rate + recommendationRate + data.metrics.owned_domain_citation_rate) / 3)}%
+                {Math.round((metrics.mention_rate + recommendationRate + metrics.owned_domain_citation_rate) / 3)}%
               </span>
             </div>
 
@@ -472,7 +482,7 @@ ${data.methodology.disclaimer}
       <div className="grid gap-4 xl:grid-cols-12">
         <div className="rounded-2xl border border-[#1e293b] bg-gradient-to-br from-[#0b172a] to-[#07111d] p-5 shadow-xl xl:col-span-5">
           <div className="text-[11px] uppercase tracking-[0.22em] text-[#00f2fe]">{t.mentionRateTitle}</div>
-          <div className="mt-3 text-4xl font-black text-[#00f2fe]">{data.metrics.mention_rate}%</div>
+          <div className="mt-3 text-4xl font-black text-[#00f2fe]">{metrics.mention_rate}%</div>
           <p className="mt-2 max-w-sm text-sm leading-relaxed text-[#cbd5e1]">{t.mentionRateTooltip}</p>
         </div>
         <div className="rounded-2xl border border-[#1e293b] bg-[#0b172a] p-5 shadow-xl xl:col-span-2">
@@ -482,7 +492,7 @@ ${data.methodology.disclaimer}
         </div>
         <div className="rounded-2xl border border-[#1e293b] bg-[#0b172a] p-5 shadow-xl xl:col-span-2">
           <div className="text-[11px] uppercase tracking-[0.2em] text-[#d4af37]">{t.ownedCitationRateTitle}</div>
-          <div className="mt-3 text-3xl font-black text-[#d4af37]">{data.metrics.owned_domain_citation_rate}%</div>
+          <div className="mt-3 text-3xl font-black text-[#d4af37]">{metrics.owned_domain_citation_rate}%</div>
           <p className="mt-2 text-xs leading-relaxed text-[#94a3b8]">{t.ownedCitationTooltip}</p>
         </div>
         <div className="rounded-2xl border border-[#1e293b] bg-[#0b172a] p-5 shadow-xl xl:col-span-3">
@@ -503,7 +513,7 @@ ${data.methodology.disclaimer}
           <div className="mt-4 space-y-3">
             <div className="rounded-xl border border-[#1e293b] bg-[#08111f] p-4">
               <div className="text-[11px] uppercase tracking-[0.2em] text-[#94a3b8]">{reportNarrative.winVisibilityTitle}</div>
-              <p className="mt-2 text-sm text-white">{reportNarrative.winVisibilityBody(data.metrics.mention_rate)}</p>
+              <p className="mt-2 text-sm text-white">{reportNarrative.winVisibilityBody(metrics.mention_rate)}</p>
             </div>
             <div className="rounded-xl border border-[#1e293b] bg-[#08111f] p-4">
               <div className="text-[11px] uppercase tracking-[0.2em] text-[#94a3b8]">{reportNarrative.winBestPlatformTitle}</div>
@@ -515,7 +525,7 @@ ${data.methodology.disclaimer}
             </div>
             <div className="rounded-xl border border-[#1e293b] bg-[#08111f] p-4">
               <div className="text-[11px] uppercase tracking-[0.2em] text-[#94a3b8]">{reportNarrative.winCitationTitle}</div>
-              <p className="mt-2 text-sm text-white">{reportNarrative.winCitationBody(data.metrics.owned_domain_citation_rate)}</p>
+              <p className="mt-2 text-sm text-white">{reportNarrative.winCitationBody(metrics.owned_domain_citation_rate)}</p>
             </div>
           </div>
         </div>
@@ -783,7 +793,7 @@ ${data.methodology.disclaimer}
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-[#1e293b]">
-                    {data.top_external_domains.map((dom, index) => (
+                    {(data?.top_external_domains || []).map((dom, index) => (
                       <tr key={index} className="transition-colors hover:bg-[#08111f]/60">
                         <td className="flex items-center gap-2 px-4 py-3 font-semibold text-white">
                           <span>{dom.domain}</span>
@@ -813,10 +823,10 @@ ${data.methodology.disclaimer}
                 <span>{t.siteReadinessTitle}</span>
               </h3>
               <p className="mt-1 text-xs text-[#94a3b8]">
-                {reportNarrative.siteReadinessSubtitle(data.website)}
+                {reportNarrative.siteReadinessSubtitle(data?.website || '')}
               </p>
               <div className="mt-4 grid grid-cols-1 gap-4 md:grid-cols-2">
-                {data.site_notes.map((note, index) => (
+                {(data?.site_notes || []).map((note, index) => (
                   <div key={index} className="space-y-2 rounded-xl border border-[#1e293b] bg-[#08111f] p-4">
                     <div className="flex items-center justify-between gap-3">
                       <span className="text-xs font-bold text-white">{note.category}</span>
@@ -846,7 +856,7 @@ ${data.methodology.disclaimer}
             </h3>
             <p className="mt-1 text-xs text-[#94a3b8]">{t.methodologyTitle}</p>
             <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
-              {data.actions.map((action, index) => (
+              {(data?.actions || []).map((action, index) => (
                 <div key={index} className="space-y-3 rounded-xl border border-[#1e293b] bg-[#08111f] p-5">
                   <div className="flex items-center justify-between gap-3">
                     <span
@@ -869,7 +879,7 @@ ${data.methodology.disclaimer}
 
           <div className="rounded-2xl border border-[#1e293b] bg-[#0b172a] p-6 shadow-xl">
             <h3 className="text-lg font-bold text-white">{t.methodologyTitle}</h3>
-            <p className="mt-2 text-xs leading-relaxed text-[#94a3b8]">{data.methodology.disclaimer}</p>
+            <p className="mt-2 text-xs leading-relaxed text-[#94a3b8]">{data?.methodology?.disclaimer}</p>
           </div>
         </>
       )}

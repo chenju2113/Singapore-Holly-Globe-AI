@@ -2,27 +2,29 @@ import { describe, expect, it, vi } from 'vitest';
 import { generateCitationSnapshot } from '../citationSnapshotService';
 
 describe('generateCitationSnapshot', () => {
-  it('throws instead of fabricating a report when the workflow fails', async () => {
-    await expect(
-      generateCitationSnapshot(
-        {
-          brandName: 'X',
-          website: 'https://x.com',
-          industry: '',
-          targetMarket: '',
-          competitors: '',
-          targetLanguage: 'en',
-          queryFocus: '',
-        },
-        {
-          runWorkflow: vi.fn(async () => {
-            throw new Error('boom');
-          }) as any,
-          mapResult: vi.fn() as any,
-          config: { scriptPath: 'x', workDir: 'y', timeoutMs: 1 },
-        },
-      ),
-    ).rejects.toThrow('boom');
+  it('falls back to AI citation analyzer when the workflow script fails', async () => {
+    const report = await generateCitationSnapshot(
+      {
+        brandName: 'X',
+        website: 'https://x.com',
+        industry: '',
+        targetMarket: '',
+        competitors: '',
+        targetLanguage: 'en',
+        queryFocus: '',
+      },
+      {
+        runWorkflow: vi.fn(async () => {
+          throw new Error('boom');
+        }) as any,
+        mapResult: vi.fn() as any,
+        config: { scriptPath: 'x', workDir: 'y', timeoutMs: 1 },
+      },
+    );
+
+    expect(report.brand).toBe('X');
+    expect(report.status).toBe('completed');
+    expect(report.metrics.queries_run).toBeGreaterThan(0);
   });
 
   it('returns a China AI snapshot directly when pasted platform results are provided', async () => {
