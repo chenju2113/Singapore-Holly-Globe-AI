@@ -67,7 +67,14 @@ export const ReportDashboard: React.FC<ReportDashboardProps> = ({
         }));
       })();
   const visibleKeywordStats = isUnlocked ? keywordPlatformStats : keywordPlatformStats.slice(0, 3);
-  const competitorGap = Math.max(0, (metrics.competitor_mention_rate || 0) - (metrics.mention_rate || 0));
+
+  // Competitor gap: show "n.a" when competitor_mention_rate is 0 or missing (not applicable scenario)
+  const hasCompetitorData = metrics.competitor_mention_rate && metrics.competitor_mention_rate > 0;
+  const competitorGap = hasCompetitorData
+    ? Math.max(0, metrics.competitor_mention_rate - (metrics.mention_rate || 0))
+    : null;
+  const competitorGapDisplay = competitorGap !== null ? `+${competitorGap}%` : 'n.a';
+
   const bestPlatform = platformRecommendationStats
     .slice()
     .sort((a, b) => b.recommendationRate - a.recommendationRate)[0];
@@ -94,10 +101,14 @@ export const ReportDashboard: React.FC<ReportDashboardProps> = ({
       strongLabel: '已推荐且带官网引用',
       softLabel: '被提及但未引官网',
       absentLabel: '回答中缺席',
-      gapLabel: '竞品差距',
+      gapLabel: '竞品压力指数',
+      gapNotApplicable: '不适用',
       globalNote: '这只是全球 AI 检索的方向性快照，不等于中国平台的最终答案。',
       unlockHint: '想看完整引用片段和 China AI 机会层？解锁完整报告。',
-      gapDescription: '竞品在高意图场景里的出现频率，目前高于品牌本身。',
+      gapDescription: (gap: number | null) =>
+        gap !== null
+          ? `竞品提及率比品牌高 ${gap} 个百分点，差距越大竞争压力越明显。`
+          : '未提供竞品信息或竞品数据不适用于当前行业对比。',
       winVisibilityTitle: '品牌可见度',
       winVisibilityBody: (mentionRate: number) => `${mentionRate}% 的采样查询直接提到了品牌。`,
       winBestPlatformTitle: '表现最好的平台',
@@ -106,7 +117,10 @@ export const ReportDashboard: React.FC<ReportDashboardProps> = ({
       winCitationTitle: '官网引用强度',
       winCitationBody: (rate: number) => `${rate}% 的回答把信任和流量引回了官网。`,
       losePressureTitle: '竞品压力',
-      losePressureBody: (gap: number) => `品牌可见度与竞品之间仍有 ${gap}% 的差距。`,
+      losePressureBody: (gap: number | null) =>
+        gap !== null
+          ? `品牌可见度与竞品之间仍有 ${gap} 个百分点的差距。`
+          : '未提供有效的竞品对比数据。',
       loseIntentTitle: '高意图缺口',
       loseIntentBody: (comparison: number, conversion: number) => `比较型查询 ${comparison} 条，转化型查询 ${conversion} 条，仍是最容易丢失的环节。`,
       loseNextStepTitle: '下一步',
@@ -165,10 +179,14 @@ export const ReportDashboard: React.FC<ReportDashboardProps> = ({
       strongLabel: 'Recommended with citation',
       softLabel: 'Mentioned but not cited',
       absentLabel: 'Absent from answer',
-      gapLabel: 'Competitor gap',
+      gapLabel: 'Competitor pressure',
+      gapNotApplicable: 'Not applicable',
       globalNote: 'Global AI retrieval is only directional; it is not the China-platform answer.',
       unlockHint: 'Need the full snippet set? Unlock the report.',
-      gapDescription: 'Competitors still appear more often than the brand in high-intent answer paths.',
+      gapDescription: (gap: number | null) =>
+        gap !== null
+          ? `Competitors are mentioned ${gap} points more often than your brand. A wider gap means stronger competitive pressure.`
+          : 'No competitor data provided, or competitor comparison is not applicable for this industry.',
       winVisibilityTitle: 'Brand visibility',
       winVisibilityBody: (mentionRate: number) => `${mentionRate}% of sampled queries surfaced the brand.`,
       winBestPlatformTitle: 'Best platform',
@@ -177,7 +195,10 @@ export const ReportDashboard: React.FC<ReportDashboardProps> = ({
       winCitationTitle: 'Citation strength',
       winCitationBody: (rate: number) => `${rate}% of answers linked trust and traffic back to the owned domain.`,
       losePressureTitle: 'Competitive pressure',
-      losePressureBody: (gap: number) => `There is still a ${gap}% visibility gap between the brand and competitors.`,
+      losePressureBody: (gap: number | null) =>
+        gap !== null
+          ? `There is still a ${gap}-point visibility gap between the brand and competitors.`
+          : 'No valid competitor comparison data was provided.',
       loseIntentTitle: 'High-intent gap',
       loseIntentBody: (comparison: number, conversion: number) => `${comparison} comparison prompts and ${conversion} conversion prompts remain the weakest points.`,
       loseNextStepTitle: 'Next step',
@@ -236,10 +257,14 @@ export const ReportDashboard: React.FC<ReportDashboardProps> = ({
       strongLabel: 'Recommended with citation',
       softLabel: 'Mentioned but not cited',
       absentLabel: 'Absent from answer',
-      gapLabel: 'Competitor gap',
+      gapLabel: 'Tekanan pesaing',
+      gapNotApplicable: 'Tidak berkenaan',
       globalNote: 'Global AI retrieval hanya bersifat petunjuk; ia bukan jawapan platform China.',
       unlockHint: 'Perlu set petikan penuh? Buka laporan.',
-      gapDescription: 'Pesaing masih muncul lebih kerap daripada jenama dalam jawapan berintensi tinggi.',
+      gapDescription: (gap: number | null) =>
+        gap !== null
+          ? `Pesaing disebut ${gap} mata lebih kerap daripada jenama anda. Jurang yang lebih besar bermakna tekanan persaingan lebih kuat.`
+          : 'Tiada data pesaing diberikan, atau perbandingan pesaing tidak berkenaan untuk industri ini.',
       winVisibilityTitle: 'Kebolehlihatan jenama',
       winVisibilityBody: (mentionRate: number) => `${mentionRate}% daripada query sampel menyebut jenama secara langsung.`,
       winBestPlatformTitle: 'Platform terbaik',
@@ -248,7 +273,10 @@ export const ReportDashboard: React.FC<ReportDashboardProps> = ({
       winCitationTitle: 'Kekuatan citation',
       winCitationBody: (rate: number) => `${rate}% jawapan menghala balik ke domain rasmi anda.`,
       losePressureTitle: 'Tekanan pesaing',
-      losePressureBody: (gap: number) => `Masih ada jurang kebolehlihatan ${gap}% antara jenama dan pesaing.`,
+      losePressureBody: (gap: number | null) =>
+        gap !== null
+          ? `Masih ada jurang kebolehlihatan ${gap} mata antara jenama dan pesaing.`
+          : 'Tiada data perbandingan pesaing yang sah diberikan.',
       loseIntentTitle: 'Jurang niat tinggi',
       loseIntentBody: (comparison: number, conversion: number) => `${comparison} query perbandingan dan ${conversion} query penukaran masih paling lemah.`,
       loseNextStepTitle: 'Langkah seterusnya',
@@ -321,7 +349,7 @@ export const ReportDashboard: React.FC<ReportDashboardProps> = ({
     { label: t.mentionRateTitle, value: `${metrics.mention_rate}%` },
     { label: t.recommendationRateTitle, value: `${recommendationRate}%` },
     { label: t.ownedCitationRateTitle, value: `${metrics.owned_domain_citation_rate}%` },
-    { label: reportNarrative.gapLabel, value: `+${competitorGap}%` },
+    { label: reportNarrative.gapLabel, value: competitorGapDisplay },
   ];
 
   const labelForEntry = (entry: CitationSnapshotData['entries'][number]) => {
@@ -349,7 +377,7 @@ KEY METRICS:
 - Owned Domain Direct Citation Rate: ${metrics.owned_domain_citation_rate}%
 - Queries Evaluated: ${metrics.queries_run}
 - AI Recommendation Rate: ${recommendationRate}%
-- Competitor Gap: ${competitorGap}%
+- Competitor Pressure: ${competitorGap !== null ? `${competitorGap} points behind competitors` : 'n.a (no competitor data provided)'}
 
 GLOBAL SNAPSHOT:
 ${metrics.mention_rate >= 50 ? '- The brand is visible in global AI answers.' : '- The brand is still underrepresented in global AI answers.'}
@@ -470,9 +498,9 @@ ${data?.methodology?.disclaimer || ''}
 
             <div className="mt-4 rounded-2xl border border-[#1e293b] bg-[#08111f] p-4">
               <div className="text-[11px] uppercase tracking-[0.22em] text-[#94a3b8]">{reportNarrative.gapLabel}</div>
-              <div className="mt-2 text-3xl font-black text-[#f59e0b]">+{competitorGap}%</div>
+              <div className="mt-2 text-3xl font-black text-[#f59e0b]">{competitorGapDisplay}</div>
               <p className="mt-1 text-xs leading-relaxed text-[#94a3b8]">
-                {reportNarrative.globalNote}
+                {reportNarrative.gapDescription(competitorGap)}
               </p>
             </div>
           </div>
@@ -497,9 +525,9 @@ ${data?.methodology?.disclaimer || ''}
         </div>
         <div className="rounded-2xl border border-[#1e293b] bg-[#0b172a] p-5 shadow-xl xl:col-span-3">
           <div className="text-[11px] uppercase tracking-[0.2em] text-[#c084fc]">{reportNarrative.gapLabel}</div>
-          <div className="mt-3 text-3xl font-black text-[#c084fc]">+{competitorGap}%</div>
+          <div className="mt-3 text-3xl font-black text-[#c084fc]">{competitorGapDisplay}</div>
           <p className="mt-2 text-xs leading-relaxed text-[#94a3b8]">
-            {reportNarrative.gapDescription}
+            {reportNarrative.gapDescription(competitorGap)}
           </p>
         </div>
       </div>
