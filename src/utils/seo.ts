@@ -50,15 +50,5 @@ export function useSeoMetadata({ title, description, canonical, ogType = 'websit
     setMetaTag('meta[name="twitter:title"]', 'name', 'twitter:title', title);
     setMetaTag('meta[name="twitter:description"]', 'name', 'twitter:description', description);
 
-    // Google Tag / Ads page view tracking across Home, FAQ, and GEO Engine
-    if (typeof window !== 'undefined') {
-      const gtagCall = (window as any).gtag || function() {
-        ((window as any).dataLayer = (window as any).dataLayer || []).push(arguments);
-      };
-      gtagCall('config', 'AW-18372486865', {
-        page_path: window.location.pathname,
-        page_title: title,
-      });
-    }
   }, [title, description, canonical, ogType]);
 }

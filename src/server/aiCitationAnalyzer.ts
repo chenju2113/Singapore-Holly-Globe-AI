@@ -17,7 +17,7 @@ function cleanDomain(website: string): string {
 }
 
 function buildDefaultQueries(params: CitationFormData, domain: string): string[] {
-  const industry = params.industry || 'B2B Tech & SaaS';
+  const industry = params.industry || 'Technology, SaaS & Digital Services';
   const market = params.targetMarket || 'Singapore & Southeast Asia';
   const competitor = params.competitors || 'leading industry players';
   const focus = params.queryFocus || industry;
@@ -371,7 +371,7 @@ Return ONLY valid JSON without markdown wrapping.`;
   return {
     brand: params.brandName,
     website: domain,
-    industry: params.industry || 'B2B Tech & SaaS',
+    industry: params.industry || 'Technology, SaaS & Digital Services',
     targetMarket: params.targetMarket || 'Singapore & Global Markets',
     runTimestamp: new Date().toISOString(),
     status: 'completed',

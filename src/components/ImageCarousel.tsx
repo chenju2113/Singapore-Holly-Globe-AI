@@ -5,20 +5,24 @@ export interface DashboardImageItem {
   id: string;
   titleEn: string;
   titleZh: string;
+  titleJa: string;
   titleMs: string;
   titleVi: string;
   tagEn: string;
   tagZh: string;
+  tagJa: string;
   tagMs: string;
   tagVi: string;
   src: string;
   fallbackSrc?: string;
   captionEn: string;
   captionZh: string;
+  captionJa: string;
   captionMs: string;
   captionVi: string;
   detailEn: string;
   detailZh: string;
+  detailJa: string;
   detailMs: string;
   detailVi: string;
 }
@@ -28,20 +32,24 @@ const DASHBOARD_IMAGES: DashboardImageItem[] = [
     id: 'industrial-supplier-audit',
     titleEn: 'Singapore Industrial Supplier – China AI Visibility Test Report',
     titleZh: '新加坡工业及医疗供应商——中国 AI 能见度评估报告',
+    titleJa: 'シンガポール工業・医療サプライヤー – 中国AI検索可視性テストレポート',
     titleMs: 'Pembekal Industri Singapura – Laporan Ujian Keterlihatan AI China',
     titleVi: 'Nhà cung cấp công nghiệp Singapore – Báo cáo hiển thị AI Trung Quốc',
     tagEn: 'SUPPLIER VISIBILITY AUDIT',
     tagZh: '供应商 AI 能见度评估报告',
+    tagJa: 'サプライヤーAI可視性監査',
     tagMs: 'AUDIT KETERLIHATAN PEMBEKAL',
     tagVi: 'ĐÁNH GIÁ HIỂN THỊ NHÀ CUNG CẤP',
     src: 'image.png',
     fallbackSrc: 'image.svg',
     captionEn: 'Supplier Visibility | Procurement-Intent Queries | China Market-Entry Readiness',
     captionZh: '供应商能见度 | 采购意向查询 | 中国市场进入准备度',
+    captionJa: 'サプライヤー可視性 | 購買意向クエリ | 中国市場参入適合度',
     captionMs: 'Keterlihatan Pembekal | Carian Niat Perolehan | Kesediaan Kemasukan Pasaran China',
     captionVi: 'Hiển thị nhà cung cấp | Truy vấn mua hàng | Độ sẵn sàng tiến vào Trung Quốc',
     detailEn: 'A sample GEO visibility report showing how a Singapore-based industrial or medical supplier appears across major Chinese AI platforms, including brand mention coverage, competitor comparison, recommendation visibility, and content gaps before market entry.',
     detailZh: '评估报告样例展示了新加坡工业及医疗设备供应商在中国主流 AI 平台的综合能见度表现，包含品牌提及覆盖率、竞品对比排名、大模型推荐位次及内容补全建议。',
+    detailJa: 'シンガポールの工業・医療機器サプライヤーが中国の主要AIプラットフォームでどのように認識されているかを示すGEO可視性監査サンプル。ブランド言及率、競合比較、推奨順位、ナレッジ補全推奨を網羅。',
     detailMs: 'Laporan sampel menunjukkan bagaimana pembekal industri Singapura muncul di merentasi platform AI China utama.',
     detailVi: 'Báo cáo mẫu thể hiện khả năng xuất hiện của nhà cung cấp Singapore trên các nền tảng AI chính tại Trung Quốc.',
   },
@@ -49,19 +57,23 @@ const DASHBOARD_IMAGES: DashboardImageItem[] = [
     id: 'live-vector',
     titleEn: 'Command Center Real-time LLM Vector Topology',
     titleZh: 'Command Center 实时 LLM 向量拓扑',
+    titleJa: 'コマンドセンター リアルタイムLLMベクトル網トポロジー',
     titleMs: 'Topologi Vektor LLM Masa-Nyata Pusat Kawalan',
     titleVi: 'Sơ đồ Vector LLM thời gian thực của Trung tâm điều hành',
     tagEn: 'LIVE VECTOR MAPPING',
     tagZh: '实时向量拓扑映射',
+    tagJa: 'リアルタイムベクトルマッピング',
     tagMs: 'PEMETAAN VEKTOR MASA-NYATA',
     tagVi: 'SƠ ĐỒ VECTOR THỜI GIAN THỰC',
     src: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCoNFSk-vJF96t4hV1Dm8nbhxWve9wf5bko0PPKq12dLQJhuUTt50cU61LvsbRGF28sV6EkIz0xvtv97J84PZGlodxzoHbFQDTbr9ufCNtHAcp6gZ8aF1lbz229TgC02DTVokqqtTturCYSuML6DUniWmZhxW4G_rrwY_zL85yorInF7Y4mFZANsLPq9c5pRO7Jnj4ZGAQt34H9XUyRLc1NiVJaxCt2hqzKLHUXVvGONAqojY8dKhWbfw',
     captionEn: 'Node Recall Rate: 84.2% | SG-CN Vector Clusters Syncing',
     captionZh: '节点召回率: 84.2% | SG-CN 向量集群同步中',
+    captionJa: 'ノード想起率: 84.2% | SG-CN ベクトルクラスタ同期中',
     captionMs: 'Kadar Panggilan Semula Ditegaskan: 84.2% | Kluster Vektor SG-CN Diselaraskan',
     captionVi: 'Tỷ lệ gọi lại nút: 84.2% | Cụm Vector SG-CN đang đồng bộ',
     detailEn: 'Real-time monitoring of Chinese AI platform vector retrieval distribution, knowledge graph recall rate, and node activity metrics.',
     detailZh: '实时监控中国 AI 平台向量检索分布、知识图谱召回率与节点热度。',
+    detailJa: '中国AIプラットフォームのベクトル検索分布、ナレッジグラフ想起率、ノードアクティビティをリアルタイム監視。',
     detailMs: 'Pemantauan masa-nyata taburan carian vektor platform AI China dan kadar panggilan semula graf pengetahuan.',
     detailVi: 'Giám sát thời gian thực phân bổ tìm kiếm vector trên các nền tảng AI Trung Quốc.',
   },
@@ -69,19 +81,23 @@ const DASHBOARD_IMAGES: DashboardImageItem[] = [
     id: 'platform-share',
     titleEn: 'Top 5 Chinese AI Platforms Brand Visibility & Competitor Audit',
     titleZh: '5 大中国 AI 平台品牌能见度与竞品对比',
+    titleJa: '中国5大AIプラットフォーム ブランド可視性・競合比較監査',
     titleMs: 'Keterlihatan Jenama 5 Platform AI China Utama & Audit Pesaing',
     titleVi: 'Khả năng hiển thị thương hiệu & Đánh giá đối thủ trên 5 AI TQ',
     tagEn: 'B2B DISTRIBUTOR DISCOVERY',
     tagZh: 'B2B 分销商与采购能见度',
+    tagJa: 'B2Bサプライチェーン・代理店探索',
     tagMs: 'PENEMUAN PENGEDAR B2B',
     tagVi: 'TÌM KIẾM NHÀ PHÂN PHỐI B2B',
     src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
     captionEn: 'Baidu | Tongyi | Kimi | Spark | Hunyuan',
     captionZh: '百度文心一言 | 阿里通义千问 | Kimi | 讯飞星火 | 腾讯混元',
+    captionJa: 'Baidu 文心一言 | 通義千問 | Kimi | 訊飛星火 | 騰訊混元',
     captionMs: 'Baidu | Tongyi | Kimi | Spark | Hunyuan',
     captionVi: 'Baidu | Tongyi | Kimi | Spark | Hunyuan',
     detailEn: 'Technical product comparison and distributor discovery analytics across China AI search platforms.',
     detailZh: '技术产品对比分析与中国 AI 搜索平台的分销商发现能见度数据。',
+    detailJa: '中国AI検索プラットフォームにおける技術製品の競合比較分析と代理店発見データ。',
     detailMs: 'Analisis perbandingan produk teknikal dan penemuan pengedar merentasi platform carian AI China.',
     detailVi: 'Phân tích so sánh sản phẩm kỹ thuật và khả năng tìm kiếm nhà phân phối trên các nền tảng AI TQ.',
   },
@@ -89,19 +105,23 @@ const DASHBOARD_IMAGES: DashboardImageItem[] = [
     id: 'cac-compliance',
     titleEn: 'CAC Regulatory Compliance & Cross-Border Data Control',
     titleZh: 'CAC 备案合规与跨境数据控制',
+    titleJa: 'CAC 規制届出適合・越境データガバナンス',
     titleMs: 'Pematuhan Perundangan CAC & Kawalan Data Rentas Sempadan',
     titleVi: 'Tuân thủ pháp lý CAC & Kiểm soát dữ liệu xuyên biên giới',
     tagEn: 'CAC REGULATORY HANDSHAKE',
     tagZh: '网信办算法合规握手',
+    tagJa: 'CACアルゴリズム適合ハンドシェイク',
     tagMs: 'AKURAT PERUNDANGAN CAC',
     tagVi: 'TUÂN THỦ PHÁP LÝ CAC',
     src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
     captionEn: 'Data Residency: SG-Central-1 | ICP Status: Verified',
     captionZh: '数据驻留地: 新加坡 | ICP 备案状态: 已验证',
+    captionJa: 'データ保管地: シンガポール | ICPステータス: 認証済',
     captionMs: 'Kediaman Data: SG-Central-1 | Status ICP: Disahkan',
     captionVi: 'Nơi lưu trữ dữ liệu: SG-Central-1 | Trạng thái ICP: Đã xác minh',
     detailEn: 'Singapore-China cross-border AI data security compliance transmission controls and authoritative brand node protections.',
     detailZh: '新加坡-中国跨境 AI 数据安全合规传输控制与权威品牌节点防护。',
+    detailJa: 'シンガポール-中国間の越境AIデータセキュリティ適合通信制御と公式ブランドノード保護。',
     detailMs: 'Kawalan penghantaran data AI rentas sempadan Singapura-China dan perlindungan node jenama berautoriti.',
     detailVi: 'Kiểm soát truyền dữ liệu AI xuyên biên giới Singapore-Trung Quốc và bảo vệ nút thương hiệu uy tín.',
   },
@@ -116,16 +136,16 @@ export const ImageCarousel: React.FC = () => {
   const currentItem = DASHBOARD_IMAGES[currentIndex];
 
   const getTitle = (img: DashboardImageItem) =>
-    language === 'zh' ? img.titleZh : language === 'ms' ? img.titleMs : language === 'vi' ? img.titleVi : img.titleEn;
+    language === 'zh' ? img.titleZh : language === 'ja' ? img.titleJa : language === 'ms' ? img.titleMs : language === 'vi' ? img.titleVi : img.titleEn;
 
   const getTag = (img: DashboardImageItem) =>
-    language === 'zh' ? img.tagZh : language === 'ms' ? img.tagMs : language === 'vi' ? img.tagVi : img.tagEn;
+    language === 'zh' ? img.tagZh : language === 'ja' ? img.tagJa : language === 'ms' ? img.tagMs : language === 'vi' ? img.tagVi : img.tagEn;
 
   const getCaption = (img: DashboardImageItem) =>
-    language === 'zh' ? img.captionZh : language === 'ms' ? img.captionMs : language === 'vi' ? img.captionVi : img.captionEn;
+    language === 'zh' ? img.captionZh : language === 'ja' ? img.captionJa : language === 'ms' ? img.captionMs : language === 'vi' ? img.captionVi : img.captionEn;
 
   const getDetail = (img: DashboardImageItem) =>
-    language === 'zh' ? img.detailZh : language === 'ms' ? img.detailMs : language === 'vi' ? img.detailVi : img.detailEn;
+    language === 'zh' ? img.detailZh : language === 'ja' ? img.detailJa : language === 'ms' ? img.detailMs : language === 'vi' ? img.detailVi : img.detailEn;
 
   const handlePrev = () => {
     setImgError(false);
@@ -159,7 +179,7 @@ export const ImageCarousel: React.FC = () => {
             <span className="w-4 h-4 rounded-full bg-black/10 flex items-center justify-center text-[10px]">
               {idx + 1}
             </span>
-            <span>{getTitle(img).split(' - ')[0].split('——')[0]}</span>
+            <span>{getTitle(img).split(' – ')[0].split(' - ')[0].split('——')[0]}</span>
           </button>
         ))}
       </div>
@@ -193,7 +213,7 @@ export const ImageCarousel: React.FC = () => {
 
           <button
             onClick={() => setIsFullscreen(true)}
-            title={language === 'zh' ? '查看全屏高清大图' : 'View Fullscreen'}
+            title={language === 'zh' ? '查看全屏高清大图' : language === 'ja' ? 'フルスクリーンで表示' : 'View Fullscreen'}
             className="bg-[#0b1c30]/90 hover:bg-[#0056c5] text-white p-1.5 rounded-md border border-white/20 transition-colors shadow-md flex items-center justify-center"
           >
             <span className="material-symbols-outlined text-base">fullscreen</span>
@@ -241,7 +261,7 @@ export const ImageCarousel: React.FC = () => {
           className="text-[#0056c5] hover:underline font-mono-code font-bold flex items-center gap-1"
         >
           <span className="material-symbols-outlined text-sm">west</span>
-          <span>{language === 'zh' ? '上一张' : language === 'ms' ? 'Sebelum' : language === 'vi' ? 'Trước' : 'Previous'}</span>
+          <span>{language === 'zh' ? '上一张' : language === 'ms' ? 'Sebelum' : language === 'vi' ? 'Trước' : language === 'ja' ? '前へ' : 'Previous'}</span>
         </button>
 
         <div className="flex items-center gap-2">
@@ -261,7 +281,7 @@ export const ImageCarousel: React.FC = () => {
           onClick={handleNext}
           className="text-[#0056c5] hover:underline font-mono-code font-bold flex items-center gap-1"
         >
-          <span>{language === 'zh' ? '下一张' : language === 'ms' ? 'Seterusnya' : language === 'vi' ? 'Tiếp' : 'Next'}</span>
+          <span>{language === 'zh' ? '下一张' : language === 'ms' ? 'Seterusnya' : language === 'vi' ? 'Tiếp' : language === 'ja' ? '次へ' : 'Next'}</span>
           <span className="material-symbols-outlined text-sm">east</span>
         </button>
       </div>

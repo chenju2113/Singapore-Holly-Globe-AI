@@ -14,7 +14,7 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   const [language, setLanguageState] = useState<Language>(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('hg_lang') as Language;
-      if (saved && (saved === 'en' || saved === 'zh' || saved === 'ms' || saved === 'vi')) {
+      if (saved && (saved === 'en' || saved === 'zh' || saved === 'ms' || saved === 'vi' || saved === 'ja')) {
         return saved;
       }
     }

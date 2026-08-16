@@ -13,7 +13,7 @@ export async function handlePerplexityCitationRequest(req: Request, res: Respons
     const report = await generateCitationSnapshot({
       brandName,
       website,
-      industry: industry || 'B2B Tech & SaaS',
+      industry: industry || 'Technology, SaaS & Digital Services',
       targetMarket: targetMarket || 'Singapore & Southeast Asia',
       competitors: competitors || '',
       targetLanguage: targetLanguage || 'en',

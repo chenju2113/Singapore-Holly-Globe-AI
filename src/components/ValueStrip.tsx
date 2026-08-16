@@ -7,32 +7,32 @@ export const ValueStrip: React.FC = () => {
   const HIGHLIGHTS = [
     {
       tag: 'TARGET',
-      label: language === 'zh' ? '服务新加坡企业' : language === 'ms' ? 'Dibina untuk Syarikat SG' : language === 'vi' ? 'Dành cho công ty SG' : 'Built for SG Companies',
+      label: language === 'zh' ? '服务新加坡企业' : language === 'ms' ? 'Dibina untuk Syarikat SG' : language === 'vi' ? 'Dành cho công ty SG' : language === 'ja' ? 'SG企業向け設計' : 'Built for SG Companies',
       icon: 'location_city'
     },
     {
       tag: 'COVERAGE',
-      label: language === 'zh' ? '覆盖中国主流 AI 平台' : language === 'ms' ? 'Semua Platform AI China' : language === 'vi' ? 'Tất cả nền tảng AI TQ' : 'All China AI Platforms',
+      label: language === 'zh' ? '覆盖中国主流 AI 平台' : language === 'ms' ? 'Semua Platform AI China' : language === 'vi' ? 'Tất cả nền tảng AI TQ' : language === 'ja' ? '中国主要AI完全網羅' : 'All China AI Platforms',
       icon: 'hub'
     },
     {
       tag: 'LEGAL',
-      label: language === 'zh' ? '中国算法法规合规' : language === 'ms' ? 'Pematuhan Perundangan' : language === 'vi' ? 'Tuân thủ pháp lý AI' : 'Compliance-aware',
+      label: language === 'zh' ? '中国算法法规合规' : language === 'ms' ? 'Pematuhan Perundangan' : language === 'vi' ? 'Tuân thủ pháp lý AI' : language === 'ja' ? 'AI規制・法令適合' : 'Compliance-aware',
       icon: 'gavel'
     },
     {
       tag: 'MARKET',
-      label: language === 'zh' ? '深耕 B2B 与专业服务' : language === 'ms' ? 'B2B & Perkhidmatan Pro' : language === 'vi' ? 'B2B & Dịch vụ chuyên nghiệp' : 'B2B & Pro Services',
+      label: language === 'zh' ? '深耕 B2B 与专业服务' : language === 'ms' ? 'B2B & Perkhidmatan Pro' : language === 'vi' ? 'B2B & Dịch vụ chuyên nghiệp' : language === 'ja' ? 'B2B・専門サービス特化' : 'B2B & Pro Services',
       icon: 'business_center'
     },
     {
       tag: 'SUPPORT',
-      label: language === 'zh' ? '新加坡团队远程顾问服务' : language === 'ms' ? 'Konsultasi Tempatan SG' : language === 'vi' ? 'Tư vấn trực tiếp SG' : 'Local SG Consultation',
+      label: language === 'zh' ? '新加坡团队远程顾问服务' : language === 'ms' ? 'Konsultasi Tempatan SG' : language === 'vi' ? 'Tư vấn trực tiếp SG' : language === 'ja' ? 'シンガポール個別相談' : 'Local SG Consultation',
       icon: 'support_agent'
     },
     {
       tag: 'EXECUTION',
-      label: language === 'zh' ? '无缝直通中国市场' : language === 'ms' ? 'Kemasukan Terus China' : language === 'vi' ? 'Tiếp cận trực tiếp Trung Quốc' : 'Direct China Entry',
+      label: language === 'zh' ? '无缝直通中国市场' : language === 'ms' ? 'Kemasukan Terus China' : language === 'vi' ? 'Tiếp cận trực tiếp Trung Quốc' : language === 'ja' ? '中国市場へダイレクト進出' : 'Direct China Entry',
       icon: 'rocket_launch'
     }
   ];

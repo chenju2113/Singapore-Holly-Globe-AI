@@ -16,7 +16,7 @@ export const PartnersCoverage: React.FC = () => {
     <section className="py-12 px-6 max-w-[1280px] mx-auto border-b border-[#c2c6d7]">
       <div className="text-center mb-8">
         <span className="text-xs font-mono-code font-bold uppercase tracking-widest text-[#727685]">
-          {language === 'zh' ? '中国核心 AI 大模型能见度覆盖' : language === 'ms' ? 'LIPUTAN PLATFORM AI CHINA' : language === 'vi' ? 'PHỦ SÓNG NỀN TẢNG AI TRUNG QUỐC' : 'CHINA AI PLATFORM COVERAGE'}
+          {language === 'zh' ? '中国核心 AI 大模型能见度覆盖' : language === 'ja' ? '中国主要AIモデル可視性カバレッジ' : language === 'ms' ? 'LIPUTAN PLATFORM AI CHINA' : language === 'vi' ? 'PHỦ SÓNG NỀN TẢNG AI TRUNG QUỐC' : 'CHINA AI PLATFORM COVERAGE'}
         </span>
       </div>
 

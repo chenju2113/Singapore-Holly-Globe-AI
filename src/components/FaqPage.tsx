@@ -80,6 +80,15 @@ export const FaqPage: React.FC<FaqPageProps> = ({
       schemaTitle: 'SEO & AI 搜索结构化数据 (FAQPage JSON-LD)',
       downloadJson: '下载 Schema JSON'
     },
+    ja: {
+      title: 'よくあるご質問 (FAQ)',
+      subtitle: 'GEO（生成AIエンジン最適化）、中国AI検索可視性、HollyGlobeの支援内容に関する30の重要Q&A。',
+      searchPlaceholder: '質問やキーワードを検索...',
+      expandAll: 'すべて展開',
+      collapseAll: 'すべて折りたたむ',
+      schemaTitle: 'SEO・AI検索構造化データ (FAQPage JSON-LD)',
+      downloadJson: 'Schema JSON ダウンロード'
+    },
     ms: {
       title: 'Soalan Lazim (FAQ)',
       subtitle: 'Panduan lengkap 30 soalan tentang Generative Engine Optimization (GEO), keterlihatan AI carian China, dan penasihat HollyGlobe.',
@@ -128,7 +137,7 @@ export const FaqPage: React.FC<FaqPageProps> = ({
 
           {/* Language Switcher Bar */}
           <div className="pt-2 flex flex-wrap items-center justify-center gap-2">
-            <span className="text-xs font-semibold text-[#424654] mr-1 hidden sm:inline-block">Language / 语言 / Bahasa / Ngôn ngữ:</span>
+            <span className="text-xs font-semibold text-[#424654] mr-1 hidden sm:inline-block">Language / 言語 / 语言:</span>
             <button
               onClick={() => handleLangChange('en')}
               className={`px-4 py-2 text-xs sm:text-sm font-bold rounded-lg transition-all flex items-center gap-1.5 ${
@@ -148,6 +157,16 @@ export const FaqPage: React.FC<FaqPageProps> = ({
               }`}
             >
               <span>🇨🇳 中文 (简体)</span>
+            </button>
+            <button
+              onClick={() => handleLangChange('ja')}
+              className={`px-4 py-2 text-xs sm:text-sm font-bold rounded-lg transition-all flex items-center gap-1.5 ${
+                lang === 'ja'
+                  ? 'bg-[#0056c5] text-white shadow-xs'
+                  : 'bg-white border border-[#c2c6d7] text-[#0b1c30] hover:bg-[#f0f4ff]'
+              }`}
+            >
+              <span>🇯🇵 日本語</span>
             </button>
             <button
               onClick={() => handleLangChange('ms')}

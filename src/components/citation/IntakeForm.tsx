@@ -18,7 +18,7 @@ export const IntakeForm: React.FC<IntakeFormProps> = ({
   const [formData, setFormData] = useState<CitationFormData>({
     brandName: '',
     website: '',
-    industry: 'B2B Tech & SaaS',
+    industry: 'Technology, SaaS & Digital Services',
     targetMarket: 'Singapore & Southeast Asia',
     competitors: '',
     targetLanguage: language,
@@ -41,7 +41,7 @@ export const IntakeForm: React.FC<IntakeFormProps> = ({
     setFormData({
       brandName: 'HollyGlobe Singapore',
       website: 'sghollyglobe.com',
-      industry: 'B2B Tech & SaaS',
+      industry: 'Technology, SaaS & Digital Services',
       targetMarket: 'Singapore & Southeast Asia',
       competitors: 'Salesforce, Hubspot, Regional Partner A',
       targetLanguage: language,
@@ -67,10 +67,10 @@ export const IntakeForm: React.FC<IntakeFormProps> = ({
           </div>
           <div>
             <span className="text-xs font-bold text-white tracking-wide uppercase block">
-              Diagnostic Intake Form
+              {language === 'zh' ? '诊断评估登记表' : language === 'ja' ? 'GEO診断・情報入力フォーム' : language === 'ms' ? 'Borang Diagnostik' : language === 'vi' ? 'Phiếu thông tin chẩn đoán' : 'Diagnostic Intake Form'}
             </span>
             <span className="text-[10px] text-[#00f2fe] font-medium">
-              3-Minute Perplexity AI Model Scan
+              {language === 'zh' ? '3 分钟 AI 模型快速深度扫描' : language === 'ja' ? '約3分 AIモデル高精度スキャン' : language === 'ms' ? 'Imbasan AI 3-Minit' : language === 'vi' ? 'Quét AI 3 phút' : '3-Minute Perplexity AI Model Scan'}
             </span>
           </div>
         </div>
@@ -82,15 +82,15 @@ export const IntakeForm: React.FC<IntakeFormProps> = ({
             className="text-xs font-bold text-[#00f2fe] hover:text-white transition-all flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#00f2fe]/10 hover:bg-[#00f2fe]/20 border border-[#00f2fe]/30 shadow-sm"
           >
             <span className="material-symbols-outlined text-sm">auto_fix_high</span>
-            <span>Autofill Sample Brand</span>
+            <span>{language === 'zh' ? '填入演示样例' : language === 'ja' ? 'サンプルデータを自動入力' : language === 'ms' ? 'Isi Data Contoh' : language === 'vi' ? 'Tự điền dữ liệu mẫu' : 'Autofill Sample Brand'}</span>
           </button>
 
           {/* Language Selector */}
-          <div className="flex items-center bg-[#0f172a] p-1 rounded-xl border border-[#334155]">
+          <div className="flex items-center flex-wrap bg-[#0f172a] p-1 rounded-xl border border-[#334155] gap-0.5">
             <button
               type="button"
               onClick={() => onLanguageChange('zh')}
-              className={`px-3 py-1 text-xs font-semibold rounded-lg transition-all ${
+              className={`px-2.5 py-1 text-xs font-semibold rounded-lg transition-all ${
                 language === 'zh'
                   ? 'bg-gradient-to-r from-[#00f2fe] to-[#0d9488] text-[#0b172a] font-extrabold shadow-sm'
                   : 'text-[#94a3b8] hover:text-white'
@@ -101,24 +101,46 @@ export const IntakeForm: React.FC<IntakeFormProps> = ({
             <button
               type="button"
               onClick={() => onLanguageChange('en')}
-              className={`px-3 py-1 text-xs font-semibold rounded-lg transition-all ${
+              className={`px-2.5 py-1 text-xs font-semibold rounded-lg transition-all ${
                 language === 'en'
                   ? 'bg-gradient-to-r from-[#00f2fe] to-[#0d9488] text-[#0b172a] font-extrabold shadow-sm'
                   : 'text-[#94a3b8] hover:text-white'
               }`}
             >
-              English
+              EN
+            </button>
+            <button
+              type="button"
+              onClick={() => onLanguageChange('ja')}
+              className={`px-2.5 py-1 text-xs font-semibold rounded-lg transition-all ${
+                language === 'ja'
+                  ? 'bg-gradient-to-r from-[#00f2fe] to-[#0d9488] text-[#0b172a] font-extrabold shadow-sm'
+                  : 'text-[#94a3b8] hover:text-white'
+              }`}
+            >
+              日本語
             </button>
             <button
               type="button"
               onClick={() => onLanguageChange('ms')}
-              className={`px-3 py-1 text-xs font-semibold rounded-lg transition-all ${
+              className={`px-2.5 py-1 text-xs font-semibold rounded-lg transition-all ${
                 language === 'ms'
                   ? 'bg-gradient-to-r from-[#00f2fe] to-[#0d9488] text-[#0b172a] font-extrabold shadow-sm'
                   : 'text-[#94a3b8] hover:text-white'
               }`}
             >
-              Malay
+              BM
+            </button>
+            <button
+              type="button"
+              onClick={() => onLanguageChange('vi')}
+              className={`px-2.5 py-1 text-xs font-semibold rounded-lg transition-all ${
+                language === 'vi'
+                  ? 'bg-gradient-to-r from-[#00f2fe] to-[#0d9488] text-[#0b172a] font-extrabold shadow-sm'
+                  : 'text-[#94a3b8] hover:text-white'
+              }`}
+            >
+              VN
             </button>
           </div>
         </div>
@@ -252,7 +274,7 @@ export const IntakeForm: React.FC<IntakeFormProps> = ({
         <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-[#1e293b]">
           <p className="text-xs text-[#64748b] flex items-center gap-1.5">
             <span className="material-symbols-outlined text-sm text-[#00f2fe]">verified_user</span>
-            <span>Free diagnostic demo. Server-side Perplexity AI search scan.</span>
+            <span>{language === 'zh' ? '免费诊断演示 · 服务端 AI 实时搜索扫描' : language === 'ja' ? '無料診断デモ · サーバーサイドAIリアルタイム検索スキャン' : language === 'ms' ? 'Demo diagnostik percuma · Imbasan carian AI masa-nyata.' : language === 'vi' ? 'Bản thử nghiệm chẩn đoán miễn phí · Quét tìm kiếm AI thời gian thực.' : 'Free diagnostic demo. Server-side Perplexity AI search scan.'}</span>
           </p>
 
           <button

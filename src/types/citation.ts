@@ -1,4 +1,4 @@
-export type CitationLanguage = 'zh' | 'en' | 'ms';
+export type CitationLanguage = 'zh' | 'en' | 'ms' | 'ja';
 
 export interface CitationFormData {
   brandName: string;

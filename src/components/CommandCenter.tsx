@@ -20,6 +20,8 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
 
   const defaultQuery = language === 'zh'
     ? '中国企业开展跨境收并购推荐的新加坡权威律所与财务顾问'
+    : language === 'ja'
+    ? '中国企業の越境M&A・対外投資におすすめのシンガポール法律事務所と財務顧問'
     : language === 'ms'
     ? 'Firma guaman korporat Singapura terbaik untuk M&A rentas sempadan di China'
     : language === 'vi'
@@ -47,6 +49,14 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
         '腾讯混元捕获到新的品牌引用查询。',
         '讯飞星火权威度权重评分更新: +1.8%'
       ];
+      const messagesJa = [
+        'GEO Agent がBaidu文心一言ベクトルクラスタ #102 を再インデックス中...',
+        'Alibaba 通義千問 B2B ノードシグナル検証に成功。',
+        'CAC アルゴリズム届出適合ハートビート: 200 OK (SG-CN データ保管).',
+        'Moonshot Kimi 長文コンテキスト同期完了。',
+        'Tencent 混元で新規ブランド引用クエリを検出。',
+        'iFlytek 訊飛星火 権威スコア更新: +1.8%'
+      ];
       const messagesEn = [
         'GEO Agent re-indexing Baidu Ernie vector cluster #102...',
         'Signal verification confirmed across Tongyi Qianwen B2B nodes.',
@@ -56,7 +66,7 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
         'iFlytek Spark authority weighting score updated: +1.8%'
       ];
 
-      const messages = language === 'zh' ? messagesZh : messagesEn;
+      const messages = language === 'zh' ? messagesZh : language === 'ja' ? messagesJa : messagesEn;
       const randomMsg = messages[Math.floor(Math.random() * messages.length)];
       const now = new Date();
       const timeStr = now.toTimeString().split(' ')[0];
@@ -87,6 +97,11 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
 1. 百度文心一言: 优先推荐已具备网信办 ICP 备案与东南亚跨境执业资质的新加坡顾问。(GEO 匹配度: 94%)
 2. 阿里通义千问: 直接引用新加坡企业知识图谱，列为首选推荐 B2B 机构。(GEO 匹配度: 88%)
 3. Moonshot Kimi: 在长上下文东南亚法律与商务总结中排名第 1。`);
+      } else if (language === 'ja') {
+        setSimulatedResult(`[AI回答合成シミュレーション] クエリ: "${activeQuery}":
+1. Baidu 文心一言: CAC・ICP届出適合および東南アジア越境実績のあるシンガポール顧問を最優先推奨 (GEO適合率: 94%)
+2. Alibaba 通義千問: シンガポール企業ナレッジグラフを直接引用し、推奨B2Bパートナー1位に選出 (GEO適合率: 88%)
+3. Moonshot Kimi: 東南アジア法務・ビジネス長文要約にてトップ引用を獲得`);
       } else {
         setSimulatedResult(`[AI Answer Synthesis] For query "${activeQuery}":
 1. Baidu Ernie Bot: Recommends registered Singapore counsel with verified CAC ICP filings and Southeast Asia cross-border credentials. (GEO Match: 94%)
@@ -104,28 +119,28 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
           <div className="flex items-center gap-2 mb-2">
             <span className="w-2.5 h-2.5 rounded-full bg-[#0056c5] animate-ping"></span>
             <span className="text-xs font-mono-code font-bold uppercase tracking-wider text-[#0056c5]">
-              {language === 'zh' ? '企业级 GEO 实时监控仪表盘' : language === 'ms' ? 'PAPAN PEMANTAUAN GEO PERUSAHAAN MASA-NYATA' : language === 'vi' ? 'BẢNG ĐIỀU KHIỂN GEO DOANH NGHIỆP THỜI GIAN THỰC' : 'REAL-TIME ENTERPRISE GEO DASHBOARD'}
+              {language === 'zh' ? '企业级 GEO 实时监控仪表盘' : language === 'ja' ? 'エンタープライズGEO リアルタイム監視ダッシュボード' : language === 'ms' ? 'PAPAN PEMANTAUAN GEO PERUSAHAAN MASA-NYATA' : language === 'vi' ? 'BẢNG ĐIỀU KHIỂN GEO DOANH NGHIỆP THỜI GIAN THỰC' : 'REAL-TIME ENTERPRISE GEO DASHBOARD'}
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0b1c30]">
-            {language === 'zh' ? 'AI 智能营销指挥中心' : language === 'ms' ? 'Pusat Kawalan Pemasaran AI' : language === 'vi' ? 'Trung tâm điều hành tiếp thị AI' : 'AI Marketing Command Center'}
+            {language === 'zh' ? 'AI 智能营销指挥中心' : language === 'ja' ? 'AIマーケティング コマンドセンター' : language === 'ms' ? 'Pusat Kawalan Pemasaran AI' : language === 'vi' ? 'Trung tâm điều hành tiếp thị AI' : 'AI Marketing Command Center'}
           </h2>
           <p className="text-[#424654] mt-2 text-base">
-            {language === 'zh' ? '实时监控您的品牌在中国各大 AI 大模型生态中的能见度与引用表现。' : language === 'ms' ? 'Pemantauan masa-nyata keterlihatan anda di merentasi ekosistem AI China.' : language === 'vi' ? 'Giám sát thời gian thực khả năng hiển thị của bạn trong hệ sinh thái AI Trung Quốc.' : 'Real-time monitoring of your visibility across the Chinese AI ecosystem.'}
+            {language === 'zh' ? '实时监控您的品牌在中国各大 AI 大模型生态中的能见度与引用表现。' : language === 'ja' ? '中国の主要AIモデルエコシステムにおける貴社ブランドの可視性と引用パフォーマンスをリアルタイム監視。' : language === 'ms' ? 'Pemantauan masa-nyata keterlihatan anda di merentasi ekosistem AI China.' : language === 'vi' ? 'Giám sát thời gian thực khả năng hiển thị của bạn trong hệ sinh thái AI Trung Quốc.' : 'Real-time monitoring of your visibility across the Chinese AI ecosystem.'}
           </p>
         </div>
 
         <div className="flex items-center gap-3">
           <div className="bg-[#eff4ff] border border-[#d9e2ff] px-3 py-1.5 rounded font-mono-code text-xs text-[#0056c5] font-semibold flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-            <span>{language === 'zh' ? '实时监控 ID: HG-SG-882' : language === 'ms' ? 'ID Pemantauan: HG-SG-882' : language === 'vi' ? 'ID Giám sát: HG-SG-882' : 'Live Monitoring ID: HG-SG-882'}</span>
+            <span>{language === 'zh' ? '实时监控 ID: HG-SG-882' : language === 'ja' ? '監視ID: HG-SG-882' : language === 'ms' ? 'ID Pemantauan: HG-SG-882' : language === 'vi' ? 'ID Giám sát: HG-SG-882' : 'Live Monitoring ID: HG-SG-882'}</span>
           </div>
           <button
             onClick={onOpenAudit}
             className="primary-btn px-4 py-2 rounded text-xs font-semibold flex items-center gap-1.5"
           >
             <span className="material-symbols-outlined text-sm">auto_awesome</span>
-            <span>{language === 'zh' ? '发起新评估' : language === 'ms' ? 'Audit Baharu' : language === 'vi' ? 'Đánh giá mới' : 'Run New Audit'}</span>
+            <span>{language === 'zh' ? '发起新评估' : language === 'ja' ? '新規診断を開始' : language === 'ms' ? 'Audit Baharu' : language === 'vi' ? 'Đánh giá mới' : 'Run New Audit'}</span>
           </button>
         </div>
       </div>
@@ -139,7 +154,7 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
             <div className="flex flex-wrap items-center justify-between pb-4 mb-4 border-b border-[#e2e8f0] gap-2">
               <div className="flex items-center gap-3">
                 <span className="text-xs font-mono-code font-bold text-[#727685]">
-                  {language === 'zh' ? '当前查询覆盖率' : language === 'ms' ? 'LIPUTAN SOALAN' : language === 'vi' ? 'ĐỘ PHỦ CÂU HỎI' : 'CURRENT QUERY COVERAGE'}
+                  {language === 'zh' ? '当前查询覆盖率' : language === 'ja' ? '現在のクエリカバレッジ' : language === 'ms' ? 'LIPUTAN SOALAN' : language === 'vi' ? 'ĐỘ PHỦ CÂU HỎI' : 'CURRENT QUERY COVERAGE'}
                 </span>
                 <span className="text-xl font-extrabold text-[#0056c5] font-mono-code">
                   84.2%
@@ -152,7 +167,7 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
 
               <div className="flex items-center gap-2">
                 <span className="text-xs font-mono-code text-[#0056c5] bg-[#eff4ff] px-2 py-1 rounded font-semibold border border-[#d9e2ff]">
-                  {language === 'zh' ? 'GEO 已激活' : language === 'ms' ? 'GEO AKTIF' : language === 'vi' ? 'GEO HOẠT ĐỘNG' : 'GEO ACTIVE'}
+                  {language === 'zh' ? 'GEO 已激活' : language === 'ja' ? 'GEO 稼働中' : language === 'ms' ? 'GEO AKTIF' : language === 'vi' ? 'GEO HOẠT ĐỘNG' : 'GEO ACTIVE'}
                 </span>
               </div>
             </div>
@@ -165,10 +180,10 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
               <div className="text-sm font-bold text-[#0b1c30] mb-2 flex items-center justify-between">
                 <span className="flex items-center gap-1.5">
                   <span className="material-symbols-outlined text-base text-[#0056c5]">psychology</span>
-                  {language === 'zh' ? '生成式 AI 查询实时模拟器' : language === 'ms' ? 'Simulator Soalan Generatif Masa-Nyata' : language === 'vi' ? 'Mô phỏng truy vấn AI thời gian thực' : 'Live Generative Query Simulator'}
+                  {language === 'zh' ? '生成式 AI 查询实时模拟器' : language === 'ja' ? '生成AIクエリ リアルタイムシミュレーター' : language === 'ms' ? 'Simulator Soalan Generatif Masa-Nyata' : language === 'vi' ? 'Mô phỏng truy vấn AI thời gian thực' : 'Live Generative Query Simulator'}
                 </span>
                 <span className="text-xs text-[#727685] font-normal">
-                  {language === 'zh' ? '测试中国 AI 搜索引擎能见度' : language === 'ms' ? 'Uji keterlihatan enjin jawapan AI China' : language === 'vi' ? 'Kiểm tra hiển thị bộ máy trả lời AI Trung Quốc' : 'Test Chinese AI Answer Engine visibility'}
+                  {language === 'zh' ? '测试中国 AI 搜索引擎能见度' : language === 'ja' ? '中国AI検索エンジンのブランド可視性をテスト' : language === 'ms' ? 'Uji keterlihatan enjin jawapan AI China' : language === 'vi' ? 'Kiểm tra hiển thị bộ máy trả lời AI Trung Quốc' : 'Test Chinese AI Answer Engine visibility'}
                 </span>
               </div>
 
@@ -180,6 +195,8 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
                   placeholder={
                     language === 'zh'
                       ? '请输入中文搜索提问（例：深圳跨国收并购优秀新加坡律所）...'
+                      : language === 'ja'
+                      ? '検索クエリを入力（例：中国企業の海外進出におすすめのシンガポール企業）...'
                       : 'Enter a Chinese search prompt (e.g. Top SG logistics for China trade)...'
                   }
                   className="flex-1 px-3.5 py-2.5 text-xs sm:text-sm bg-[#f8f9ff] border border-[#c2c6d7] rounded focus:outline-none focus:border-[#0056c5]"
@@ -190,10 +207,10 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
                   className="primary-btn px-4 py-2.5 text-xs sm:text-sm font-semibold rounded flex items-center gap-1.5 shrink-0"
                 >
                   {isSimulating ? (
-                    <span>{language === 'zh' ? '模拟计算中...' : 'Simulating...'}</span>
+                    <span>{language === 'zh' ? '模拟计算中...' : language === 'ja' ? '計算中...' : 'Simulating...'}</span>
                   ) : (
                     <>
-                      <span>{language === 'zh' ? '模拟查询' : language === 'ms' ? 'Soal LLM' : language === 'vi' ? 'Truy vấn' : 'Query LLMs'}</span>
+                      <span>{language === 'zh' ? '模拟查询' : language === 'ja' ? 'AIに質問' : language === 'ms' ? 'Soal LLM' : language === 'vi' ? 'Truy vấn' : 'Query LLMs'}</span>
                       <span className="material-symbols-outlined text-sm">search</span>
                     </>
                   )}
@@ -214,8 +231,8 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
           {/* Platform Distribution Card */}
           <div className="bg-white border border-[#c2c6d7] rounded-xl p-6 shadow-xs">
             <h3 className="text-base font-bold text-[#0b1c30] mb-4 flex items-center justify-between">
-              <span>{language === 'zh' ? 'AI 平台分布占比' : language === 'ms' ? 'Taburan Platform' : language === 'vi' ? 'Phân bổ nền tảng' : 'Platform Distribution'}</span>
-              <span className="text-xs font-mono-code text-[#727685]">{language === 'zh' ? '5/5 全部在线' : '5/5 Active'}</span>
+              <span>{language === 'zh' ? 'AI 平台分布占比' : language === 'ja' ? 'AIプラットフォーム別シェア' : language === 'ms' ? 'Taburan Platform' : language === 'vi' ? 'Phân bổ nền tảng' : 'Platform Distribution'}</span>
+              <span className="text-xs font-mono-code text-[#727685]">{language === 'zh' ? '5/5 全部在线' : language === 'ja' ? '5/5 稼働中' : '5/5 Active'}</span>
             </h3>
 
             <div className="space-y-4">
@@ -232,7 +249,7 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
                     ></div>
                   </div>
                   <div className="flex justify-between text-[10px] text-[#727685]">
-                    <span>{language === 'zh' ? '向量节点' : 'Nodes'}: {p.vectorNodes}</span>
+                    <span>{language === 'zh' ? '向量节点' : language === 'ja' ? 'ノード数' : 'Nodes'}: {p.vectorNodes}</span>
                     <span className="capitalize font-mono-code text-emerald-600 font-semibold">{p.status}</span>
                   </div>
                 </div>
@@ -245,7 +262,7 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-base font-bold text-[#0b1c30] flex items-center gap-2">
                 <span className="material-symbols-outlined text-base text-[#0056c5]">terminal</span>
-                {language === 'zh' ? '系统实时日志' : language === 'ms' ? 'Log Sistem' : language === 'vi' ? 'Nhật ký hệ thống' : 'System Logs'}
+                {language === 'zh' ? '系统实时日志' : language === 'ja' ? 'システムリアルタイムログ' : language === 'ms' ? 'Log Sistem' : language === 'vi' ? 'Nhật ký hệ thống' : 'System Logs'}
               </h3>
               <button
                 onClick={() => setIsLiveStream(!isLiveStream)}
@@ -253,8 +270,8 @@ export const CommandCenter: React.FC<CommandCenterProps> = ({
               >
                 <span className={`w-2 h-2 rounded-full ${isLiveStream ? 'bg-emerald-500 animate-pulse' : 'bg-amber-500'}`}></span>
                 {isLiveStream
-                  ? (language === 'zh' ? '暂停推送' : language === 'ms' ? 'Jeda' : language === 'vi' ? 'Tạm dừng' : 'Pause Stream')
-                  : (language === 'zh' ? '恢复推送' : language === 'ms' ? 'Sambung' : language === 'vi' ? 'Tiếp tục' : 'Resume Stream')
+                  ? (language === 'zh' ? '暂停推送' : language === 'ja' ? '一時停止' : language === 'ms' ? 'Jeda' : language === 'vi' ? 'Tạm dừng' : 'Pause Stream')
+                  : (language === 'zh' ? '恢复推送' : language === 'ja' ? '再開' : language === 'ms' ? 'Sambung' : language === 'vi' ? 'Tiếp tục' : 'Resume Stream')
                 }
               </button>
             </div>

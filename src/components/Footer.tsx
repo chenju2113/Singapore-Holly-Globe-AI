@@ -39,15 +39,15 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
 
           <p className="text-xs font-mono-code font-bold text-[#00f2fe] uppercase tracking-wider">
-            {language === 'zh' ? '新加坡 · 中国 AI 能见度伙伴' : language === 'ms' ? 'Singapura · Rakan Keterlihatan AI China' : language === 'vi' ? 'Singapore · Đối tác hiển thị AI Trung Quốc' : 'Singapore · China AI Visibility Partner'}
+            {language === 'zh' ? '新加坡 · 中国 AI 能见度伙伴' : language === 'ms' ? 'Singapura · Rakan Keterlihatan AI China' : language === 'vi' ? 'Singapore · Đối tác hiển thị AI Trung Quốc' : language === 'ja' ? 'シンガポール · 中国 AI検索可視性パートナー' : 'Singapore · China AI Visibility Partner'}
           </p>
 
           <p className="text-sm text-slate-400 leading-relaxed max-w-sm">
-            {language === 'zh' ? 'HollyGlobe 新加坡是一家线上优先的 B2B 咨询机构，帮助新加坡与东南亚品牌提升在目标中国市场中的 AI 能见度与 GEO 准备度。' : language === 'ms' ? 'HollyGlobe Singapore ialah penasihat B2B atas talian yang membantu jenama Singapura dan serantau meningkatkan keterlihatan AI.' : language === 'vi' ? 'HollyGlobe Singapore là đơn vị tư vấn B2B ưu tiên trực tuyến giúp các thương hiệu khu vực tăng cường hiển thị AI.' : 'HollyGlobe Singapore is an online-first B2B advisory helping Singapore and regional brands improve AI visibility and GEO readiness for China-market discovery.'}
+            {language === 'zh' ? 'HollyGlobe 新加坡是一家线上优先的 B2B 咨询机构，帮助新加坡与东南亚品牌提升在目标中国市场中的 AI 能见度与 GEO 准备度。' : language === 'ms' ? 'HollyGlobe Singapore ialah penasihat B2B atas talian yang membantu jenama Singapura dan serantau meningkatkan keterlihatan AI.' : language === 'vi' ? 'HollyGlobe Singapore là đơn vị tư vấn B2B ưu tiên trực tuyến giúp các thương hiệu khu vực tăng cường hiển thị AI.' : language === 'ja' ? 'HollyGlobe シンガポールは、シンガポールおよび東南アジアのブランドが中国市場におけるAI検索での可視性とGEO適合度を高めるためのオンライン特化型B2Bアドバイザリーです。' : 'HollyGlobe Singapore is an online-first B2B advisory helping Singapore and regional brands improve AI visibility and GEO readiness for China-market discovery.'}
           </p>
 
           <div className="text-xs text-slate-400 font-mono-code space-y-1">
-            <p>{language === 'zh' ? '立足新加坡 · 线上优先远程咨询服务' : language === 'ms' ? 'Berpusat di Singapura · Penasihat Dalam Talian' : language === 'vi' ? 'Trụ sở tại Singapore · Tư vấn trực tuyến' : 'Based in Singapore · Online-First Remote Advisory'}</p>
+            <p>{language === 'zh' ? '立足新加坡 · 线上优先远程咨询服务' : language === 'ms' ? 'Berpusat di Singapura · Penasihat Dalam Talian' : language === 'vi' ? 'Trụ sở tại Singapore · Tư vấn trực tuyến' : language === 'ja' ? 'シンガポール拠点 · 完全オンライン・リモート相談' : 'Based in Singapore · Online-First Remote Advisory'}</p>
             <p>
               Email:{' '}
               <a href="mailto:enquiry@sghollyglobe.com" className="text-[#00f2fe] hover:underline font-bold">
@@ -60,7 +60,7 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Col 3: Solutions */}
         <div className="space-y-3 text-sm">
           <div className="font-bold text-white uppercase text-xs font-mono-code tracking-wider text-[#166ef1]">
-            {language === 'zh' ? '解决方案' : language === 'ms' ? 'Penyelesaian' : language === 'vi' ? 'Giải pháp' : 'Solutions'}
+            {language === 'zh' ? '解决方案' : language === 'ms' ? 'Penyelesaian' : language === 'vi' ? 'Giải pháp' : language === 'ja' ? 'ソリューション' : 'Solutions'}
           </div>
           <ul className="space-y-2">
             {onNavigateCitation && (
@@ -76,22 +76,22 @@ export const Footer: React.FC<FooterProps> = ({
             )}
             <li>
               <button onClick={onOpenGeoAudit} className="hover:text-white transition-colors">
-                {language === 'zh' ? 'GEO 智能 Agent 审计' : 'GEO Agent Audit'}
+                {language === 'zh' ? 'GEO 智能 Agent 审计' : language === 'ja' ? 'GEO AI Agent 監査' : 'GEO Agent Audit'}
               </button>
             </li>
             <li>
               <a href="#command-center" className="hover:text-white transition-colors">
-                {language === 'zh' ? '指挥中心平台' : 'Command Center'}
+                {language === 'zh' ? '指挥中心平台' : language === 'ja' ? 'コマンドセンター' : 'Command Center'}
               </a>
             </li>
             <li>
               <a href="#product-matrix" className="hover:text-white transition-colors">
-                {language === 'zh' ? 'HollyLink 底层基础设施' : 'HollyLink Infrastructure'}
+                {language === 'zh' ? 'HollyLink 底层基础设施' : language === 'ja' ? 'HollyLink インフラ' : 'HollyLink Infrastructure'}
               </a>
             </li>
             <li>
               <button onClick={onOpenCaseStudies} className="hover:text-white transition-colors">
-                {language === 'zh' ? 'B2B 行业落地案例' : 'B2B Industry Deployment'}
+                {language === 'zh' ? 'B2B 行业落地案例' : language === 'ja' ? 'B2B 業界導入事例' : 'B2B Industry Deployment'}
               </button>
             </li>
           </ul>
@@ -100,27 +100,27 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Col 4: Framework */}
         <div className="space-y-3 text-sm">
           <div className="font-bold text-white uppercase text-xs font-mono-code tracking-wider text-[#166ef1]">
-            {language === 'zh' ? '方法论与框架' : language === 'ms' ? 'Kerangka & Metodologi' : language === 'vi' ? 'Phương pháp luận' : 'Methodology'}
+            {language === 'zh' ? '方法论与框架' : language === 'ms' ? 'Kerangka & Metodologi' : language === 'vi' ? 'Phương pháp luận' : language === 'ja' ? '方法論・フレームワーク' : 'Methodology'}
           </div>
           <ul className="space-y-2">
             <li>
               <button onClick={onOpenMethodology} className="hover:text-white transition-colors">
-                {language === 'zh' ? '网信办算法对齐与备案' : 'CAC Filing Alignment'}
+                {language === 'zh' ? '网信办算法对齐与备案' : language === 'ja' ? 'CAC アルゴリズム届出適合' : 'CAC Filing Alignment'}
               </button>
             </li>
             <li>
               <button onClick={onOpenMethodology} className="hover:text-white transition-colors">
-                {language === 'zh' ? '向量空间语义审计' : 'Vector Space Auditing'}
+                {language === 'zh' ? '向量空间语义审计' : language === 'ja' ? 'ベクトル空間セマンティック監査' : 'Vector Space Auditing'}
               </button>
             </li>
             <li>
               <button onClick={onOpenMethodology} className="hover:text-white transition-colors">
-                {language === 'zh' ? '权威信号向量注入' : 'Signal Injection'}
+                {language === 'zh' ? '权威信号向量注入' : language === 'ja' ? '権威シグナル注入' : 'Signal Injection'}
               </button>
             </li>
             <li>
               <button onClick={onOpenMethodology} className="hover:text-white transition-colors">
-                {language === 'zh' ? '品牌权威度防护' : 'Authority Guarding'}
+                {language === 'zh' ? '品牌权威度防护' : language === 'ja' ? 'ブランド権威保護' : 'Authority Guarding'}
               </button>
             </li>
             {onNavigateFaq && (
@@ -136,10 +136,10 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Col 5: Contact CTA */}
         <div className="space-y-3 text-sm">
           <div className="font-bold text-white uppercase text-xs font-mono-code tracking-wider text-[#00f2fe]">
-            {language === 'zh' ? '新加坡团队咨询' : language === 'ms' ? 'Penasihat Singapore' : language === 'vi' ? 'Tư vấn Singapore' : 'Singapore Advisory'}
+            {language === 'zh' ? '新加坡团队咨询' : language === 'ms' ? 'Penasihat Singapore' : language === 'vi' ? 'Tư vấn Singapore' : language === 'ja' ? 'シンガポール個別相談' : 'Singapore Advisory'}
           </div>
           <p className="text-xs text-slate-400">
-            {language === 'zh' ? '与我们的新加坡专家顾问团队预约远程战略研讨。' : language === 'ms' ? 'Minta konsultasi atas talian bersama pasukan penasihat SG kami.' : language === 'vi' ? 'Yêu cầu tư vấn trực tuyến với đội ngũ chuyên gia Singapore.' : 'Request a remote consultation with our Singapore advisory team.'}
+            {language === 'zh' ? '与我们的新加坡专家顾问团队预约远程战略研讨。' : language === 'ms' ? 'Minta konsultasi atas talian bersama pasukan penasihat SG kami.' : language === 'vi' ? 'Yêu cầu tư vấn trực tuyến với đội ngũ chuyên gia Singapore.' : language === 'ja' ? 'シンガポールの専門アドバイザーチームとのオンライン戦略セッションをご予約ください。' : 'Request a remote consultation with our Singapore advisory team.'}
           </p>
           <button
             onClick={onOpenConsultation}
@@ -158,13 +158,13 @@ export const Footer: React.FC<FooterProps> = ({
         </div>
         <div className="flex flex-wrap gap-6">
           <button onClick={onOpenMethodology} className="hover:text-white transition-colors">
-            {language === 'zh' ? '算法合规政策' : 'CAC Compliance Policy'}
+            {language === 'zh' ? '算法合规政策' : language === 'ja' ? 'CAC コンプライアンス方針' : 'CAC Compliance Policy'}
           </button>
           <a href="mailto:enquiry@sghollyglobe.com?subject=Privacy Policy Query" className="hover:text-white transition-colors">
-            {language === 'zh' ? '隐私政策' : 'Privacy Policy'}
+            {language === 'zh' ? '隐私政策' : language === 'ja' ? 'プライバシーポリシー' : 'Privacy Policy'}
           </a>
           <a href="mailto:enquiry@sghollyglobe.com?subject=Terms of Service Query" className="hover:text-white transition-colors">
-            {language === 'zh' ? '服务条款' : 'Terms of Service'}
+            {language === 'zh' ? '服务条款' : language === 'ja' ? '利用規約' : 'Terms of Service'}
           </a>
         </div>
       </div>

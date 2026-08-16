@@ -34,7 +34,7 @@ describe('generateCitationSnapshot', () => {
       {
         brandName: 'X',
         website: 'https://x.com',
-        industry: 'B2B Tech & SaaS',
+        industry: 'Technology, SaaS & Digital Services',
         targetMarket: 'Greater China (China, HK, TW)',
         competitors: '',
         targetLanguage: 'zh',

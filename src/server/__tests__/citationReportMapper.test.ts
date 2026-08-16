@@ -38,7 +38,7 @@ describe('mapHgBrandCitationResult', () => {
       },
       request: {
         ...readFixture('request.json'),
-        industry: 'B2B Tech & SaaS',
+        industry: 'Technology, SaaS & Digital Services',
       },
     });
 

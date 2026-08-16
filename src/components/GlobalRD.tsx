@@ -6,22 +6,22 @@ export const GlobalRD: React.FC = () => {
 
   const HUBS = [
     {
-      city: language === 'zh' ? '新加坡' : 'Singapore',
-      tag: language === 'zh' ? '战略总部中心' : 'STRATEGIC HUB',
-      role: language === 'zh' ? '企业级咨询与网信办合规' : language === 'ms' ? 'Penasihat Perusahaan & CAC' : language === 'vi' ? 'Tư vấn doanh nghiệp & CAC' : 'Enterprise Advisory & CAC Compliance',
-      detail: language === 'zh' ? '驻新加坡线上顾问中心，主导跨境 AI 能见度战略规划、合规备案及区域客户服务。' : language === 'ms' ? 'Pusat penasihat dalam talian Singapura memimpin strategi keterlihatan AI rentas sempadan.' : language === 'vi' ? 'Trung tâm tư vấn trực tuyến Singapore dẫn dắt chiến lược hiển thị AI xuyên biên giới.' : 'Singapore-based online advisory leading cross-border AI visibility strategy, regulatory filings, and regional client engagement.'
+      city: language === 'zh' ? '新加坡' : language === 'ja' ? 'シンガポール' : 'Singapore',
+      tag: language === 'zh' ? '战略总部中心' : language === 'ja' ? '戦略拠点・アドバイザリー' : 'STRATEGIC HUB',
+      role: language === 'zh' ? '企业级咨询与网信办合规' : language === 'ja' ? 'エンタープライズ戦略＆CACコンプライアンス' : language === 'ms' ? 'Penasihat Perusahaan & CAC' : language === 'vi' ? 'Tư vấn doanh nghiệp & CAC' : 'Enterprise Advisory & CAC Compliance',
+      detail: language === 'zh' ? '驻新加坡线上顾问中心，主导跨境 AI 能见度战略规划、合规备案及区域客户服务。' : language === 'ja' ? 'シンガポール拠点のオンラインアドバイザリー。越境AI可視化戦略の策定、法規制届出、グローバルクライアント支援を統括。' : language === 'ms' ? 'Pusat penasihat dalam talian Singapura memimpin strategi keterlihatan AI rentas sempadan.' : language === 'vi' ? 'Trung tâm tư vấn trực tuyến Singapore dẫn dắt chiến lược hiển thị AI xuyên biên giới.' : 'Singapore-based online advisory leading cross-border AI visibility strategy, regulatory filings, and regional client engagement.'
     },
     {
-      city: language === 'zh' ? '深圳' : 'Shenzhen',
-      tag: language === 'zh' ? '核心算法实验室' : 'CORE ALGORITHM',
-      role: language === 'zh' ? '向量引擎与中文 NLP 实验室' : language === 'ms' ? 'Enjin Vektor & Makmal NLP' : language === 'vi' ? 'Bộ máy vector & Phòng lab NLP' : 'Vector Engine & Chinese NLP Lab',
-      detail: language === 'zh' ? '位于南山科技园。专注于百度文心、阿里通义、Kimi 及腾讯混元大模型向量注入与爬虫优化。' : language === 'ms' ? 'Taman Teknologi Nanshan. Berfokus pada saluran suntikan vektor LLM Baidu, Tongyi, Kimi, dan Tencent.' : language === 'vi' ? 'Khu công nghệ Nam Sơn. Tập trung vào quy trình nhúng vector LLM Baidu, Tongyi, Kimi, Tencent.' : 'Nanshan Tech Park. Focuses on Baidu, Tongyi, Kimi, and Tencent LLM vector injection pipelines and crawler optimization.'
+      city: language === 'zh' ? '深圳' : language === 'ja' ? '深圳（中国）' : 'Shenzhen',
+      tag: language === 'zh' ? '核心算法实验室' : language === 'ja' ? 'コアアルゴリズム研究所' : 'CORE ALGORITHM',
+      role: language === 'zh' ? '向量引擎与中文 NLP 实验室' : language === 'ja' ? 'ベクトルエンジン＆中国語NLPラボ' : language === 'ms' ? 'Enjin Vektor & Makmal NLP' : language === 'vi' ? 'Bộ máy vector & Phòng lab NLP' : 'Vector Engine & Chinese NLP Lab',
+      detail: language === 'zh' ? '位于南山科技园。专注于百度文心、阿里通义、Kimi 及腾讯混元大模型向量注入与爬虫优化。' : language === 'ja' ? '南山ハイテクパーク拠点。Baidu文心一言、Alibaba通義千問、Kimi、Tencent混元等のLLMベクトル注入・クローラー最適化を推進。' : language === 'ms' ? 'Taman Teknologi Nanshan. Berfokus pada saluran suntikan vektor LLM Baidu, Tongyi, Kimi, dan Tencent.' : language === 'vi' ? 'Khu công nghệ Nam Sơn. Tập trung vào quy trình nhúng vector LLM Baidu, Tongyi, Kimi, Tencent.' : 'Nanshan Tech Park. Focuses on Baidu, Tongyi, Kimi, and Tencent LLM vector injection pipelines and crawler optimization.'
     },
     {
-      city: language === 'zh' ? '硅谷' : 'Silicon Valley',
-      tag: language === 'zh' ? '大模型架构研发' : 'LLM ARCHITECTURE',
-      role: language === 'zh' ? '生成式大模型研发' : language === 'ms' ? 'R&D Model Generatif' : language === 'vi' ? 'R&D mô hình tạo sinh' : 'Generative Model R&D',
-      detail: language === 'zh' ? '位于帕罗奥图。前沿研究生成式搜索引擎优化算法与多大模型评测基准工程。' : language === 'ms' ? 'Palo Alto. Mengkaji algoritma pengoptimuman enjin generatif berasaskan tandatangan dan penanda aras.' : language === 'vi' ? 'Palo Alto. Nghiên cứu thuật toán tối ưu hóa bộ máy tìm kiếm tạo sinh và chuẩn thử nghiệm đa LLM.' : 'Palo Alto. Researches fundamental generative engine optimization algorithms and multi-LLM benchmark dynamics.'
+      city: language === 'zh' ? '硅谷' : language === 'ja' ? 'シリコンバレー（米国）' : 'Silicon Valley',
+      tag: language === 'zh' ? '大模型架构研发' : language === 'ja' ? 'LLM基盤技術研究' : 'LLM ARCHITECTURE',
+      role: language === 'zh' ? '生成式大模型研发' : language === 'ja' ? '生成AIモデル・GEO基盤R&D' : language === 'ms' ? 'R&D Model Generatif' : language === 'vi' ? 'R&D mô hình tạo sinh' : 'Generative Model R&D',
+      detail: language === 'zh' ? '位于帕罗奥图。前沿研究生成式搜索引擎优化算法与多大模型评测基准工程。' : language === 'ja' ? 'パロアルト拠点。生成エンジン最適化（GEO）の基礎理論、マルチLLMベンチマーク評価の先端アルゴリズムを研究。' : language === 'ms' ? 'Palo Alto. Mengkaji algoritma pengoptimuman enjin generatif berasaskan tandatangan dan penanda aras.' : language === 'vi' ? 'Palo Alto. Nghiên cứu thuật toán tối ưu hóa bộ máy tìm kiếm tạo sinh và chuẩn thử nghiệm đa LLM.' : 'Palo Alto. Researches fundamental generative engine optimization algorithms and multi-LLM benchmark dynamics.'
     }
   ];
 
@@ -29,13 +29,13 @@ export const GlobalRD: React.FC = () => {
     <section className="py-20 px-6 max-w-[1280px] mx-auto border-t border-[#c2c6d7] bg-[#f0f4fd]/50">
       <div className="text-center max-w-2xl mx-auto mb-12">
         <span className="text-xs font-mono-code font-bold text-[#0056c5] uppercase tracking-wider bg-[#eff4ff] px-3 py-1 rounded border border-[#d9e2ff]">
-          {language === 'zh' ? '全球创新研发网络' : language === 'ms' ? 'RANGKAIAN INOVASI GLOBAL' : language === 'vi' ? 'MẠNG LƯỚI SÁNG TẠO TOÀN CẦU' : 'GLOBAL INNOVATION NETWORK'}
+          {language === 'zh' ? '全球创新研发网络' : language === 'ja' ? 'グローバル開発・拠点ネットワーク' : language === 'ms' ? 'RANGKAIAN INOVASI GLOBAL' : language === 'vi' ? 'MẠNG LƯỚI SÁNG TẠO TOÀN CẦU' : 'GLOBAL INNOVATION NETWORK'}
         </span>
         <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0b1c30] mt-4">
-          {language === 'zh' ? '全球研发与咨询中心' : language === 'ms' ? 'Pusat R&D Global' : language === 'vi' ? 'Trung tâm R&D toàn cầu' : 'Global R&D Hubs'}
+          {language === 'zh' ? '全球研发与咨询中心' : language === 'ja' ? 'グローバル R&D ＆ 戦略アドバイザリー拠点' : language === 'ms' ? 'Pusat R&D Global' : language === 'vi' ? 'Trung tâm R&D toàn cầu' : 'Global R&D Hubs'}
         </h2>
         <p className="text-[#424654] text-base mt-2">
-          {language === 'zh' ? '三大中心工程协同，赋能全球企业在中国 AI 搜索生态中的品牌能见度。' : language === 'ms' ? 'Sinergi kejuruteraan tiga pusat yang menawari keterlihatan carian AI perusahaan.' : language === 'vi' ? 'Hiệp lực kỹ thuật 3 trung tâm nâng tầm hiển thị tìm kiếm AI doanh nghiệp.' : 'Tri-center engineering synergy powering enterprise AI search visibility worldwide.'}
+          {language === 'zh' ? '三大中心工程协同，赋能全球企业在中国 AI 搜索生态中的品牌能见度。' : language === 'ja' ? '3大拠点の技術シナジーにより、世界のトップ企業の中国AIエコシステムにおける圧倒的可視性を創出。' : language === 'ms' ? 'Sinergi kejuruteraan tiga pusat yang menawari keterlihatan carian AI perusahaan.' : language === 'vi' ? 'Hiệp lực kỹ thuật 3 trung tâm nâng tầm hiển thị tìm kiếm AI doanh nghiệp.' : 'Tri-center engineering synergy powering enterprise AI search visibility worldwide.'}
         </p>
       </div>
 

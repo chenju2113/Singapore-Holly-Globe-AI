@@ -38,7 +38,7 @@ function summarizeStderr(stderr: string) {
 }
 
 function buildQueries(params: CitationFormData, domain: string) {
-  const industry = params.industry || 'B2B Tech & SaaS';
+  const industry = params.industry || 'Technology, SaaS & Digital Services';
   const market = params.targetMarket || 'Singapore & Southeast Asia';
   const competitor = params.competitors || 'leading competitors';
   const focus = params.queryFocus || industry;

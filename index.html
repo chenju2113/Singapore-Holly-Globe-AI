@@ -3,15 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18372486865"></script>
+    <!-- Microsoft Advertising UET Tag -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      window.gtag = gtag;
-      gtag('js', new Date());
+      (function(w, d, t, u, o) {
+        w[u] = w[u] || [];
+        o.ts = (new Date()).getTime();
+        var n = d.createElement(t);
+        n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : "");
+        n.async = 1;
+        n.onload = n.onreadystatechange = function() {
+          var s = this.readyState;
+          if (!s || s === "loaded" || s === "complete") {
+            o.q = w[u];
+            w[u] = new UET(o);
+            w[u].push("pageLoad");
+            n.onload = n.onreadystatechange = null;
+          }
+        };
+        var i = d.getElementsByTagName(t)[0];
+        i.parentNode.insertBefore(n, i);
+      })(window, document, "script", "uetq", { ti: "187267000", enableAutoSpaTracking: true });
+    </script>
 
-      gtag('config', 'AW-18372486865');
+    <!-- LinkedIn Insight Tag (Partner ID: 9761948 - Lead Conversion Active) -->
+    <script type="text/javascript">
+      _linkedin_partner_id = "9761948";
+      window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+      window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+    </script>
+    <script type="text/javascript">
+      (function(l) {
+      if (!l){window.lintrk = function(a,b){window.lintrk.q.push([a,b])};
+      window.lintrk.q=[]}
+      var s = document.getElementsByTagName("script")[0];
+      var b = document.createElement("script");
+      b.type = "text/javascript";b.async = true;
+      b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+      s.parentNode.insertBefore(b, s);})(window.lintrk);
     </script>
     <title>HollyGlobe Singapore | Singapore · China AI Visibility Partner</title>
     <meta name="description" content="HollyGlobe Singapore is an online-first B2B advisory helping Singapore and regional brands build AI search visibility and GEO readiness for China-market discovery." />
@@ -70,6 +98,9 @@
     </script>
   </head>
   <body class="bg-[#f8f9ff] text-[#0b1c30] antialiased overflow-x-hidden">
+    <noscript>
+      <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=9761948&fmt=gif" />
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

@@ -19,28 +19,28 @@ export const ComplianceSupport: React.FC<ComplianceSupportProps> = ({ onOpenCons
 
           <div>
             <span className="text-xs font-mono-code font-bold text-[#0056c5] uppercase tracking-wider">
-              {language === 'zh' ? '监管合规框架' : language === 'ms' ? 'KERANGKA KAWAL SELIA' : language === 'vi' ? 'KHUNG PHÁP LÝ' : 'REGULATORY FRAMEWORK'}
+              {language === 'zh' ? '监管合规框架' : language === 'ja' ? '規制コンプライアンス枠組み' : language === 'ms' ? 'KERANGKA KAWAL SELIA' : language === 'vi' ? 'KHUNG PHÁP LÝ' : 'REGULATORY FRAMEWORK'}
             </span>
             <h3 className="text-2xl font-extrabold text-[#0b1c30] mt-1">
-              {language === 'zh' ? '严格的中国市场准入纪律' : language === 'ms' ? 'Disiplin Kemasukan Pasaran' : language === 'vi' ? 'Kỷ luật gia nhập thị trường' : 'Market Entry Discipline'}
+              {language === 'zh' ? '严格的中国市场准入纪律' : language === 'ja' ? '厳格な中国市場参入・適法基準' : language === 'ms' ? 'Disiplin Kemasukan Pasaran' : language === 'vi' ? 'Kỷ luật gia nhập thị trường' : 'Market Entry Discipline'}
             </h3>
             <p className="text-sm text-[#424654] mt-2 leading-relaxed">
-              {language === 'zh' ? '进入中国生成式 AI 搜索生态，必须严格遵循国家法律法规、算法备案流程与数据出境安全评估。' : language === 'ms' ? 'Menavigasi landskap AI China memerlukan pematuhan ketat terhadap undang-undang dan pendaftaran.' : language === 'vi' ? 'Hiểu rõ môi trường pháp lý AI Trung Quốc yêu cầu tuân thủ nghiêm ngặt các quy định.' : 'Navigating mainland China’s AI regulatory landscape requires strict adherence to legal standards, filing procedures, and data security mandates.'}
+              {language === 'zh' ? '进入中国生成式 AI 搜索生态，必须严格遵循国家法律法规、算法备案流程与数据出境安全评估。' : language === 'ja' ? '中国の生成AI検索エコシステムへの参入には、国家法規制、アルゴリズム届出プロセス、越境データセキュリティ審査への厳格な準拠が不可欠です。' : language === 'ms' ? 'Menavigasi landskap AI China memerlukan pematuhan ketat terhadap undang-undang dan pendaftaran.' : language === 'vi' ? 'Hiểu rõ môi trường pháp lý AI Trung Quốc yêu cầu tuân thủ nghiêm ngặt các quy định.' : 'Navigating mainland China’s AI regulatory landscape requires strict adherence to legal standards, filing procedures, and data security mandates.'}
             </p>
           </div>
 
           <ul className="space-y-3 text-xs sm:text-sm text-[#0b1c30] font-medium">
             <li className="flex items-center gap-2.5">
               <span className="material-symbols-outlined text-base text-emerald-600">check_circle</span>
-              <span>{language === 'zh' ? '国家网信办 (CAC) 深度合成与生成式 AI 算法备案' : language === 'ms' ? 'Pendaftaran Algoritma Sintesis Mendalam CAC' : language === 'vi' ? 'Đăng ký thuật toán AI & tổng hợp sâu của CAC' : 'CAC Deep Synthesis & Generative AI Algorithm Filings'}</span>
+              <span>{language === 'zh' ? '国家网信办 (CAC) 深度合成与生成式 AI 算法备案' : language === 'ja' ? '国家インターネット情報弁公室（CAC）深層合成・生成AIアルゴリズム届出' : language === 'ms' ? 'Pendaftaran Algoritma Sintesis Mendalam CAC' : language === 'vi' ? 'Đăng ký thuật toán AI & tổng hợp sâu của CAC' : 'CAC Deep Synthesis & Generative AI Algorithm Filings'}</span>
             </li>
             <li className="flex items-center gap-2.5">
               <span className="material-symbols-outlined text-base text-emerald-600">check_circle</span>
-              <span>{language === 'zh' ? '跨境数据安全评估与 ICP 经营许可证适配' : language === 'ms' ? 'Penilaian Keselamatan Data Rentas Sempadan & Lesen ICP' : language === 'vi' ? 'Đánh giá an toàn dữ liệu xuyên biên giới & Giấy phép ICP' : 'Cross-Border Data Security Assessments & ICP License Alignment'}</span>
+              <span>{language === 'zh' ? '跨境数据安全评估与 ICP 经营许可证适配' : language === 'ja' ? '越境データセキュリティ評価およびICPライセンス適合支援' : language === 'ms' ? 'Penilaian Keselamatan Data Rentas Sempadan & Lesen ICP' : language === 'vi' ? 'Đánh giá an toàn dữ liệu xuyên biên giới & Giấy phép ICP' : 'Cross-Border Data Security Assessments & ICP License Alignment'}</span>
             </li>
             <li className="flex items-center gap-2.5">
               <span className="material-symbols-outlined text-base text-emerald-600">check_circle</span>
-              <span>{language === 'zh' ? '新加坡-中国合规数据安全传输与驻留机制' : language === 'ms' ? 'Kediaman Data & Penghantaran Selamat SG-China' : language === 'vi' ? 'Lưu trữ dữ liệu & truyền an toàn SG-TQ' : 'Data Residency & Secure Singapore-China Transmission'}</span>
+              <span>{language === 'zh' ? '新加坡-中国合规数据安全传输与驻留机制' : language === 'ja' ? 'シンガポール・中国間の適法データ保管＆セキュア伝送メカニズム' : language === 'ms' ? 'Kediaman Data & Penghantaran Selamat SG-China' : language === 'vi' ? 'Lưu trữ dữ liệu & truyền an toàn SG-TQ' : 'Data Residency & Secure Singapore-China Transmission'}</span>
             </li>
           </ul>
         </div>
@@ -54,23 +54,23 @@ export const ComplianceSupport: React.FC<ComplianceSupportProps> = ({ onOpenCons
 
             <div>
               <span className="text-xs font-mono-code font-bold text-[#0056c5] uppercase tracking-wider">
-                {language === 'zh' ? '线上优先顾问服务' : language === 'ms' ? 'PENASIHAT DALAM TALIAN' : language === 'vi' ? 'TƯ VẤN TRỰC TUYẾN' : 'ONLINE-FIRST ADVISORY'}
+                {language === 'zh' ? '线上优先顾问服务' : language === 'ja' ? 'オンライン特化アドバイザリー' : language === 'ms' ? 'PENASIHAT DALAM TALIAN' : language === 'vi' ? 'TƯ VẤN TRỰC TUYẾN' : 'ONLINE-FIRST ADVISORY'}
               </span>
               <h3 className="text-2xl font-extrabold text-[#0b1c30] mt-1">
-                {language === 'zh' ? '新加坡专业顾问团队' : language === 'ms' ? 'Pasukan Penasihat Singapura' : language === 'vi' ? 'Đội ngũ tư vấn Singapore' : 'Singapore Advisory Team'}
+                {language === 'zh' ? '新加坡专业顾问团队' : language === 'ja' ? 'シンガポール専門アドバイザリーチーム' : language === 'ms' ? 'Pasukan Penasihat Singapura' : language === 'vi' ? 'Đội ngũ tư vấn Singapore' : 'Singapore Advisory Team'}
               </h3>
               <p className="text-sm text-[#424654] mt-2 leading-relaxed">
-                {language === 'zh' ? '直接与我们驻新加坡的专家团队沟通。我们采用专注线上的沟通机制，无缝对接东南亚管理者，确保高效沟通零时差。' : language === 'ms' ? 'Bekerja terus dengan pasukan penasihat kami di Singapura secara dalam talian tanpa halangan komunikasi.' : language === 'vi' ? 'Làm việc trực tiếp với đội ngũ tư vấn tại Singapore trực tuyến không có rào cản giao tiếp.' : 'Work directly with our Singapore-based advisory team. We operate as an online-first business, supporting regional clients remotely without offshore friction or communication delays.'}
+                {language === 'zh' ? '直接与我们驻新加坡的专家团队沟通。我们采用专注线上的沟通机制，无缝对接东南亚管理者，确保高效沟通零时差。' : language === 'ja' ? 'シンガポール拠点の専門チームと直接オンラインで連携。時差なくスムーズに経営層・事業責任者様へ高密度な戦略支援を提供します。' : language === 'ms' ? 'Bekerja terus dengan pasukan penasihat kami di Singapura secara dalam talian tanpa halangan komunikasi.' : language === 'vi' ? 'Làm việc trực tiếp với đội ngũ tư vấn tại Singapore trực tuyến không có rào cản giao tiếp.' : 'Work directly with our Singapore-based advisory team. We operate as an online-first business, supporting regional clients remotely without offshore friction or communication delays.'}
               </p>
             </div>
 
             <div className="p-4 bg-[#f8f9ff] border border-[#d9e2ff] rounded-lg space-y-2 text-xs">
               <div className="flex justify-between items-center text-[#0b1c30]">
-                <span className="font-bold">{language === 'zh' ? '线上顾问咨询台' : 'Online Advisory Desk'}</span>
-                <span className="text-emerald-700 font-mono-code font-bold">{language === 'zh' ? '新加坡时间远程支持' : 'Remote SGT Support'}</span>
+                <span className="font-bold">{language === 'zh' ? '线上顾问咨询台' : language === 'ja' ? 'オンライン相談デスク' : 'Online Advisory Desk'}</span>
+                <span className="text-emerald-700 font-mono-code font-bold">{language === 'zh' ? '新加坡时间远程支持' : language === 'ja' ? 'SGT対応 リモートサポート' : 'Remote SGT Support'}</span>
               </div>
               <div className="text-[#727685]">
-                {language === 'zh' ? '为新加坡及区域管理层量身定制远程战略咨询、合规审查与高管能见度报告。' : language === 'ms' ? 'Konsultasi strategi maya, pemeriksaan pematuhan, dan laporan eksekutif.' : language === 'vi' ? 'Tư vấn chiến lược từ xa, kiểm tra tuân thủ và báo cáo điều hành.' : 'Remote strategy consultations, compliance checkups, and executive reporting tailored for Singapore and regional leadership.'}
+                {language === 'zh' ? '为新加坡及区域管理层量身定制远程战略咨询、合规审查与高管能见度报告。' : language === 'ja' ? 'シンガポールおよび東南アジア・グローバル企業向けに、リモート戦略策定、コンプライアンス診断、経営層向け可視化レポートをご提供。' : language === 'ms' ? 'Konsultasi strategi maya, pemeriksaan pematuhan, dan laporan eksekutif.' : language === 'vi' ? 'Tư vấn chiến lược từ xa, kiểm tra tuân thủ và báo cáo điều hành.' : 'Remote strategy consultations, compliance checkups, and executive reporting tailored for Singapore and regional leadership.'}
               </div>
             </div>
           </div>
@@ -79,7 +79,7 @@ export const ComplianceSupport: React.FC<ComplianceSupportProps> = ({ onOpenCons
             onClick={onOpenConsultation}
             className="primary-btn w-full py-3.5 rounded font-semibold text-sm flex items-center justify-center gap-2 shadow-xs"
           >
-            <span>{language === 'zh' ? '预约新加坡线上咨询' : language === 'ms' ? 'Minta Konsultasi SG' : language === 'vi' ? 'Yêu cầu tư vấn SG' : 'Request a Remote Consultation'}</span>
+            <span>{language === 'zh' ? '预约新加坡线上咨询' : language === 'ja' ? 'シンガポール個別オンライン相談を予約' : language === 'ms' ? 'Minta Konsultasi SG' : language === 'vi' ? 'Yêu cầu tư vấn SG' : 'Request a Remote Consultation'}</span>
             <span className="material-symbols-outlined text-base">calendar_month</span>
           </button>
         </div>

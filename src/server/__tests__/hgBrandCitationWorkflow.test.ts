@@ -28,7 +28,7 @@ describe('runHgBrandCitationWorkflow', () => {
       {
         brandName: 'HollyGlobe Singapore',
         website: 'https://sghollyglobe.com/',
-        industry: 'B2B Tech & SaaS',
+        industry: 'Technology, SaaS & Digital Services',
         targetMarket: 'Singapore & Southeast Asia',
         competitors: 'Competitor A',
         targetLanguage: 'en',
@@ -55,7 +55,7 @@ describe('runHgBrandCitationWorkflow', () => {
       {
         brandName: 'HollyGlobe Singapore',
         website: 'https://sghollyglobe.com/',
-        industry: 'B2B Tech & SaaS',
+        industry: 'Technology, SaaS & Digital Services',
         targetMarket: 'Singapore & Southeast Asia',
         competitors: 'Competitor A',
         targetLanguage: 'en',
@@ -93,7 +93,7 @@ describe('runHgBrandCitationWorkflow', () => {
         {
           brandName: 'HollyGlobe Singapore',
           website: 'https://sghollyglobe.com/',
-          industry: 'B2B Tech & SaaS',
+          industry: 'Technology, SaaS & Digital Services',
           targetMarket: 'Singapore & Southeast Asia',
           competitors: 'Competitor A',
           targetLanguage: 'en',

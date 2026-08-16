@@ -1,4 +1,4 @@
-export type Language = 'en' | 'zh' | 'ms' | 'vi';
+export type Language = 'en' | 'zh' | 'ms' | 'vi' | 'ja';
 
 export interface FaqItem {
   id: number;
@@ -18,6 +18,7 @@ export const FAQ_CATEGORIES: CategoryInfo[] = [
     label: {
       en: 'All Questions',
       zh: '全部问题',
+      ja: 'すべての質問',
       ms: 'Semua Soalan',
       vi: 'Tất cả câu hỏi'
     }
@@ -27,6 +28,7 @@ export const FAQ_CATEGORIES: CategoryInfo[] = [
     label: {
       en: '1. Basics',
       zh: '1. 基础认知类',
+      ja: '1. 基礎知識・概要',
       ms: '1. Asas',
       vi: '1. Cơ bản'
     }
@@ -36,6 +38,7 @@ export const FAQ_CATEGORIES: CategoryInfo[] = [
     label: {
       en: '2. Fit & Audience',
       zh: '2. 适用对象类',
+      ja: '2. 対象企業・適合性',
       ms: '2. Kesesuaian Dan Sasaran',
       vi: '2. Đối tượng phù hợp'
     }
@@ -45,6 +48,7 @@ export const FAQ_CATEGORIES: CategoryInfo[] = [
     label: {
       en: '3. Service Scope',
       zh: '3. 服务内容类',
+      ja: '3. サービス内容・範囲',
       ms: '3. Skop Perkhidmatan',
       vi: '3. Phạm vi dịch vụ'
     }
@@ -54,6 +58,7 @@ export const FAQ_CATEGORIES: CategoryInfo[] = [
     label: {
       en: '4. Results & Measurement',
       zh: '4. 效果与结果类',
+      ja: '4. 効果・成果測定',
       ms: '4. Hasil Dan Pengukuran',
       vi: '4. Kết quả & Đo lường'
     }
@@ -63,6 +68,7 @@ export const FAQ_CATEGORIES: CategoryInfo[] = [
     label: {
       en: '5. Execution & Investment',
       zh: '5. 执行与投入类',
+      ja: '5. 実施フロー・体制',
       ms: '5. Pelaksanaan Dan Pelaburan',
       vi: '5. Triển khai & Đầu tư'
     }
@@ -72,6 +78,7 @@ export const FAQ_CATEGORIES: CategoryInfo[] = [
     label: {
       en: '6. Risk & Vendor Selection',
       zh: '6. 风险与选择类',
+      ja: '6. リスク・パートナー選定',
       ms: '6. Risiko Dan Pemilihan Vendor',
       vi: '6. Rủi ro & Lựa chọn đơn vị'
     }
@@ -853,6 +860,200 @@ export const FAQ_DATA: Record<Language, FaqItem[]> = {
       question: '30. Làm thế nào để biết một đơn vị cung cấp dịch vụ GEO có uy tín hay không?',
       answer: 'Có 4 điều cần xem xét. Thứ nhất, họ có thực sự hiểu các nền tảng AI Trung Quốc không, chứ không chỉ nói về xu hướng AI toàn cầu. Thứ hai, họ có tránh các tuyên bố phi thực tế như đảm bảo thứ hạng không. Thứ ba, họ có thể giải thích rõ ràng những gì sẽ bàn giao, cách đo lường tiến độ và ranh giới dịch vụ không. Thứ tư, họ có hiểu cách các doanh nghiệp B2B, sản xuất và dịch vụ chuyên nghiệp thực sự mua và bán hay không.'
     }
+  ],
+
+  ja: [
+    // 基礎知識・概要 (1-6)
+    {
+      id: 1,
+      categoryKey: 'basics',
+      question: '1. GEOとは何ですか？従来のSEOとどのように違いますか？',
+      answer: 'GEOは「Generative Engine Optimization（生成AIエンジン最適化）」の略称です。従来のSEOが検索エンジン結果一覧（SERP）での上位表示とクリック獲得を目指すのに対し、GEOはユーザーがAIツール（Baidu AI、DeepSeek、Perplexity等）に質問した際、貴社ブランドがAIによって正確に認識・引用・推奨されるようにすることを目的とします。'
+    },
+    {
+      id: 2,
+      categoryKey: 'basics',
+      question: '2. HollyGlobeのGEOサービスは具体的に何を行いますか？',
+      answer: 'HollyGlobe GEOは、シンガポールおよび東南アジアの企業が中国市場に進出する際、中国の主要AIプラットフォーム上での存在感を高める支援を行います。企業情報の構造化、AI親和性の高いコンテンツ設計、権威シグナルの強化、ナレッジ配信、そして継続的なモデル引用モニタリングを提供します。'
+    },
+    {
+      id: 3,
+      categoryKey: 'basics',
+      question: '3. GEOとAEO（回答エンジン最適化）は同じものですか？',
+      answer: '重複する部分はありますが、厳密には異なります。AEOが特定の質問に対する「単一のダイレクトアンサー」獲得に注力するのに対し、GEOはAIプラットフォーム全体におけるブランド言及、ドメイン引用、競合比較、推奨リスト掲載など、より広範なAI可視性を網羅します。'
+    },
+    {
+      id: 4,
+      categoryKey: 'basics',
+      question: '4. なぜ今、企業はGEOに取り組む必要があるのですか？',
+      answer: '特にB2B分野において、企業の意思決定者が営業担当に問い合わせる前にAIを使って情報収集・サプライヤー比較を行う割合が急増しているためです。AIの回答層に貴社が存在しない場合、検討リストに入る前に脱落してしまうリスクがあります。'
+    },
+    {
+      id: 5,
+      categoryKey: 'basics',
+      question: '5. AI検索エンジンはどのように情報源を見つけ、引用するのですか？',
+      answer: 'AIエンジンは、インデックスされたWebページ、構造化ナレッジグラフ、高権威メディア、業界データベース、専門レポートなどを組み合わせて回答を合成します。ブランドの実体が明確に定義され、信頼できる引用元と結びついている情報が優先的に参照されます。'
+    },
+    {
+      id: 6,
+      categoryKey: 'basics',
+      question: '6. GEOは検索エンジンの順位を保証するものですか？',
+      answer: 'いいえ。生成AIの回答は動的かつ対話文脈によって生成されるため、従来の「1位保証」のような概念は存在しません。GEOは、関連クエリにおいてAIモデルが貴社を想起・引用・推奨する確率とカバレッジを最大化するアプローチです。'
+    },
+
+    // 対象企業・適合性 (7-11)
+    {
+      id: 7,
+      categoryKey: 'fit',
+      question: '7. どのような業界の企業がGEOに最も適していますか？',
+      answer: 'B2B SaaS・テクノロジー、精密製造・工業サプライヤー、金融・プロフェッショナルサービス、医療・ヘルスケア、高等教育、高級ホスピタリティなど、意思決定プロセスが長く、信頼性と専門性が重視される業界に最も効果的です。'
+    },
+    {
+      id: 8,
+      categoryKey: 'fit',
+      question: '8. まだ中国市場での知名度が低い企業でも効果はありますか？',
+      answer: 'はい。ゼロから従来の知名度を築くには膨大な広告費が必要ですが、GEOを活用することで、中国の意思決定者がAIで業界ソリューションを検索した際、高信頼な専門企業としてAIに推薦されるポジショニングをスピーディに構築できます。'
+    },
+    {
+      id: 9,
+      categoryKey: 'fit',
+      question: '9. 中国に現地法人やオフィスがないシンガポール企業でも利用できますか？',
+      answer: 'もちろんです。HollyGlobeはシンガポールを拠点とするオンライン特化型アドバイザリーであり、現地法人の有無に関わらず、越境でのブランド認知と問い合わせ獲得に向けたAI可視性構築をサポートします。'
+    },
+    {
+      id: 10,
+      categoryKey: 'fit',
+      question: '10. 一般消費者向け（B2C）ブランドでもGEOは有効ですか？',
+      answer: '高単価商品、海外旅行、留学、ニッチな越境ECなど、ユーザーが購入前にAIや小紅書（RED）で深い比較検討を行うカテゴリーにおいて非常に有効です。単純な低単価衝動買い商品より、検討度の高い商材に向いています。'
+    },
+    {
+      id: 11,
+      categoryKey: 'fit',
+      question: '11. 既に中国で広告やマーケティングを実施している場合、GEOは不要ですか？',
+      answer: 'むしろ併用することで広告効果が倍増します。広告で認知した見込み顧客がAIで評判や競合比較を調べた際、AIが好意的に推薦・裏付けを行うことで、最終的な商談転換率が大幅に向上します。'
+    },
+
+    // サービス内容・範囲 (12-17)
+    {
+      id: 12,
+      categoryKey: 'scope',
+      question: '12. GEOプロジェクトの具体的な進め方を教えてください。',
+      answer: '通常、①現状のAI引用・言及監査（Baseline Audit）、②ブランドエンティティおよびナレッジの構造化設計、③高権威プラットフォームへのRAGコンテンツ投入、④技術的適合（Robots.txt・Schema・クローラー対応）、⑤継続的なモニタリングと改善、というステップで進行します。'
+    },
+    {
+      id: 13,
+      categoryKey: 'scope',
+      question: '13. 対象となる中国のAIプラットフォームはどれですか？',
+      answer: 'Baidu AI（文心一言）、DeepSeek、小紅書（RED AI）、Douyin AI、WeChat AI検索、テンセント混元（Hunyuan）、Kimi、阿里通義千問など、中国の主要なAI検索・対話プラットフォームを幅広くカバーします。'
+    },
+    {
+      id: 14,
+      categoryKey: 'scope',
+      question: '14. 自社Webサイトの改修やコーディングが必要ですか？',
+      answer: '大規模な改修は不要ですが、AIクローラーが情報を正確に読み取れるよう、Schema構造化マークアップの追加、Robots.txtの最適化、エンティティ情報の明示化などの推奨事項をご提案し、実装をサポートします。'
+    },
+    {
+      id: 15,
+      categoryKey: 'scope',
+      question: '15. 中国語コンテンツの制作や翻訳も含まれますか？',
+      answer: 'はい。中国のAIモデルやユーザーの文脈に合わせた専門的な中国語ナレッジコンテンツの作成、用語集の統一、FAQ構造化などを包括的にサポートします。'
+    },
+    {
+      id: 16,
+      categoryKey: 'scope',
+      question: '16. 中国の法令規制（CACアルゴリズム届出やICP）への対応はサポートされますか？',
+      answer: 'はい。中国国家インターネット情報弁公室（CAC）の生成AI関連規制、ICPライセンスの要件、越境データ取り扱いなどのコンプライアンス留意点についてアドバイスを提供します。'
+    },
+    {
+      id: 17,
+      categoryKey: 'scope',
+      question: '17. 他社との差別化ポイントは何ですか？',
+      answer: 'シンガポール基準の国際的なガバナンスと、中国AIエコシステムに関する独自の技術的モニタリング能力を兼ね備えている点です。推測ではなく、実データに基づいたAIモデル引用追跡を実施します。'
+    },
+
+    // 効果・成果測定 (18-22)
+    {
+      id: 18,
+      categoryKey: 'results',
+      question: '18. GEOの効果はどのように測定しますか？',
+      answer: '「ブランド言及率（Mention Rate）」「公式サイト引用率（Citation Rate）」「モデルシェア（Share of Model）」「AI回答における推奨順位」「文脈感情スコア」などの定量的指標を用いてダッシュボードで可視化します。'
+    },
+    {
+      id: 19,
+      categoryKey: 'results',
+      question: '19. 効果が現れるまでにどのくらいの期間がかかりますか？',
+      answer: '通常、初期施策の投入後4〜8週間程度でAIモデルの回答やインデックスに変化が現れ始めます。3〜6ヶ月の継続的な最適化により、安定した引用と推奨ポジションを確立します。'
+    },
+    {
+      id: 20,
+      categoryKey: 'results',
+      question: '20. AIが競合他社を優先して推薦している場合、どう対処しますか？',
+      answer: '競合が引用されている情報ソースを分析し、貴社の強み・専門性・実績に関する比較コンテンツや権威シグナルを強化することで、AIモデルのナレッジバランスを是正します。'
+    },
+    {
+      id: 21,
+      categoryKey: 'results',
+      question: '21. AIが自社について不正確な情報（ハルシネーション）を出力した場合はどうしますか？',
+      answer: '公式ナレッジの構造化投入と高権威メディアでの事実確認シグナル配信を通じて、AIが参照する元データの精度を高め、誤情報の出力頻度を低減させます。'
+    },
+    {
+      id: 22,
+      categoryKey: 'results',
+      question: '22. GEOは実際のリード獲得や売上に繋がりますか？',
+      answer: 'はい。AI検索を利用するユーザーは購買意欲や課題意識が非常に高いため、AIによって直接推奨されたブランドは、極めて質の高いB2B商談や問い合わせに結びつきやすい特徴があります。'
+    },
+
+    // 実施フロー・体制 (23-28)
+    {
+      id: 23,
+      categoryKey: 'execution',
+      question: '23. 契約から施策開始までの流れを教えてください。',
+      answer: 'お問い合わせ・無料診断 → 戦略カウンセリング（オンライン） → 提案書・スコープ確定 → プロジェクトキックオフ → 初期監査とコンテンツ投入、という流れで迅速にスタートできます。'
+    },
+    {
+      id: 24,
+      categoryKey: 'execution',
+      question: '24. 貴社チームとのコミュニケーションはどのように行われますか？',
+      answer: 'シンガポールの専門チームが担当し、Zoom/Teams、メール、WeChatなど、ご希望のオンラインツールを通じてスムーズに連携します。定期的なレポートミーティングも実施します。'
+    },
+    {
+      id: 25,
+      categoryKey: 'execution',
+      question: '25. 社内リソースはどの程度割く必要がありますか？',
+      answer: '初期の会社情報・強み・事例などのヒアリングにご協力いただければ、その後のコンテンツ構造化や技術的調査、配信作業の大部分はHollyGlobe側で代行するため、社内の負担は最小限で済みます。'
+    },
+    {
+      id: 26,
+      categoryKey: 'execution',
+      question: '26. 単発の監査のみを依頼することは可能ですか？',
+      answer: 'はい。まずは現状のAI可視性を把握するための「GEO現状診断・監査レポート」を単発でご利用いただき、その結果を踏まえて継続的な最適化プランをご検討いただけます。'
+    },
+    {
+      id: 27,
+      categoryKey: 'execution',
+      question: '27. 契約期間の縛りはありますか？',
+      answer: 'プロジェクトの目的や規模に応じて、単発監査パッケージから、3ヶ月〜1年の継続リテーナー契約まで、柔軟なプランをご用意しています。'
+    },
+    {
+      id: 28,
+      categoryKey: 'execution',
+      question: '28. 既にSEOやPR会社と契約していますが、併行して導入できますか？',
+      answer: 'はい、大歓迎です。既存のSEOやPR資産はGEOにとっても貴重な土台となります。既存パートナーの取り組みと連携し、AI検索に特化したレイヤーを補強する形でシナジーを発揮します。'
+    },
+
+    // リスク・パートナー選定 (29-30)
+    {
+      id: 29,
+      categoryKey: 'risk',
+      question: '29. GEOを実施する上での法的・コンプライアンスリスクはありますか？',
+      answer: '中国市場向けのコンテンツ配信では、広告法や特定業界規制（金融・医療など）への配慮が不可欠です。HollyGlobeは誇大広告を避け、事実に基づいた安全で持続可能なナレッジ設計を徹底しています。'
+    },
+    {
+      id: 30,
+      categoryKey: 'risk',
+      question: '30. 信頼できるGEOパートナーを選ぶための基準は何ですか？',
+      answer: '①中国主要AIモデルの仕組みを熟知しているか、②非現実的な順位保証ではなくデータ主導の指標を提示しているか、③成果物と測定手法が透明であるか、④B2Bや専門サービスの購買行動を理解しているか、の4点を確認することをおすすめします。'
+    }
   ]
 };
 
@@ -861,7 +1062,7 @@ export function generateFaqSchemaJson(lang: Language) {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    'inLanguage': lang === 'zh' ? 'zh-CN' : lang === 'ms' ? 'ms-MY' : lang === 'vi' ? 'vi-VN' : 'en-US',
+    'inLanguage': lang === 'zh' ? 'zh-CN' : lang === 'ms' ? 'ms-MY' : lang === 'vi' ? 'vi-VN' : lang === 'ja' ? 'ja-JP' : 'en-US',
     'mainEntity': items.map((item) => ({
       '@type': 'Question',
       'name': item.question,

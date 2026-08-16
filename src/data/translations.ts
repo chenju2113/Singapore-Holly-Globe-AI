@@ -1,4 +1,4 @@
-export type Language = 'en' | 'zh' | 'ms' | 'vi';
+export type Language = 'en' | 'zh' | 'ms' | 'vi' | 'ja';
 
 export interface LanguageOption {
   code: Language;
@@ -9,6 +9,7 @@ export interface LanguageOption {
 export const LANGUAGE_OPTIONS: LanguageOption[] = [
   { code: 'en', label: 'English', flag: '🇬🇧' },
   { code: 'zh', label: '中文', flag: '🇨🇳' },
+  { code: 'ja', label: '日本語', flag: '🇯🇵' },
   { code: 'ms', label: 'Bahasa Melayu', flag: '🇲🇾' },
   { code: 'vi', label: 'Tiếng Việt', flag: '🇻🇳' },
 ];
@@ -684,5 +685,173 @@ export const translations = {
     footer_terms: 'Điều khoản dịch vụ',
     footer_contact_us: 'Liên hệ',
     footer_rights: 'Đã đăng ký bản quyền.'
+  },
+
+  ja: {
+    // Header
+    nav_geo_engine: 'GEO エンジン',
+    nav_command_center: 'コマンドセンター',
+    nav_product_matrix: '製品マトリクス',
+    nav_case_studies: '導入事例',
+    nav_methodology: '方法論とフレームワーク',
+    nav_faq: 'よくある質問',
+    nav_request_consultation: '個別相談を予約',
+    nav_free_audit: '無料GEO診断',
+    nav_select_language: '言語を選択',
+
+    // Hero Section
+    hero_badge: 'シンガポール · 中国 AI検索可視性アドバイザリー',
+    hero_title: '中国のAIエコシステムにおけるブランドの引用・露出を最適化',
+    hero_subtitle: 'シンガポールおよび東南アジアの企業が、Baidu AI、DeepSeek、Douyin、小紅書（RED）、WeChat AIなどの主要AI検索エンジンで確実に発見・推奨されるためのオンライン特化型B2Bアドバイザリー。',
+    hero_cta_consultation: '戦略相談を予約',
+    hero_cta_citation: 'AI引用診断スナップショット',
+
+    // Value Strip
+    value_1_title: 'オンライン完結型B2B相談',
+    value_1_desc: 'リモート戦略セッションと個別レポート',
+    value_2_title: 'シンガポール拠点ハブ',
+    value_2_desc: '東南アジアから中国市場への進出を支援',
+    value_3_title: 'デュアルエンジンGEO',
+    value_3_desc: 'Baidu AIとDeepSeekの引用を最適化',
+    value_4_title: '越境AIポジショニング',
+    value_4_desc: '中国のAI検索インデックスに完全適合',
+    value_5_title: '法令遵守・規制対応',
+    value_5_desc: 'CAC生成AIアルゴリズム届出・ICP対応',
+    value_6_title: 'データ主導型AI監査',
+    value_6_desc: 'リアルタイムでモデル引用シェアを可視化',
+
+    // Partners / Ecosystem Coverage
+    partners_title: '対応している中国主要AIプラットフォーム',
+    partners_subtitle: '中国の主要LLMおよびAI検索インデックスにおけるブランド引用を最大化',
+    platform_baidu_desc: '中国最大のAI検索エンジン。毎日膨大な対話型検索と要約回答を生成。',
+    platform_deepseek_desc: '高度な推論と知識統合で急速に普及する次世代AI検索エンジン。',
+    platform_douyin_desc: 'ショート動画とソーシャル検索を融合したAIレコメンドエンジン。',
+    platform_xiaohongshu_desc: 'ユーザーのリアルな体験談に基づくライフスタイル・商品探索AIエンジン。',
+    platform_wechat_desc: '膨大な公衆号記事やコンテンツインデックスを元にしたWeChat AI検索。',
+    platform_tencent_desc: 'テンセントのエンタープライズ＆コンシューマー向けスマート検索LLM。',
+
+    // Command Center
+    command_title: 'リアルタイム GEO コマンドセンター',
+    command_subtitle: 'シンガポール・東南アジア企業の中国市場進出向け リアルタイムLLMインデックス＆引用追跡ダッシュボード',
+    command_live_status: 'リアルタイム監視稼働中',
+    command_run_audit: '無料GEO診断を実行',
+    command_platform_status: 'プラットフォーム稼働状況',
+    command_recent_activity: '最新の診断ログ',
+
+    // Why GEO Section
+    why_geo_badge: 'なぜ今GEOなのか',
+    why_geo_title: '従来のSEOから、生成AI最適化（GEO）への地殻変動',
+    why_geo_subtitle: '検索エンジンはリンクを並べる時代から、AIが直接回答を生成する時代へ移行しました。AIのナレッジベースに正しくインデックスされていなければ、貴社ブランドは認知されません。',
+    why_seo_title: '従来のSEO',
+    why_seo_desc: '検索結果一覧（SERP）における特定キーワードの掲載順位とクリック率の最適化。',
+    why_geo_card_title: '生成AIエンジン最適化 (GEO)',
+    why_geo_card_desc: 'AI回答内でのブランド実体認識、構造化データ引用、および推奨頻度の最適化。',
+    step_1_title: '1. ブランドエンティティ・マッピング',
+    step_1_desc: '中国語圏の高権威ナレッジベース上で明確なブランド実体を確立。',
+    step_2_title: '2. 権威引用＆RAGシーディング',
+    step_2_desc: '対象プラットフォームが信頼する情報ソースにブランドのナレッジを戦略的に投入。',
+    step_3_title: '3. LLMモニタリング＆継続最適化',
+    step_3_desc: '各AIモデルの回答内容と推奨率を追跡し、継続的に引用精度を改善。',
+    learn_methodology: 'GEO方法論を詳しく見る',
+
+    // Mission & Values
+    mission_badge: '私たちのミッション',
+    mission_title: '中国AI検索における東南アジア企業の存在感を確立',
+    mission_desc: 'HollyGlobe シンガポールは、オンラインアドバイザリー、技術的最適化、および戦略的ナレッジ設計を通じて、東南アジア企業と中国のAI検索市場をシームレスに結びます。',
+    value_trust_title: '高信頼のアドバイザリー基準',
+    value_trust_desc: 'シンガポールのガバナンス基準と中国デジタルエコシステムへの深い知見を融合。',
+    value_tech_title: '独自GEO技術と専門ノウハウ',
+    value_tech_desc: 'Baidu AIやDeepSeekに特化した独自のLLM引用追跡アルゴリズム。',
+    value_remote_title: '迅速なオンライン完結型モデル',
+    value_remote_desc: 'スムーズなリモート相談により、スピーディな意思決定とグローバル連携を実現。',
+
+    // Who We Are
+    who_badge: '会社概要',
+    who_title: 'シンガポール拠点のオンライン特化型 B2B アドバイザリー',
+    who_desc_1: 'HollyGlobe シンガポールは、中国市場への展開を目指すシンガポールおよび東南アジア企業向けに生成AI最適化（GEO）を提供するモダンなアドバイザリーファームです。',
+    who_desc_2: 'シンガポールの国際的なビジネス水準と、中国AI検索エコシステムに関する深い技術的理解を兼ね備えています。',
+    who_stat_1_val: '100%',
+    who_stat_1_lbl: 'オンライン・リモート対応',
+    who_stat_2_val: '6+',
+    who_stat_2_lbl: '中国主要AIエンジン網羅',
+    who_stat_3_val: '二重',
+    who_stat_3_lbl: 'シンガポール・中国連携フォーカス',
+    who_btn_contact: '専門アドバイザーに相談',
+
+    // Industry Stats
+    industry_badge: '対象業界分野',
+    industry_title: '高信頼性が求められる業界に特化したカスタムGEOソリューション',
+    industry_subtitle: '中国の顧客・企業の信頼獲得とAI回答の正確性がビジネスを左右する重要分野',
+    ind_edu: '高等教育・海外留学',
+    ind_fin: '金融サービス・プロフェッショナルアドバイザリー',
+    ind_health: 'ヘルスケア・医療ツーリズム',
+    ind_luxury: '高級ブランド・ホスピタリティ',
+    ind_tech: 'B2B SaaS・エンタープライズテクノロジー',
+    ind_cross: '越境Eコマース・グローバル貿易',
+    case_studies_btn: '導入事例を見る',
+
+    // Core Tech
+    tech_badge: 'コアテクノロジー',
+    tech_title: '独自のGEO＆LLM引用モニタリング・アーキテクチャ',
+    tech_1_title: 'マルチLLM引用スクレイピング',
+    tech_1_desc: 'Baidu AI、DeepSeek、Yuanbao、Douyin AIなどの検索クエリをリアルタイムでシミュレーション。',
+    tech_2_title: 'エンティティ・ナレッジグラフ構築',
+    tech_2_desc: 'RAG（検索拡張生成）モデルがスムーズに取得・引用できるようブランド資産を構造化。',
+    tech_3_title: '感情分析＆モデルシェア（SoM）計測',
+    tech_3_desc: '競合他社と比較したブランドの推奨頻度とレコメンド強度を定量的に評価。',
+
+    // Patent & Product Matrix
+    matrix_badge: 'サービスマトリクス',
+    matrix_title: '総合AI検索可視性向上サービス',
+    service_audit_title: 'GEO可視性診断・監査',
+    service_audit_desc: '中国の主要6大AI検索エンジンにおける貴社ブランドの現状を包括的に診断。',
+    service_seeding_title: 'RAGコンテンツ・シーディング',
+    service_seeding_desc: '中国のデジタルインデックスに対し、高権威なブランド情報を戦略的に投入。',
+    service_filing_title: 'アルゴリズム届出＆ICP適合支援',
+    service_filing_desc: '中国のAI規制要件やコンテンツコンプライアンスの適合プロセスをガイダンス。',
+    service_retainer_title: '継続的LLMモニタリング',
+    service_retainer_desc: '月次の引用追跡、感情調整、およびプロアクティブな引用最適化。',
+
+    // Compliance Support
+    comp_badge: '規制対応・コンプライアンス',
+    comp_title: '中国のデジタル規制に自信を持って適応',
+    comp_desc: '中国国家インターネット情報弁公室（CAC）の生成AIアルゴリズム届出、ICPライセンス要件、越境データ移転など、シンガポールおよび国際企業に必要なコンプライアンスを支援します。',
+    comp_item_1: 'CAC 生成AIアルゴリズム届出アドバイザリー',
+    comp_item_2: 'ICPライセンス＆ドメイン登録支援',
+    comp_item_3: '中国越境データ移転コンプライアンス対応',
+    comp_item_4: '中国AIエコシステムにおける商標・ブランド著作権保護',
+
+    // Global R&D
+    rd_badge: 'グローバルネットワーク',
+    rd_title: 'シンガポールハブとアジア全域の展開力',
+    rd_desc: 'シンガポールに拠点を置くHollyGlobeは、東南アジアおよび中国全域のクライアントに対し、高品質なオンラインアドバイザリーを提供しています。',
+
+    // FAQ Section
+    faq_sec_badge: 'よくある質問',
+    faq_sec_title: 'FAQ',
+    faq_sec_q1: 'HollyGlobe Singapore はどのような事業を行っていますか？',
+    faq_sec_a1: 'シンガポールおよび東南アジアのブランドが、中国市場におけるAI検索での可視性、GEO適合度、越境での発見性を高めるための支援を行っています。',
+    faq_sec_q2: 'オンラインでの相談・依頼は可能ですか？',
+    faq_sec_a2: 'はい。HollyGlobe Singapore は完全オンライン対応で、リモートにてお客様をサポートしています。',
+    faq_sec_q3: 'どの市場に特化していますか？',
+    faq_sec_a3: 'シンガポールから中国への展開が主力ですが、東南アジア全域の越境ブランドにも対応しています。',
+    faq_view_all: 'すべての質問を見る',
+
+    // CTA Section
+    cta_title: '中国AI検索での圧倒的な存在感を確立しませんか？',
+    cta_subtitle: 'シンガポールの専門アドバイザーとの個別相談をご予約いただくか、今すぐ無料のGEO診断をお申し込みください。',
+    cta_btn_consultation: '個別相談を予約',
+    cta_btn_methodology: '方法論を見る',
+    cta_btn_audit: '無料診断を受ける',
+
+    // Footer
+    footer_desc: 'HollyGlobe Singapore は、シンガポールおよび東南アジアのブランドが中国AI検索での存在感を構築するためのオンライン特化型アドバイザリーファームです。',
+    footer_quick_links: 'クイックリンク',
+    footer_services: 'サービス',
+    footer_legal: '法的情報',
+    footer_privacy: 'プライバシーポリシー',
+    footer_terms: '利用規約',
+    footer_contact_us: 'お問い合わせ',
+    footer_rights: '無断転載を禁じます。'
   }
 };

@@ -1,0 +1,56 @@
+{
+  "brand_name": "HollyGlobe Singapore",
+  "brand_domain": "sghollyglobe.com",
+  "brand_website": "https://sghollyglobe.com/",
+  "brand_summary": "AI Search & Cross-Border Marketing",
+  "industry": "B2B Tech & SaaS",
+  "target_market": "Singapore & Southeast Asia",
+  "query_focus": "AI Search & Cross-Border Marketing",
+  "client_logo_url": "/app/applet/public/hollyglobe_logo.svg",
+  "agency_name": "HollyGlobe Singapore",
+  "agency_contact_email": "enquiry@sghollyglobe.com",
+  "agency_logo_light_path": "/app/applet/public/hollyglobe_white_logo.svg",
+  "agency_logo_dark_path": "/app/applet/public/hollyglobe_logo.svg",
+  "agency_icon_path": "/app/applet/public/hollyglobe_logo.svg",
+  "provider": "perplexity",
+  "provider_api_key_env": "PERPLEXITY_API_KEY",
+  "report_date": "2026-08-09",
+  "output_basename": "HollyGlobe_GEO_20260809",
+  "output_dir": "/app/applet/tmp/hg-brand-citation-vv9eBz",
+  "languages": [
+    "en"
+  ],
+  "queries": [
+    "Who are the most recommended B2B Tech & SaaS brands in Singapore & Southeast Asia?",
+    "What are the main strengths and case studies of HollyGlobe Singapore for AI Search & Cross-Border Marketing?",
+    "How does HollyGlobe Singapore compare with Competitor A?",
+    "What products or services are offered on HollyGlobe Singapore's official website sghollyglobe.com?"
+  ],
+  "site_checks": [
+    {
+      "label": "robots.txt",
+      "status": "found",
+      "detail": "Reachable with a Sitemap directive"
+    },
+    {
+      "label": "sitemap.xml",
+      "status": "found",
+      "detail": "Valid sitemap with 5 <loc> entries"
+    },
+    {
+      "label": "Homepage structured data",
+      "status": "weak",
+      "detail": "Organization entity present but declares no sameAs links"
+    }
+  ],
+  "recommended_actions": [
+    {
+      "title": "P0: Align brand entity markup",
+      "body": "Homepage structured data check returned \"weak\" (Organization entity present but declares no sameAs links). Publish an Organization JSON-LD block for HollyGlobe Singapore with a canonical name, website, and sameAs links.",
+      "priority": "high"
+    }
+  ],
+  "audit_output_name": "perplexity-citations.json",
+  "audit_json": "/app/applet/tmp/hg-brand-citation-vv9eBz/perplexity-citations.json",
+  "run_audit": true
+}

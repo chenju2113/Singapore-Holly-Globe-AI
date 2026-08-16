@@ -193,7 +193,7 @@ export function generateChinaPlatformSnapshot(params: CitationFormData): Citatio
   return {
     brand: params.brandName,
     website: cleanDomain,
-    industry: params.industry || 'B2B Tech & SaaS',
+    industry: params.industry || 'Technology, SaaS & Digital Services',
     targetMarket: params.targetMarket || 'Greater China (China, HK, TW)',
     runTimestamp: new Date().toISOString(),
     status: 'completed',

@@ -64,7 +64,7 @@ export const Header: React.FC<HeaderProps> = ({
               HollyGlobe <span className="text-[#00f2fe] font-semibold text-xs sm:inline bg-[#00f2fe]/10 px-2 py-0.5 rounded border border-[#00f2fe]/30">Singapore</span>
             </span>
             <span className="text-[10px] text-[#94a3b8] font-medium tracking-wider uppercase">
-              Singapore · China AI Visibility Partner
+              {language === 'zh' ? '新加坡 · 中国 AI 能见度战略伙伴' : language === 'ja' ? 'シンガポール · 中国AI可視化パートナー' : 'Singapore · China AI Visibility Partner'}
             </span>
           </div>
         </button>
@@ -80,7 +80,7 @@ export const Header: React.FC<HeaderProps> = ({
                 : 'hover:text-[#00f2fe]'
             }`}
           >
-            {language === 'zh' ? '首页' : language === 'ms' ? 'Utama' : language === 'vi' ? 'Trang chủ' : 'Home'}
+            {language === 'zh' ? '首页' : language === 'ms' ? 'Utama' : language === 'vi' ? 'Trang chủ' : language === 'ja' ? 'ホーム' : 'Home'}
           </button>
 
           {/* AI Citation Page Link */}
@@ -265,7 +265,7 @@ export const Header: React.FC<HeaderProps> = ({
             }}
             className="w-full text-left py-2 text-[#cbd5e1] font-medium text-sm"
           >
-            {language === 'zh' ? '首页' : language === 'ms' ? 'Utama' : language === 'vi' ? 'Trang chủ' : 'Home'}
+            {language === 'zh' ? '首页' : language === 'ms' ? 'Utama' : language === 'vi' ? 'Trang chủ' : language === 'ja' ? 'ホーム' : 'Home'}
           </button>
 
           <button
