@@ -8,7 +8,7 @@ import path from 'path';
 import fs from 'fs';
 import { GoogleGenAI, Type } from '@google/genai';
 import { handlePerplexityCitationRequest } from './src/server/citationRoutes';
-import { transformHtmlForFaq } from './src/server/seoHtmlTransformer';
+import { transformHtmlForFaq, transformHtmlForBlog } from './src/server/seoHtmlTransformer';
 
 const app = express();
 const PORT = 3000;
@@ -172,6 +172,17 @@ Evaluate its projected visibility across top Chinese AI platforms (Baidu Ernie B
 });
 
 app.post('/api/perplexity-citation', handlePerplexityCitationRequest);
+
+// Blog posts API
+app.get('/api/blog/posts', (req, res) => {
+  try {
+    const { BLOG_POSTS } = require('./src/data/blogData.ts');
+    res.json({ posts: BLOG_POSTS });
+  } catch (error: any) {
+    console.error('Error loading blog posts:', error);
+    res.status(500).json({ error: 'Failed to load blog posts', posts: [] });
+  }
+});
 
 // Check email integration status
 app.get('/api/check-email-config', (req, res) => {
@@ -356,6 +367,20 @@ async function startServer() {
       }
     });
 
+    // Dedicated HTML handler for /blog in dev mode
+    app.get(['/blog', '/blog/'], async (req, res, next) => {
+      try {
+        const indexPath = path.join(process.cwd(), 'index.html');
+        let html = await fs.promises.readFile(indexPath, 'utf-8');
+        html = await vite.transformIndexHtml(req.originalUrl, html);
+        const blogHtml = transformHtmlForBlog(html);
+        return res.status(200).set({ 'Content-Type': 'text/html; charset=utf-8' }).send(blogHtml);
+      } catch (e) {
+        vite.ssrFixStacktrace(e as Error);
+        next(e);
+      }
+    });
+
     app.use(vite.middlewares);
   } else {
     const distPath = path.join(process.cwd(), 'dist');
@@ -371,6 +396,22 @@ async function startServer() {
         let html = await fs.promises.readFile(indexPath, 'utf-8');
         const faqHtml = transformHtmlForFaq(html);
         return res.status(200).set({ 'Content-Type': 'text/html; charset=utf-8' }).send(faqHtml);
+      } catch (e) {
+        return res.sendFile(path.join(distPath, 'index.html'));
+      }
+    });
+
+    // Dedicated HTML handler for /blog in production mode
+    app.get(['/blog', '/blog/'], async (req, res) => {
+      try {
+        const blogIndexPath = path.join(distPath, 'blog', 'index.html');
+        if (fs.existsSync(blogIndexPath)) {
+          return res.sendFile(blogIndexPath);
+        }
+        const indexPath = path.join(distPath, 'index.html');
+        let html = await fs.promises.readFile(indexPath, 'utf-8');
+        const blogHtml = transformHtmlForBlog(html);
+        return res.status(200).set({ 'Content-Type': 'text/html; charset=utf-8' }).send(blogHtml);
       } catch (e) {
         return res.sendFile(path.join(distPath, 'index.html'));
       }

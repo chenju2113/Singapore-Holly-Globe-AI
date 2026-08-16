@@ -1,5 +1,86 @@
 import fs from 'fs';
 
+export function transformHtmlForBlog(html: string): string {
+  const blogTitle = 'Insights | HollyGlobe Singapore';
+  const blogDescription = 'Perspectives on GEO, AI search visibility, and content strategy from HollyGlobe Singapore.';
+  const blogCanonical = 'https://sghollyglobe.com/blog';
+
+  let updated = html;
+
+  // Title
+  updated = updated.replace(/<title>.*?<\/title>/s, `<title>${blogTitle}</title>`);
+
+  // Meta description
+  updated = updated.replace(
+    /<meta\s+name="description"\s+content=".*?"\s*\/?>/s,
+    `<meta name="description" content="${blogDescription}" />`
+  );
+
+  // Canonical
+  updated = updated.replace(
+    /<link\s+rel="canonical"\s+href=".*?"\s*\/?>/s,
+    `<link rel="canonical" href="${blogCanonical}" />`
+  );
+
+  // Open Graph URL
+  updated = updated.replace(
+    /<meta\s+property="og:url"\s+content=".*?"\s*\/?>/s,
+    `<meta property="og:url" content="${blogCanonical}" />`
+  );
+
+  // Open Graph Title
+  updated = updated.replace(
+    /<meta\s+property="og:title"\s+content=".*?"\s*\/?>/s,
+    `<meta property="og:title" content="${blogTitle}" />`
+  );
+
+  // Open Graph Description
+  updated = updated.replace(
+    /<meta\s+property="og:description"\s+content=".*?"\s*\/?>/s,
+    `<meta property="og:description" content="${blogDescription}" />`
+  );
+
+  // Twitter Title
+  updated = updated.replace(
+    /<meta\s+name="twitter:title"\s+content=".*?"\s*\/?>/s,
+    `<meta name="twitter:title" content="${blogTitle}" />`
+  );
+
+  // Twitter Description
+  updated = updated.replace(
+    /<meta\s+name="twitter:description"\s+content=".*?"\s*\/?>/s,
+    `<meta name="twitter:description" content="${blogDescription}" />`
+  );
+
+  // Blog JSON-LD schema (ItemList of blog posts)
+  const blogSchema = {
+    "@type": "Blog",
+    "@id": "https://sghollyglobe.com/blog#blog",
+    "url": "https://sghollyglobe.com/blog",
+    "name": "HollyGlobe Singapore Insights",
+    "description": blogDescription
+  };
+
+  try {
+    const ldJsonRegex = /(<script\s+type="application\/ld\+json">)([\s\S]*?)(<\/script>)/;
+    const match = updated.match(ldJsonRegex);
+    if (match) {
+      const parsed = JSON.parse(match[2]);
+      if (parsed && Array.isArray(parsed['@graph'])) {
+        const hasBlog = parsed['@graph'].some((item: any) => item && item['@type'] === 'Blog');
+        if (!hasBlog) {
+          parsed['@graph'].push(blogSchema);
+        }
+        updated = updated.replace(ldJsonRegex, `$1\n${JSON.stringify(parsed, null, 2)}\n$3`);
+      }
+    }
+  } catch (err) {
+    console.error('Error injecting Blog JSON-LD:', err);
+  }
+
+  return updated;
+}
+
 export function transformHtmlForFaq(html: string): string {
   const faqTitle = 'FAQ | HollyGlobe Singapore';
   const faqDescription = 'Frequently asked questions about HollyGlobe Singapore, our remote consulting model, and our Singapore-to-China AI visibility focus.';

@@ -41,6 +41,26 @@
       b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
       s.parentNode.insertBefore(b, s);})(window.lintrk);
     </script>
+    <script>
+      (function(w, d, t, u, o) {
+        w[u] = w[u] || [];
+        o.ts = (new Date()).getTime();
+        var n = d.createElement(t);
+        n.src = "https://bat.bing.net/bat.js?ti=" + o.ti + ("uetq" != u ? "&q=" + u : "");
+        n.async = 1;
+        n.onload = n.onreadystatechange = function() {
+          var s = this.readyState;
+          if (!s || s === "loaded" || s === "complete") {
+            o.q = w[u];
+            w[u] = new UET(o);
+            w[u].push("pageLoad");
+            n.onload = n.onreadystatechange = null;
+          }
+        };
+        var i = d.getElementsByTagName(t)[0];
+        i.parentNode.insertBefore(n, i);
+      })(window, document, "script", "uetq", { ti: "187267000", enableAutoSpaTracking: true });
+    </script>
     <title>HollyGlobe Singapore | Singapore · China AI Visibility Partner</title>
     <meta name="description" content="HollyGlobe Singapore is an online-first B2B advisory helping Singapore and regional brands build AI search visibility and GEO readiness for China-market discovery." />
     <link rel="canonical" href="https://sghollyglobe.com/" />
@@ -105,4 +125,3 @@
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

@@ -3,12 +3,15 @@ import { useLanguage } from '../context/LanguageContext';
 import { LANGUAGE_OPTIONS } from '../data/translations';
 
 interface HeaderProps {
-  currentView: 'home' | 'citation' | 'faq';
-  onNavigate: (view: 'home' | 'citation' | 'faq') => void;
+  currentView: 'home' | 'citation' | 'faq' | 'blog' | 'caseStudy';
+  onNavigate: (view: 'home' | 'citation' | 'faq' | 'blog' | 'caseStudy') => void;
   onOpenConsultation: () => void;
   onOpenGeoAudit: () => void;
   onOpenCaseStudies: () => void;
   onOpenMethodology: () => void;
+  onNavigateCaseStudy: () => void;
+  onNavigateFitnessCaseStudy: () => void;
+  onNavigateYanwoCaseStudy: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
@@ -18,6 +21,9 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenGeoAudit,
   onOpenCaseStudies,
   onOpenMethodology,
+  onNavigateCaseStudy,
+  onNavigateFitnessCaseStudy,
+  onNavigateYanwoCaseStudy,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [langDropdownOpen, setLangDropdownOpen] = useState(false);
@@ -120,19 +126,35 @@ export const Header: React.FC<HeaderProps> = ({
               <div className="bg-[#0b172a] border border-[#1e293b] rounded-xl shadow-2xl py-1.5 overflow-hidden backdrop-blur-md">
                 <button
                   onClick={() => {
-                    onOpenCaseStudies();
+                    onOpenMethodology();
                   }}
                   className="w-full text-left px-4 py-2 text-xs font-semibold text-[#cbd5e1] hover:text-[#00f2fe] hover:bg-[#1e293b]/70 flex items-center justify-between transition-colors"
                 >
-                  <span>{t.nav_case_studies}</span>
+                  <span>{t.nav_methodology}</span>
                 </button>
                 <button
                   onClick={() => {
-                    onOpenMethodology();
+                    onNavigateCaseStudy();
                   }}
                   className="w-full text-left px-4 py-2 text-xs font-semibold text-[#cbd5e1] hover:text-[#00f2fe] hover:bg-[#1e293b]/70 flex items-center justify-between transition-colors border-t border-[#1e293b]/50"
                 >
-                  <span>{t.nav_methodology}</span>
+                  <span>{language === 'zh' ? '教育行业成功案例' : 'Featured EDU Case'}</span>
+                </button>
+                <button
+                  onClick={() => {
+                  onNavigateFitnessCaseStudy();
+                }}
+                className="w-full text-left px-4 py-2 text-xs font-semibold text-[#cbd5e1] hover:text-[#00f2fe] hover:bg-[#1e293b]/70 flex items-center justify-between transition-colors border-t border-[#1e293b]/50"
+                >
+                  <span>{language === 'zh' ? '健身 KOL 成功案例' : 'Fitness KOL Case'}</span>
+                </button>
+                <button
+                  onClick={() => {
+                    onNavigateYanwoCaseStudy();
+                  }}
+                  className="w-full text-left px-4 py-2 text-xs font-semibold text-[#cbd5e1] hover:text-[#00f2fe] hover:bg-[#1e293b]/70 flex items-center justify-between transition-colors border-t border-[#1e293b]/50"
+                >
+                  <span>{language === 'zh' ? '小仙炖燕窝成功案例' : 'Xiaoxiandun Case'}</span>
                 </button>
               </div>
             </div>
@@ -146,6 +168,16 @@ export const Header: React.FC<HeaderProps> = ({
             }`}
           >
             {t.nav_faq}
+          </button>
+          <button
+            onClick={() => onNavigate('blog')}
+            className={`transition-colors py-1 ${
+              currentView === 'blog'
+                ? 'text-[#00f2fe] border-b-2 border-[#00f2fe]'
+                : 'hover:text-[#00f2fe]'
+            }`}
+          >
+            Insights
           </button>
         </nav>
 
@@ -296,6 +328,36 @@ export const Header: React.FC<HeaderProps> = ({
                 <span className="material-symbols-outlined text-xs">subdirectory_arrow_right</span>
                 <span>{t.nav_methodology}</span>
               </button>
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onNavigateCaseStudy();
+                }}
+                className="w-full text-left py-1 text-[#94a3b8] hover:text-[#00f2fe] font-medium text-xs flex items-center gap-1.5 transition-colors"
+              >
+                <span className="material-symbols-outlined text-xs">subdirectory_arrow_right</span>
+                <span>{language === 'zh' ? '教育行业成功案例' : 'Featured EDU Case'}</span>
+              </button>
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onNavigateFitnessCaseStudy();
+                }}
+                className="w-full text-left py-1 text-[#94a3b8] hover:text-[#00f2fe] font-medium text-xs flex items-center gap-1.5 transition-colors"
+              >
+                <span className="material-symbols-outlined text-xs">subdirectory_arrow_right</span>
+                <span>{language === 'zh' ? '健身 KOL 成功案例' : 'Fitness KOL Case'}</span>
+              </button>
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onNavigateYanwoCaseStudy();
+                }}
+                className="w-full text-left py-1 text-[#94a3b8] hover:text-[#00f2fe] font-medium text-xs flex items-center gap-1.5 transition-colors"
+              >
+                <span className="material-symbols-outlined text-xs">subdirectory_arrow_right</span>
+                <span>{language === 'zh' ? '小仙炖燕窝成功案例' : 'Xiaoxiandun Case'}</span>
+              </button>
             </div>
           </div>
 
@@ -326,4 +388,3 @@ export const Header: React.FC<HeaderProps> = ({
     </header>
   );
 };
-

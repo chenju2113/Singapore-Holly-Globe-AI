@@ -4,6 +4,8 @@ import { useLanguage } from '../context/LanguageContext';
 interface FooterProps {
   onNavigateCitation?: () => void;
   onNavigateFaq?: () => void;
+  onNavigateCaseStudy?: () => void;
+  onNavigateFitnessCaseStudy?: () => void;
   onOpenConsultation: () => void;
   onOpenGeoAudit: () => void;
   onOpenCaseStudies: () => void;
@@ -13,6 +15,8 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({
   onNavigateCitation,
   onNavigateFaq,
+  onNavigateCaseStudy,
+  onNavigateFitnessCaseStudy,
   onOpenConsultation,
   onOpenGeoAudit,
   onOpenCaseStudies,
@@ -94,6 +98,20 @@ export const Footer: React.FC<FooterProps> = ({
                 {language === 'zh' ? 'B2B 行业落地案例' : language === 'ja' ? 'B2B 業界導入事例' : 'B2B Industry Deployment'}
               </button>
             </li>
+            {onNavigateCaseStudy && (
+              <li>
+                <button onClick={onNavigateCaseStudy} className="hover:text-white transition-colors text-[#00f2fe] font-semibold">
+                  {language === 'zh' ? '教育行业成功案例' : 'Featured EDU Case'}
+                </button>
+              </li>
+            )}
+            {onNavigateFitnessCaseStudy && (
+              <li>
+                <button onClick={onNavigateFitnessCaseStudy} className="hover:text-white transition-colors text-[#00f2fe] font-semibold">
+                  {language === 'zh' ? '健身 KOL 成功案例' : 'Fitness KOL Case'}
+                </button>
+              </li>
+            )}
           </ul>
         </div>
 

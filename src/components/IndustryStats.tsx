@@ -3,9 +3,15 @@ import { useLanguage } from '../context/LanguageContext';
 
 interface IndustryStatsProps {
   onOpenCaseStudies: () => void;
+  onOpenFeaturedCase: () => void;
+  onOpenFitnessCase: () => void;
 }
 
-export const IndustryStats: React.FC<IndustryStatsProps> = ({ onOpenCaseStudies }) => {
+export const IndustryStats: React.FC<IndustryStatsProps> = ({
+  onOpenCaseStudies,
+  onOpenFeaturedCase,
+  onOpenFitnessCase,
+}) => {
   const { language } = useLanguage();
 
   const STATS = [
@@ -83,17 +89,54 @@ export const IndustryStats: React.FC<IndustryStatsProps> = ({ onOpenCaseStudies 
           </h2>
         </div>
 
-        <button
-          onClick={onOpenCaseStudies}
-          className="secondary-btn px-4 py-2.5 rounded text-xs font-semibold flex items-center gap-1.5 self-start sm:self-auto"
-        >
-          <span>{language === 'zh' ? '查看所有客户案例' : language === 'ja' ? 'すべての導入事例を見る' : language === 'ms' ? 'Lihat Semua Kes' : language === 'vi' ? 'Xem tất cả nghiên cứu tình huống' : 'View All Case Studies'}</span>
-          <span className="material-symbols-outlined text-sm">open_in_new</span>
-        </button>
+        <div className="flex flex-wrap gap-3 self-start sm:self-auto">
+          <button
+            onClick={onOpenFeaturedCase}
+            className="px-4 py-2.5 rounded text-xs font-semibold flex items-center gap-1.5 bg-[#0056c5] text-white hover:brightness-110 transition-all"
+          >
+            <span>{language === 'zh' ? '查看教育行业成功案例' : language === 'ja' ? '教育業界の成功事例を見る' : 'Featured EDU Case'}</span>
+            <span className="material-symbols-outlined text-sm">north_east</span>
+          </button>
+          <button
+            onClick={onOpenFitnessCase}
+            className="px-4 py-2.5 rounded text-xs font-semibold flex items-center gap-1.5 bg-[#0b1c30] text-[#8fe6ff] hover:brightness-110 transition-all border border-[#173154]"
+          >
+            <span>{language === 'zh' ? '查看健身 KOL 案例' : language === 'ja' ? 'フィットネスKOL事例を見る' : 'Fitness KOL Case'}</span>
+            <span className="material-symbols-outlined text-sm">north_east</span>
+          </button>
+          <button
+            onClick={onOpenCaseStudies}
+            className="secondary-btn px-4 py-2.5 rounded text-xs font-semibold flex items-center gap-1.5"
+          >
+            <span>{language === 'zh' ? '查看所有客户案例' : language === 'ja' ? 'すべての導入事例を見る' : language === 'ms' ? 'Lihat Semua Kes' : language === 'vi' ? 'Xem tất cả nghiên cứu tình huống' : 'View All Case Studies'}</span>
+            <span className="material-symbols-outlined text-sm">open_in_new</span>
+          </button>
+        </div>
       </div>
 
       {/* Industry Badges Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div
+          onClick={onOpenFitnessCase}
+          className="p-5 rounded-xl shadow-xs transition-all cursor-pointer group space-y-3 border border-[#173154] bg-[linear-gradient(135deg,#07111f_0%,#0b1a31_55%,#10365e_100%)] hover:border-[#8fe6ff] hover:shadow-md"
+        >
+          <div className="flex items-center justify-between">
+            <span className="text-[10px] font-mono-code font-bold text-[#8fe6ff] bg-white/8 px-2 py-0.5 rounded uppercase border border-[#2d4f7f]">
+              {language === 'zh' ? '健身 KOL' : language === 'ja' ? 'フィットネス KOL' : 'FITNESS KOL'}
+            </span>
+            <span className="material-symbols-outlined text-base text-[#8fe6ff] group-hover:translate-x-1 transition-all">
+              arrow_forward
+            </span>
+          </div>
+          <div className="font-bold text-white text-base transition-colors">
+            {language === 'zh' ? '罗心悦有氧减脂运动' : 'Luo Xinyue Fitness'}
+          </div>
+          <div className="text-xs text-[#c8d7eb] font-medium">
+            {language === 'zh' ? '案例亮点' : language === 'ja' ? '事例ハイライト' : 'Case Highlight'}:
+            {' '}
+            {language === 'zh' ? 'AI 在大体重减脂、膝盖友好和产后恢复场景中更愿意优先推荐她。' : 'AI prioritizes her for low-impact weight-loss and recovery searches.'}
+          </div>
+        </div>
         {INDUSTRIES.map((ind, idx) => (
           <div
             key={idx}
